@@ -1,65 +1,72 @@
+/*!
+
+=========================================================
+* Paper Dashboard React - v1.3.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+
+* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
 import React from "react";
 
-// react-bootstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+// reactstrap components
+import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
 function Typography() {
   return (
     <>
-      <Container fluid>
+      <div className="content">
         <Row>
           <Col md="12">
             <Card>
-              <Card.Header>
-                <Card.Title as="h4">Light Bootstrap Table Heading</Card.Title>
-                <p className="card-category">
-                  Created using Montserrat Font Family
-                </p>
-              </Card.Header>
-              <Card.Body>
+              <CardHeader>
+                <h5 className="title">Paper Table Heading</h5>
+                <p className="category">Created using Montserrat Font Family</p>
+              </CardHeader>
+              <CardBody>
                 <div className="typography-line">
                   <h1>
                     <span>Header 1</span>
-                    The Life of Light Bootstrap Dashboard React
+                    The Life of Paper Dashboard
                   </h1>
                 </div>
                 <div className="typography-line">
                   <h2>
                     <span>Header 2</span>
-                    The Life of Light Bootstrap Dashboard React
+                    The Life of Paper Dashboard
                   </h2>
                 </div>
                 <div className="typography-line">
                   <h3>
                     <span>Header 3</span>
-                    The Life of Light Bootstrap Dashboard React
+                    The Life of Paper Dashboard
                   </h3>
                 </div>
                 <div className="typography-line">
                   <h4>
                     <span>Header 4</span>
-                    The Life of Light Bootstrap Dashboard React
+                    The Life of Paper Dashboard
                   </h4>
                 </div>
                 <div className="typography-line">
                   <h5>
                     <span>Header 5</span>
-                    The Life of Light Bootstrap Dashboard React
+                    The Life of Paper Dashboard
                   </h5>
                 </div>
                 <div className="typography-line">
                   <h6>
                     <span>Header 6</span>
-                    The Life of Light Bootstrap Dashboard React
+                    The Life of Paper Dashboard
                   </h6>
                 </div>
                 <div className="typography-line">
@@ -79,9 +86,8 @@ function Typography() {
                       worth billions of dollars, because I got the answers. I
                       understand culture. I am the nucleus. I think that’s a
                       responsibility that I have, to push possibilities, to show
-                      people, this is the level that things could be at."{" "}
-                      <br></br>
-                      <br></br>
+                      people, this is the level that things could be at." <br />
+                      <br />
                       <small>- Noaa</small>
                     </p>
                   </blockquote>
@@ -131,15 +137,15 @@ function Typography() {
                 <div className="typography-line">
                   <h2>
                     <span>Small Tag</span>
-                    Header with small subtitle <br></br>
+                    Header with small subtitle <br />
                     <small>Use "small" tag for the headers</small>
                   </h2>
                 </div>
-              </Card.Body>
+              </CardBody>
             </Card>
           </Col>
         </Row>
-      </Container>
+      </div>
     </>
   );
 }

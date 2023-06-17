@@ -1,12 +1,13 @@
 /*!
 
 =========================================================
-* Light Bootstrap Dashboard React - v2.0.1
+* Paper Dashboard React - v1.3.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+
+* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
 
 * Coded by Creative Tim
 
@@ -15,47 +16,51 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
-import { Container } from "react-bootstrap";
+/*eslint-disable*/
+import React from "react";
+import { Container, Row } from "reactstrap";
+// used for making the prop types of this component
+import PropTypes from "prop-types";
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer className="footer px-0 px-lg-3">
-        <Container fluid>
-          <nav>
-            <ul className="footer-menu">
+function Footer(props) {
+  return (
+    <footer className={"footer" + (props.default ? " footer-default" : "")}>
+      <Container fluid={props.fluid ? true : false}>
+        <Row>
+          <nav className="footer-nav">
+            <ul>
               <li>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  Home
+                <a href="https://www.creative-tim.com" target="_blank">
+                  Creative Tim
                 </a>
               </li>
               <li>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  Company
-                </a>
-              </li>
-              <li>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                <a href="https://blog.creative-tim.com" target="_blank">
                   Blog
                 </a>
               </li>
+              <li>
+                <a href="https://www.creative-tim.com/license" target="_blank">
+                  Licenses
+                </a>
+              </li>
             </ul>
-            <p className="copyright text-center">
-              © {new Date().getFullYear()}{" "}
-              <a href="http://www.creative-tim.com">Creative Tim</a>, made with
-              love for a better web
-            </p>
           </nav>
-        </Container>
-      </footer>
-    );
-  }
+          <div className="credits ml-auto">
+            <div className="copyright">
+              &copy; {1900 + new Date().getYear()}, made with{" "}
+              <i className="fa fa-heart heart" /> by Creative Tim
+            </div>
+          </div>
+        </Row>
+      </Container>
+    </footer>
+  );
 }
+
+Footer.propTypes = {
+  default: PropTypes.bool,
+  fluid: PropTypes.bool,
+};
 
 export default Footer;

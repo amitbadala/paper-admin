@@ -1,246 +1,205 @@
 # Change Log
 
-## [2.0.1] 2022-07-04
+## [1.3.2] 2023-05-23
 
 - Update dependencies
+- Fix issues
+
+## [1.3.1] 2021-07-14
+
+- Update the dependencies
 - Migration to React 18
 - Migration to sass from node-sass
 
-## [2.0.0] 2021-01-21
-
-### IMPORTANT
-
-- We have updated this product from Bootstrap 3 to Bootstrap 4, so in essence, this is a new product
-- For this, we have followed the guidelines from [here](https://react-bootstrap.github.io/migrating/) and [here](https://getbootstrap.com/docs/4.0/migration/)
-- We also did not add Bootstrap variables as part of our styles (we will do so in one of our next updates, probably in version 3.0.0 when we'll add Bootstrap 5)
+## [1.3.0] 2021-05-17
 
 ### Bug fixing
 
-- Renamed all files to `.js`, instead of `.jsx`
-- Refactor all files from class components to functional ones, so now, you can use React Hooks
-- https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/62
-- https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/58
-- https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/52
-- https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/50
+- We've change all class components to function ones, so now, Paper Dashboard React accepts hooks
 
 ### Major style changes
 
-- Since the update from Bootstrap 3 to Bootstrap 4, all styles have been changed
-
 ### Deleted components
 
-- src/components/Card/Card.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/CustomButton/CustomButton.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/CustomCheckbox/CustomCheckbox.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/CustomRadio/CustomRadio.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/FormInputs/FormInputs.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/StatsCard/StatsCard.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/Tasks/Tasks.jsx (we'll use the simple React Bootstrap tags instead)
-- src/components/UserCard/UserCard.jsx (we'll use the simple React Bootstrap tags instead)
+### Added components
+
+- `@babel/core@7.14.2` (to stop warnings)
+
+### Deleted dependencies
+
+- `history` (no longer needed due to the `BrowserRouter`)
+- `react-google-maps` (replaced by simple Google Maps API)
+- `@types/googlemaps`
+- `@types/markerclustererplus`
+- `@types/react`
+- `ajv` (no longer needed - this was installed so `react-scripts` install would not show errors)
+
+### Added dependencies
+
+### Updated dependencies
+
+```
+bootstrap                    4.5.0   →    4.6.0
+chart.js                     2.9.3   →    3.2.1
+node-sass                   4.14.1   →    6.0.0
+perfect-scrollbar            1.5.0   →    1.5.1
+react                      16.13.1   →   17.0.2
+react-chartjs-2              2.9.0   →    3.0.3
+react-dom                  16.13.1   →   17.0.2
+react-notification-alert    0.0.12   →   0.0.13
+react-scripts                3.4.1   →    4.0.3
+reactstrap                   8.4.1   →    8.9.0
+gulp-append-prepend          1.0.8   →    1.0.9
+jquery                       3.5.1   →    3.6.0
+typescript                   3.9.5   →    4.2.4
+```
+
+### Warning
+
+_We will update Bootstrap to v5 when we'll release a new design for the Paper products._
+_You will also have the following message: found 80 vulnerabilities (1 low, 79 moderate). This comes from react-scripts, and will be fixed in the next version. NOTE: the product works as expected with these vulnerabilities._
+
+## [1.2.0] 2020-06-12
+
+### Bug fixing
+
+- https://github.com/creativetimofficial/paper-dashboard-react/issues/15
+- https://github.com/creativetimofficial/paper-dashboard-react/issues/13
+- https://github.com/creativetimofficial/paper-dashboard-react/issues/12
+- https://github.com/creativetimofficial/paper-dashboard-react/issues/9 (could not reproduce the issue, so we've left the perfect-scrollbar initialization as is, if there are layout problems, please delete the bits of code specified here: https://github.com/creativetimofficial/paper-dashboard-react/issues/9#issuecomment-593385860)
+- https://github.com/creativetimofficial/paper-dashboard-react/issues/8
+- Other Paper React products issues solved here as well
+  - https://github.com/creativetimofficial/ct-paper-kit-pro-react/issues/2
+  - https://github.com/creativetimofficial/paper-kit-react/issues/2
+  - https://github.com/creativetimofficial/ct-paper-dashboard-pro-react/issues/8
+  - https://github.com/creativetimofficial/ct-paper-dashboard-pro-react/issues/6 - solution to this is to change the usage of the ModalHeader from Reactstrap to simple Bootstrap ones:
+    So, instead of:
+
+```
+<ModalHeader className="justify-content-center" toggle={this.toggleModalDemo}>
+    Modal Title
+</ModalHeader>
+```
+
+You should use
+
+```
+<div className="modal-header justify-content-center">
+  <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.toggleModalDemo}>
+    <span aria-hidden="true">×</span>
+  </button>
+  <h5 className="modal-title">Modal Title</h5>
+</div>
+```
+
+### Major style changes
+
+- - There will be additional changes in each `.js` and `.html` files since we've used `prettier` to prettify them
+- `src/assets/scss/paper-dashboard/_nucleo-outline.scss` (changed the fonts import to `~assets/fonts` and also added assets path inside `jsconfig.json` file)
+- `src/assets/scss/paper-dashboard/react/custom/_nucleo-outline.scss` (changed the fonts import to `~assets/fonts` and also added assets path inside `jsconfig.json` file)
+- `src/assets/scss/paper-dashboard/react/custom/_responsive.scss`
+- `src/assets/scss/paper-dashboard/react/custom/_inputs.scss`
+
+### Deleted components
 
 ### Added components
 
 ### Deleted dependencies
 
-- react-notification-system (we'll use react-notification-alert from now on)
-- @types/googlemaps
-- @types/markerclustererplus
-- @types/react
-- react-google-maps (we'll use simple Google Maps API with Vanilla JS)
-- react-toggle (we'll use the simple React-Bootstrap Form.Check as a switch instead)
-
 ### Added dependencies
 
-- react-notification-alert@0.0.13 (instead of the react-notification-system)
-- reactstrap@8.9.0 (as part of the react-notification-alert)
-- jquery@3.5.1 (since Bootstrap requires it)
-- @fortawesome/fontawesome-free@5.15.2 (For easier update of the package - instead of a link inside public/index.html)
-- gulp-append-prepend@1.0.8 (For Creative Tim licenses)
-- gulp@4.0.2 (For Creative Tim licenses)
+- gulp@4.0.2 (for Creative Tim copyrights)
+- gulp-append-prepend@1.0.8 (for Creative Tim copyrights)
 
 ### Updated dependencies
 
 ```
-bootstrap           3.3.7   →    4.6.0
-node-sass          4.12.0   →   4.14.1
-react              16.8.6   →   17.0.1
-react-bootstrap    0.32.4   →    1.4.3
-react-chartist     0.13.3   →   0.14.3
-react-dom          16.8.6   →   17.0.1
-react-router        5.0.0   →    5.2.0
-react-router-dom    5.0.0   →    5.2.0
-react-scripts       3.0.0   →    4.0.1
-typescript          3.4.3   →    4.1.3
+bootstrap             4.3.1   →     4.5.0
+chart.js              2.8.0   →     2.9.3
+history               4.9.0   →    4.10.1
+node-sass            4.12.0   →    4.14.1
+perfect-scrollbar     1.4.0   →     1.5.0
+react                16.8.6   →   16.13.1
+react-chartjs-2       2.7.6   →     2.9.0
+react-dom            16.8.6   →   16.13.1
+react-router          5.0.0   →     5.2.0
+react-router-dom      5.0.0   →     5.2.0
+react-scripts         3.0.1   →     3.4.1
+reactstrap            8.0.0   →     8.4.1
+@types/googlemaps    3.36.2   →    3.39.6
+@types/react        16.8.19   →   16.9.35
+ajv                  6.10.0   →    6.12.2
+jquery                3.4.1   →     3.5.1
+typescript            3.4.5   →     3.9.5
 ```
 
 ### Warning
 
-**The TypeScript and jQuery dependencies are installed only to stop console warnings on install. They are not actually used in our product. So the product is not based on TypeScript or jQuery!**
-_The following warnings will appear when running the installation command, but they do not affect the UI or the functionality of the product (they will be solved in our next update):_
+_All the following products: Paper Kit React, Paper Dashboard React, Paper Kit PRO React and Paper Dashboard PRO React have been updated together, and thus, we've added to all of them the same version of 1.2.0 - we may have skipped some versions for some of the above products, we've done so, since we want all Paper & React products to share the same versions._
+_While in development some of the plugins that were used for this product will throw some warnings - note, this only happens in development, the UI or the functionality of the product is not affected, also, if the issues will persist in React 17, we'll drop usage of those plugins, and replace them with other ones._
+_Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the product, and they appear because of NodeJS and not from the product itself._
 
-```
-npm WARN react-chartist@0.14.3 requires a peer of react@^0.14.9 || ^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
-npm WARN react-popper@1.3.7 requires a peer of react@0.14.x || ^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
-npm WARN create-react-context@0.3.0 requires a peer of react@^0.14.0 || ^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
-```
+## [1.1.0] 2019-05-31
 
-_If they will persist in our 2.4.\* version, we will drop their usages and replace them with other plugins._
-_In development mode, some of the above plugins will throw a warning because they still use React v16 syntax. If the error will persist in our 2.4.\* version, we will drop their usage and replace them with other plugins._
+### Major changes
 
-### Upgrade details
+- Almost all of the styles inside `src/scss` have been changed
+- We've removed `src/routes/*` files and replaced them with just one file (`src/routes.js`)
+- We've renamed `src/layouts/Dashboard/Dashboard.jsx` to `src/layouts/Admin.jsx`
+- We've dropped the usage of `NODE_PATH=./src` and the file `.env` with the `jsconfig.json` file for using absolute paths
+- We've renamed `src/components/Header/Header.jsx` to `src/components/Navbars/DemoNavbar.jsx`
+- We've renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Dashboard.jsx`
+- We've renamed `src/views/Icons/Icons.jsx` to `src/views/Icons.jsx`
+- We've renamed `src/views/Maps/Maps.jsx` to `src/views/Map.jsx`
+- We've renamed `src/views/Notifications/Notifications.jsx` to `src/views/Notifications.jsx`
+- We've renamed `src/views/TableList/TableList.jsx` to `src/views/Tables.jsx`
+- We've renamed `src/views/Typography/Typography.jsx` to `src/views/Typography.jsx`
+- We've renamed `src/views/UserPage/UserPage.jsx` to `src/views/User.jsx`
 
-- Updated all packages from `package.json` using `npm-upgrade`, link here: https://www.npmjs.com/package/npm-upgrade
-- Renamed all `ControlLabel` components to `FormLabel` (this refers to the react-bootstrap components)
-- Renamed all `Grid` components to `Container` (this refers to the react-bootstrap components)
-- Rename all `HelpBlock` components to `FormText`
-- Rename all `MenuItem` components to `Dropdown.Item` and `NavDropdown.Item`
-- Rename all Panel components to Card
-- Deleted variables folder
-- Change the usage of `React Big Calendar` to the new API, so instead of
+### Dropped components
 
-```
-import BigCalendar from "react-big-calendar";
-```
+- `src/components/CardElements/CardAuthor.jsx` (replaced with simple HTML/React/Reactstrap syntax)
+- `src/components/CustomButton/CustomButton.jsx` (replaced with simple HTML/React/Reactstrap syntax)
+- `src/components/CustomCheckbox/SimpleCheckbox.jsx` (replaced with simple HTML/React/Reactstrap syntax)
+- `src/components/CustomRadio/CustomRadio.jsx` (replaced with simple HTML/React/Reactstrap syntax)
+- `src/components/FormInputs/FormInputs.jsx` (replaced with simple HTML/React/Reactstrap syntax)
+- `src/components/Stats/Stats.jsx` (replaced with simple HTML/React/Reactstrap syntax)
 
-- And
+### Added components
 
-```
-const localizer = BigCalendar.momentLocalizer(moment);
-```
+- `src/views/Upgrade.jsx`
 
-- We will have:
+### Deleted dependencies
 
-```
-import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
-```
+- eslint-config-prettier
+- eslint-plugin-prettier
 
-- And
+### Added dependencies
 
-```
-const localizer = momentLocalizer(moment);
-```
+- typescript v3.4.5
+- react-router v5.0.0
 
-- Change Panels with new react-bootstrap components
-- For Col componets, replaced `size={number1} sizeOffest={number2}` with `size={{span: number1, offset: number2}}` where size can be `xs`, `sm`, `md`, `lg`
-- Changed `bsStyle` to `variant`
-- Changed `bsSize` to `size`
-- Replace `<Navbar.Header>` with `<div className=“navbar-header”>`
-- Replace `<Navbar.Form>` with `<div className="navbar-search-form navbar-form navbar-left">`
-- Replace `<FormGroup>` with `<Form.Group>`
-- Replace `<InputGroup.Addon>` with `<InputGroup.Prepend><InputGroup.Text>` and `<InputGroup.Append><InputGroup.Text>`
-- All required images have a default prop at the end now, example: `const us_flag = require("../assets/img/flags/US.png");` was changed to `const us_flag = require("../assets/img/flags/US.png");`
-- Rename all .jsx files to .js
-- Added Row and Col inside StatsCard
-- Delete eventKey from NavDropdown components
-- Deleted noCaret from NavDropdown components
-- Replace Navbar fluid with Navbar → Container fluid
-- Add fontawesome as dependencie instead of font link insde public/index.html, it is now imported insde src/index.js
-- In addition to these changes, we’ve chaned the structure of the pages and components as well to match those from the HTML version of the product: https://www.creative-tim.com/product/light-bootstrap-dashboard
+### Updated dependencies
 
-## [1.3.0] 2019-05-03
+- @types/react 16.4.16 → 16.8.18
+- bootstrap 4.1.3 → 4.3.1
+- chart.js 2.7.2 → 2.8.0
+- history 4.7.2 → 4.9.0
+- node-sass 4.9.3 → 4.12.0
+- react 16.5.2 → 16.8.6
+- react-chartjs-2 2.7.4 → 2.7.6
+- react-dom 16.5.2 → 16.8.6
+- react-notification-alert 0.0.8 → 0.0.12
+- react-router-dom 4.3.1 → 5.0.0
+- react-scripts 2.0.4 → 3.0.1
+- reactstrap 6.5.0 → 8.0.0
+- ajv 6.0.0 → 6.10.0
+- jquery 3.3.1 → 3.4.1
+- @types/googlemaps 3.30.13 → 3.36.0
 
-### Bug fixing
-
-- Renamed `src/layouts/Dashboard/Dashboard.jsx` to `src/layouts/Admin.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Dashboard.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Icons.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Maps.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Notifications.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/TableList.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Typography.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Upgrade.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/UserProfile.jsx`
-- Renamed `src/components/Header` to `src/components/Navbars`
-- Renamed `src/components/Navbars/Header.jsx` to `src/components/Navbars/AdminNavbar.jsx`
-- Renamed `src/components/Navbars/HeaderLinks.jsx` to `src/components/Navbars/AdminNavbarLinks.jsx`
-- Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for _.jsx_, _.js_, _.html_ and _.css_ files
-- Changed our buggy routing system, now it should work flawlessly, for more info, please refer to our [live docs here](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/documentation/routing-system)
-- Solved
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/48
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/47
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/34
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/30
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/19
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/17
-  - https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues/15
-- Removed `.env` file and replaced it with `jsconfig.json`
-- Small bug fixes
-
-### Removed dependencies/components
-
-- Deleted `src/routes/*` folder
-- node-sass-chokidar
-- npm-run-all
-
-### Added dependencies/components
-
-- Added `src/routes.js` file (instead of the three files from `src/routes/*`)
-- @types/markerclustererplus@2.1.33 (to stop install warnings)
-- @types/googlemaps@3.30.19 (to stop install warnings)
-- @types/react@16.8.13 (to stop install warnings)
-- typescript@3.4.3 (to stop install warnings)
-- react-router@5.0.0 (react-router-dom auto-installs this package, but it is better to have them both inside package.json)
-- react-toggle@4.0.2
-
-### Update dependencies
-
-- node-sass 4.6.1 → 4.12.0
-- react 16.2.0 → 16.8.6
-- react-bootstrap 0.32.1 → 0.32.4
-- react-chartist 0.13.1 → 0.13.3
-- react-dom 16.2.0 → 16.8.6
-- react-router-dom 4.2.2 → 5.0.0
-- react-scripts 1.1.1 → 3.0.0
-
-## [1.2.0] 2018-04-12
-
-### Bug fixing
-
-- Added `fluid` prop on `Grid` component in `Footer`
-- Moved all the contents of `elements` folder to `components` folder and delete it
-- Renamed `containers` folder to `layouts`
-- Renamed `App/App.jsx` to `Dashboard/Dashboard.jsx`
-- Renamed `src/routes/app.jsx` to `src/routes/dashboard.jsx`
-- Renamed `appRoutes` to `dashboardRoutes`
-- Added `src/routes/index.jsx` and made the routes in `src/index.js` dynamically based on `indexRoutes` from `src/routes/index.jsx` (users can now make new layouts and routes for them easier)
-
-### Removed dependencies/components
-
-- `google-maps-react@1.1.0`
-- `react-router@4.1.2`
-
-### Added dependencies/components
-
-- `node-sass@4.6.1`
-- `react-google-maps@9.4.5` (insted of `google-maps-react@1.1.0`)
-- `bootstrap@3.3.7` (and deleted `src/assets/bootstrap.min.css?v=3.3.5`)
-
-### Update dependencies
-
-- `npm-run-all@4.1.1` to `npm-run-all@4.1.2`
-- `react@15.6.1` to `react@16.2.0`
-- `react-bootstrap@0.31.1` to `react-bootstrap@0.32.1`
-- `react-chartist@0.13.0` to `react-chartist@0.13.1`
-- `react-dom@15.6.1` to `react-dom@16.2.0`
-- `react-notification-system@0.2.15` to `react-notification-system@0.2.17`
-- `react-router-dom@4.1.2` to `react-router-dom@4.2.2`
-- `react-scripts@1.0.10` to `react-scripts@1.1.1`
-
-## [1.1.0] 2017-10-30
-
-### Bug fixing
-
-- Changed property of `isChecked` in `CustomCheckbox`
-- Removed hover state for checkboxes and radios
-- Moved `NotificationSystem` outside of `.main-panel` (for responsive issues)
-- All `div`'s with Bootstrap classes (`.container`,`.container-fluid`,`.row`,`.col-*`) were changed in React-Bootstrap components
-- Changed `Notifications Places` buttons from buttons with `className` to our own button component `CustomButton`
-- Added property `round` in `CustomButton` (for the button class `.btn-round`)
-- Added dynamic routes
-
-## [1.0.0] 2017-09-20
+## [1.0.0] 2018-10-12
 
 ### Original Release
 
-- Added React-Bootstrap as base framework
-- Added design from Light Bootstrap Dashboard by Creative Tim
+- Added Reactstrap as base framework
+- Added design from Paper Dashboard 2 by Creative Tim

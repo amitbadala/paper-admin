@@ -1,12 +1,13 @@
 /*!
 
 =========================================================
-* Light Bootstrap Dashboard React - v2.0.1
+* Paper Dashboard React - v1.3.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+
+* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
 
 * Coded by Creative Tim
 
@@ -15,210 +16,148 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-/*eslint-disable*/
-import React, { Component } from "react";
+import React from "react";
 
-import { Dropdown, Badge, Button, Form } from "react-bootstrap";
+import { Button } from "reactstrap";
 
-import sideBarImage1 from "assets/img/sidebar-1.jpg";
-import sideBarImage2 from "assets/img/sidebar-2.jpg";
-import sideBarImage3 from "assets/img/sidebar-3.jpg";
-import sideBarImage4 from "assets/img/sidebar-4.jpg";
-
-function FixedPlugin({
-  hasImage,
-  setHasImage,
-  color,
-  setColor,
-  image,
-  setImage
-}) {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     classes: "dropdown show-dropdown open",
-  //     bg_checked: true,
-  //     bgImage: this.props.bgImage,
-  //   };
-  // }
-  // handleClick = () => {
-  //   this.props.handleFixedClick();
-  // };
-  // onChangeClick = () => {
-  //   this.props.handleHasImage(!this.state.bg_checked);
-  //   this.setState({ bg_checked: !this.state.bg_checked });
-  // };
+function FixedPlugin(props) {
+  const [classes, setClasses] = React.useState("dropdown show");
+  const handleClick = () => {
+    if (classes === "dropdown") {
+      setClasses("dropdown show");
+    } else {
+      setClasses("dropdown");
+    }
+  };
   return (
     <div className="fixed-plugin">
-      <Dropdown>
-        <Dropdown.Toggle
-          id="dropdown-fixed-plugin"
-          variant=""
-          className="text-white border-0 opacity-100"
-        >
-          <i className="fas fa-cogs fa-2x mt-1"></i>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <li className="adjustments-line d-flex align-items-center justify-content-between">
-            <p>Background Image</p>
-            <Form.Check
-              type="switch"
-              id="custom-switch-1-image"
-              checked={hasImage}
-              onChange={setHasImage}
-            />
-          </li>
-          <li className="adjustments-line mt-3">
-            <p>Filters</p>
-            <div className="pull-right">
-              <Badge
-                variant="secondary"
-                className={color === "black" ? "active" : ""}
-                onClick={() => setColor("black")}
-              ></Badge>
-              <Badge
-                variant="azure"
-                className={color === "azure" ? "active" : ""}
-                onClick={() => setColor("azure")}
-              ></Badge>
-              <Badge
-                variant="green"
-                className={color === "green" ? "active" : ""}
-                onClick={() => setColor("green")}
-              ></Badge>
-              <Badge
-                variant="orange"
-                className={color === "orange" ? "active" : ""}
-                onClick={() => setColor("orange")}
-              ></Badge>
-              <Badge
-                variant="red"
-                className={color === "red" ? "active" : ""}
-                onClick={() => setColor("red")}
-              ></Badge>
-              <Badge
-                variant="purple"
-                className={color === "purple" ? "active" : ""}
-                onClick={() => setColor("purple")}
-              ></Badge>
+      <div className={classes}>
+        <div onClick={handleClick}>
+          <i className="fa fa-cog fa-2x" />
+        </div>
+        <ul className="dropdown-menu show">
+          <li className="header-title">SIDEBAR BACKGROUND</li>
+          <li className="adjustments-line">
+            <div className="badge-colors text-center">
+              <span
+                className={
+                  props.bgColor === "black"
+                    ? "badge filter badge-dark active"
+                    : "badge filter badge-dark"
+                }
+                data-color="black"
+                onClick={() => {
+                  props.handleBgClick("black");
+                }}
+              />
+              <span
+                className={
+                  props.bgColor === "white"
+                    ? "badge filter badge-light active"
+                    : "badge filter badge-light"
+                }
+                data-color="white"
+                onClick={() => {
+                  props.handleBgClick("white");
+                }}
+              />
             </div>
-            <div className="clearfix"></div>
           </li>
-          <li className="header-title">Sidebar Images</li>
-          <li className={image === sideBarImage1 ? "active" : ""}>
-            <a
-              className="img-holder switch-trigger d-block"
-              href="#pablo"
-              onClick={(e) => {
-                e.preventDefault();
-                setImage(sideBarImage1);
-              }}
-            >
-              <img alt="..." src={sideBarImage1}></img>
-            </a>
-          </li>
-          <li className={image === sideBarImage2 ? "active" : ""}>
-            <a
-              className="img-holder switch-trigger d-block"
-              href="#pablo"
-              onClick={(e) => {
-                e.preventDefault();
-                setImage(sideBarImage2);
-              }}
-            >
-              <img alt="..." src={sideBarImage2}></img>
-            </a>
-          </li>
-          <li className={image === sideBarImage3 ? "active" : ""}>
-            <a
-              className="img-holder switch-trigger d-block"
-              href="#pablo"
-              onClick={(e) => {
-                e.preventDefault();
-                setImage(sideBarImage3);
-              }}
-            >
-              <img alt="..." src={sideBarImage3}></img>
-            </a>
-          </li>
-          <li className={image === sideBarImage4 ? "active" : ""}>
-            <a
-              className="img-holder switch-trigger d-block"
-              href="#pablo"
-              onClick={(e) => {
-                e.preventDefault();
-                setImage(sideBarImage4);
-              }}
-            >
-              <img alt="..." src={sideBarImage4}></img>
-            </a>
-          </li>
-          <li className="button-container">
-            <div>
-              <Button
-                block
-                className="btn-fill"
-                href="http://www.creative-tim.com/product/light-bootstrap-dashboard-react"
-                rel="noopener noreferrer"
-                target="_blank"
-                variant="info"
-              >
-                Download, it's free!
-              </Button>
+          <li className="header-title">SIDEBAR ACTIVE COLOR</li>
+          <li className="adjustments-line">
+            <div className="badge-colors text-center">
+              <span
+                className={
+                  props.activeColor === "primary"
+                    ? "badge filter badge-primary active"
+                    : "badge filter badge-primary"
+                }
+                data-color="primary"
+                onClick={() => {
+                  props.handleActiveClick("primary");
+                }}
+              />
+              <span
+                className={
+                  props.activeColor === "info"
+                    ? "badge filter badge-info active"
+                    : "badge filter badge-info"
+                }
+                data-color="info"
+                onClick={() => {
+                  props.handleActiveClick("info");
+                }}
+              />
+              <span
+                className={
+                  props.activeColor === "success"
+                    ? "badge filter badge-success active"
+                    : "badge filter badge-success"
+                }
+                data-color="success"
+                onClick={() => {
+                  props.handleActiveClick("success");
+                }}
+              />
+              <span
+                className={
+                  props.activeColor === "warning"
+                    ? "badge filter badge-warning active"
+                    : "badge filter badge-warning"
+                }
+                data-color="warning"
+                onClick={() => {
+                  props.handleActiveClick("warning");
+                }}
+              />
+              <span
+                className={
+                  props.activeColor === "danger"
+                    ? "badge filter badge-danger active"
+                    : "badge filter badge-danger"
+                }
+                data-color="danger"
+                onClick={() => {
+                  props.handleActiveClick("danger");
+                }}
+              />
             </div>
           </li>
           <li className="button-container">
-            <div>
-              <Button
-                block
-                className="btn-fill"
-                href="http://www.creative-tim.com/product/light-bootstrap-dashboard-react"
-                rel="noopener noreferrer"
-                target="_blank"
-                variant="default"
-              >
-                Checkout docs.
-              </Button>
-            </div>
-          </li>
-          <li className="header-title pro-title text-center">
-            Want more components?
-          </li>
-          <li className="button-container">
-            <div>
-              <Button
-                block
-                className="btn-fill"
-                href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro-react"
-                rel="noopener noreferrer"
-                target="_blank"
-                variant="primary"
-              >
-                Get The PRO Version!
-              </Button>
-            </div>
-          </li>
-          <li className="header-title" id="sharrreTitle">
-            Thank you for sharing!
-          </li>
-          <li className="button-container mb-4">
             <Button
-              className="btn-social btn-outline btn-round sharrre"
-              id="twitter"
-              variant="twitter"
+              href="https://www.creative-tim.com/product/paper-dashboard-react?ref=pdr-fixed-plugin"
+              color="primary"
+              block
+              className="btn-round"
             >
-              <i className="fab fa-twitter"></i>· 256
-            </Button>
-            <Button
-              className="btn-social btn-outline btn-round sharrre"
-              id="facebook"
-              variant="facebook"
-            >
-              <i className="fab fa-facebook-square"></i>· 426
+              Download now
             </Button>
           </li>
-        </Dropdown.Menu>
-      </Dropdown>
+          <li className="button-container">
+            <Button
+              href="https://www.creative-tim.com/product/paper-dashboard-react/#/documentation/tutorial?ref=pdr-fixed-plugin"
+              color="default"
+              block
+              className="btn-round"
+              outline
+            >
+              <i className="nc-icon nc-paper" /> Documentation
+            </Button>
+          </li>
+          <li className="header-title">Want more components?</li>
+          <li className="button-container">
+            <Button
+              href="https://www.creative-tim.com/product/paper-dashboard-pro-react?ref=pdr-fixed-plugin"
+              color="danger"
+              block
+              className="btn-round"
+              target="_blank"
+            >
+              Get pro version
+            </Button>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

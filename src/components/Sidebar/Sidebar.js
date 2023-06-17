@@ -1,12 +1,13 @@
 /*!
 
 =========================================================
-* Light Bootstrap Dashboard React - v2.0.1
+* Paper Dashboard React - v1.3.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+
+* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
 
 * Coded by Creative Tim
 
@@ -15,63 +16,74 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
-import { useLocation, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { Nav } from "reactstrap";
+// javascript plugin used to create scrollbars on windows
+import PerfectScrollbar from "perfect-scrollbar";
 
-import { Nav } from "react-bootstrap";
+import logo from "logo.svg";
 
-import logo from "assets/img/reactlogo.png";
+var ps;
 
-function Sidebar({ color, image, routes }) {
+function Sidebar(props) {
   const location = useLocation();
+  const sidebar = React.useRef();
+  // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
+  React.useEffect(() => {
+    if (navigator.platform.indexOf("Win") > -1) {
+      ps = new PerfectScrollbar(sidebar.current, {
+        suppressScrollX: true,
+        suppressScrollY: false,
+      });
+    }
+    return function cleanup() {
+      if (navigator.platform.indexOf("Win") > -1) {
+        ps.destroy();
+      }
+    };
+  });
   return (
-    <div className="sidebar" data-image={image} data-color={color}>
-      <div
-        className="sidebar-background"
-        style={{
-          backgroundImage: "url(" + image + ")"
-        }}
-      />
-      <div className="sidebar-wrapper">
-        <div className="logo d-flex align-items-center justify-content-start">
-          <a
-            href="https://www.creative-tim.com?ref=lbd-sidebar"
-            className="simple-text logo-mini mx-1"
-          >
-            <div className="logo-img">
-              <img src={require("assets/img/reactlogo.png")} alt="..." />
-            </div>
-          </a>
-          <a className="simple-text" href="http://www.creative-tim.com">
-            Creative Tim
-          </a>
-        </div>
+    <div
+      className="sidebar"
+      data-color={props.bgColor}
+      data-active-color={props.activeColor}
+    >
+      <div className="logo">
+        <a
+          href="https://www.creative-tim.com"
+          className="simple-text logo-mini"
+        >
+          <div className="logo-img">
+            <img src={logo} alt="react-logo" />
+          </div>
+        </a>
+        <a
+          href="https://www.creative-tim.com"
+          className="simple-text logo-normal"
+        >
+          Creative Tim
+        </a>
+      </div>
+      <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>
-          {routes.map((prop, key) => {
-            if (!prop.redirect)
-              return (
-                <li
-                  className={
-                    prop.upgrade
-                      ? "active active-pro"
-                      : activeRoute(prop.layout + prop.path)
-                  }
-                  key={key}
-                >
-                  <NavLink
-                    to={prop.layout + prop.path}
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    <i className={prop.icon} />
-                    <p>{prop.name}</p>
-                  </NavLink>
-                </li>
-              );
-            return null;
+          {props.routes.map((prop, key) => {
+            return (
+              <li
+                className={
+                  activeRoute(prop.path) + (prop.pro ? " active-pro" : "")
+                }
+                key={key}
+              >
+                <NavLink to={prop.layout + prop.path} className="nav-NavLink">
+                  <i className={prop.icon} />
+                  <p>{prop.name}</p>
+                </NavLink>
+              </li>
+            );
           })}
         </Nav>
       </div>

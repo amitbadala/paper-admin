@@ -1,127 +1,149 @@
+/*!
+
+=========================================================
+* Paper Dashboard React - v1.3.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+
+* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
 import React from "react";
 
-// react-bootstrap components
+// reactstrap components
 import {
-  Badge,
   Button,
   Card,
-  Navbar,
-  Nav,
+  CardHeader,
+  CardBody,
+  CardTitle,
   Table,
-  Container,
   Row,
   Col,
-} from "react-bootstrap";
+} from "reactstrap";
 
 function Upgrade() {
   return (
     <>
-      <Container fluid>
+      <div className="content">
         <Row>
           <Col className="ml-auto mr-auto" md="8">
-            <Card>
-              <div className="header text-center">
-                <h4 className="title">Light Bootstrap Dashboard PRO React</h4>
-                <p className="category">
+            <Card className="card-upgrade">
+              <CardHeader className="text-center">
+                <CardTitle tag="h4">Paper Dashboard PRO</CardTitle>
+                <p className="card-category">
                   Are you looking for more components? Please check our Premium
-                  Version of Light Bootstrap Dashboard React.
+                  Version of Paper Dashboard PRO.
                 </p>
-                <br></br>
-              </div>
-              <Table responsive>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th className="text-center">Free</th>
-                    <th className="text-center">PRO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Components</td>
-                    <td>16</td>
-                    <td>115+</td>
-                  </tr>
-                  <tr>
-                    <td>Plugins</td>
-                    <td>4</td>
-                    <td>14+</td>
-                  </tr>
-                  <tr>
-                    <td>Example Pages</td>
-                    <td>4</td>
-                    <td>22+</td>
-                  </tr>
-                  <tr>
-                    <td>Documentation</td>
-                    <td>
-                      <i className="fas fa-times text-danger"></i>
-                    </td>
-                    <td>
-                      <i className="fas fa-check text-success"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>SASS Files</td>
-                    <td>
-                      <i className="fas fa-times text-danger"></i>
-                    </td>
-                    <td>
-                      <i className="fas fa-check text-success"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Login/Register/Lock Pages</td>
-                    <td>
-                      <i className="fas fa-times text-danger"></i>
-                    </td>
-                    <td>
-                      <i className="fas fa-check text-success"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Premium Support</td>
-                    <td>
-                      <i className="fas fa-times text-danger"></i>
-                    </td>
-                    <td>
-                      <i className="fas fa-check text-success"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Free</td>
-                    <td>Just $49</td>
-                  </tr>
-                  <tr className="last-row">
-                    <td></td>
-                    <td>
-                      <Button
-                        className="btn-round btn-fill disabled"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        variant="default"
-                      >
-                        Current Version
-                      </Button>
-                    </td>
-                    <td>
-                      <Button
-                        className="btn-round btn-fill"
-                        href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro-react/?ref=lbdrupgrade"
-                        target="_blank"
-                        variant="info"
-                      >
-                        Upgrade to PRO
-                      </Button>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
+              </CardHeader>
+              <CardBody>
+                <Table responsive>
+                  <thead>
+                    <tr>
+                      <th />
+                      <th className="text-center">Free</th>
+                      <th className="text-center">PRO</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Components</td>
+                      <td className="text-center">16</td>
+                      <td className="text-center">160</td>
+                    </tr>
+                    <tr>
+                      <td>Plugins</td>
+                      <td className="text-center">4</td>
+                      <td className="text-center">13</td>
+                    </tr>
+                    <tr>
+                      <td>Example Pages</td>
+                      <td className="text-center">7</td>
+                      <td className="text-center">27</td>
+                    </tr>
+                    <tr>
+                      <td>Login, Register, Pricing, Lock Pages</td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-simple-remove text-danger" />
+                      </td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-check-2 text-success" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        DataTables, VectorMap, SweetAlert, Wizard,
+                        jQueryValidation, FullCalendar etc...
+                      </td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-simple-remove text-danger" />
+                      </td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-check-2 text-success" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mini Sidebar</td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-simple-remove text-danger" />
+                      </td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-check-2 text-success" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Premium Support</td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-simple-remove text-danger" />
+                      </td>
+                      <td className="text-center">
+                        <i className="nc-icon nc-check-2 text-success" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td />
+                      <td className="text-center">Free</td>
+                      <td className="text-center">From $49</td>
+                    </tr>
+                    <tr>
+                      <td className="text-center" />
+                      <td className="text-center">
+                        <Button
+                          className="btn-round disabled"
+                          color="default"
+                          href="#pablo"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          Current Version
+                        </Button>
+                      </td>
+                      <td className="text-center">
+                        <Button
+                          className="btn-round"
+                          color="primary"
+                          href="https://www.creative-tim.com/product/paper-dashboard-2-pro?ref=pd-free-upgrade-live"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Upgrade to PRO
+                        </Button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </CardBody>
             </Card>
           </Col>
         </Row>
-      </Container>
+      </div>
     </>
   );
 }

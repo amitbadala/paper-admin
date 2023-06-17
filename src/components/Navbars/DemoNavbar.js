@@ -73,17 +73,9 @@ function Header(props) {
   }, [location]);
   return (
     // add or remove classes depending if we are on full-screen-maps page or not
-    <Navbar
-      color={
-        location.pathname.indexOf("full-screen-maps") !== -1 ? "dark" : color
-      }
+    <Navbar 
       expand="lg"
-      className={
-        location.pathname.indexOf("full-screen-maps") !== -1
-          ? "navbar-absolute fixed-top"
-          : "navbar-absolute fixed-top " +
-            (color === "transparent" ? "navbar-transparent " : "")
-      }
+      className="navbar-sticky bg-glass-effect-light"
     >
       <Container fluid>
         <div className="navbar-wrapper">

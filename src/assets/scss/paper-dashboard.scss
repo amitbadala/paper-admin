@@ -54,3 +54,45 @@
 
 // html to react differences
 @import "paper-dashboard/react/react-differences.scss";
+@import "paper-dashboard/sections";
+
+.section {
+    font-family: 'Montserrat';
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -1px;
+    min-height: calc(100vh - 134px);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    p{
+        font-size: large;
+        font-family: 'Montserrat';
+        letter-spacing: normal;
+
+       &.typing-text {
+        color: #333;
+        font-family: monospace;
+        font-size: x-large;
+        font-weight: 100;
+}
+    }
+}
+
+.big-header {
+    font-size: clamp(40px,8vw,80px);
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -2px;
+}
+
+.sub-big-header {
+    color: #565656;
+    font-weight: 700;
+}
+
+
+
+.dark-slate-color {
+    color: #333;
+}

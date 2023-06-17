@@ -76,6 +76,18 @@
         z-index: 1029;
     }
 
+    &.navbar-sticky {
+        position: sticky !important;
+        background-color: rgb(244 243 239 / 57%);
+        backdrop-filter: blur(10px);
+        top: 0;
+
+        a{
+            color: #333 !important;
+        }
+    }
+
+
     .documentation &{
         &.fixed-top{
             left: 0;

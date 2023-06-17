@@ -7,6 +7,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
+import About from "views/About.js"
+import User from "views/User";
 // import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
@@ -49,19 +51,20 @@ function Dashboard(props) {
         activeColor={activeColor}
       />
       <div className="main-panel" ref={mainPanel}>
-        <DemoNavbar {...props} />
-        <Routes>
-          {routes.map((prop, key) => {
+        <DemoNavbar {...props} /> 
+        <About id="about"/>
+        <User id="user"/>
+        {/* <div className="section"><h2 class="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
+          {/* {routes.map((prop, key) => {
             return (
-              <Route
+              <li
                 path={prop.path}
                 element={prop.component}
                 key={key}
                 exact
               />
             );
-          })}
-        </Routes>
+          })} */}
         <Footer fluid />
       </div>
       {/* <FixedPlugin

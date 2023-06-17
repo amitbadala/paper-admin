@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
+import ScrollLink from "components/ScrollLink/ScrollLink";
 
 import logo from "logo.svg";
 
@@ -60,10 +61,10 @@ function Sidebar(props) {
                 }
                 key={key}
               >
-                <NavLink to={prop.layout + prop.path} className="nav-NavLink">
+                <ScrollLink  href={prop.path} className="nav-NavLink">
                   <i className={prop.icon} />
                   <p>{prop.name}</p>
-                </NavLink>
+                </ScrollLink>
               </li>
             );
           })}

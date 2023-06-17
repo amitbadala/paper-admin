@@ -18,7 +18,7 @@ import {
 function User() {
   return (
     <>
-      <div className="content">
+      <div className="content" id="user">
         <Row>
           <Col md="4">
             <Card className="card-user">

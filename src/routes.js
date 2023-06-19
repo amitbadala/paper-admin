@@ -1,10 +1,10 @@
-import Dashboard from "views/Dashboard.js";
 import Notifications from "views/Notifications.js";
 import Icons from "views/Icons.js";
 import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserPage from "views/User.js";
+import WorkExperience from "views/WorkExperience";
 // import UpgradeToPro from "views/Upgrade.js";
 
 var routes = [
@@ -65,10 +65,10 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "#user",
-    name: "User",
+    path: "#work-experience",
+    name: "Work Experience",
     icon: "nc-icon nc-caps-small",
-    component: <Typography />,
+    component: <WorkExperience />,
     layout: "/admin",
   },
 ];

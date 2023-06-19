@@ -12,6 +12,7 @@ import User from "views/User";
 // import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
+import WorkExperience from "views/WorkExperience";
 
 var ps;
 
@@ -53,7 +54,7 @@ function Dashboard(props) {
       <div className="main-panel" ref={mainPanel}>
         <DemoNavbar {...props} /> 
         <About id="about"/>
-        <User id="user"/>
+        <WorkExperience id="user"/>
         {/* <div className="section"><h2 class="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
           {/* {routes.map((prop, key) => {
             return (

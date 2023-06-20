@@ -22,106 +22,55 @@ import AnimatedCards from "components/AnimatedCards/AnimatedCards";
 function WorkExperience() {
   return (
     <div className="content" id="work-experience">
-      <Row>
-        <Col md="3">
-          <AnimatedCards />
-          <Card className="card-stats">
-            <CardBody>
-              <Row>
-                <Col md="4" xs="5">
-                  <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-globe text-warning" />
-                  </div>
-                </Col>
-                <Col md="8" xs="7">
-                  <div className="numbers">
-                    <p className="card-category">Capacity</p>
-                    <CardTitle tag="p">150GB</CardTitle>
-                    <p />
-                  </div>
-                </Col>
-              </Row>
-            </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fas fa-sync-alt" /> Update Now
+      <AnimatedCards />
+      <Card className="card-stats">
+        <CardBody>
+          <Row>
+            <Col md="4" xs="5">
+              <div className="icon-big text-center icon-warning">
+                <i className="nc-icon nc-globe text-warning" />
               </div>
-            </CardFooter>
-          </Card>
-          <Card className="card-stats">
-            <CardBody>
-              <Row>
-                <Col md="4" xs="5">
-                  <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-globe text-warning" />
-                  </div>
-                </Col>
-                <Col md="8" xs="7">
-                  <div className="numbers">
-                    <p className="card-category">Capacity</p>
-                    <CardTitle tag="p">150GB</CardTitle>
-                    <p />
-                  </div>
-                </Col>
-              </Row>
-            </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fas fa-sync-alt" /> Update Now
+            </Col>
+            <Col md="8" xs="7">
+              <div className="numbers">
+                <p className="card-category">Capacity</p>
+                <CardTitle tag="p">150GB</CardTitle>
+                <p />
               </div>
-            </CardFooter>
-          </Card>
-          <Card className="card-stats">
-            <CardBody>
-              <Row>
-                <Col md="4" xs="5">
-                  <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-globe text-warning" />
-                  </div>
-                </Col>
-                <Col md="8" xs="7">
-                  <div className="numbers">
-                    <p className="card-category">Capacity</p>
-                    <CardTitle tag="p">150GB</CardTitle>
-                    <p />
-                  </div>
-                </Col>
-              </Row>
-            </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fas fa-sync-alt" /> Update Now
+            </Col>
+          </Row>
+        </CardBody>
+        <CardFooter>
+          <hr />
+          <div className="stats">
+            <i className="fas fa-sync-alt" /> Update Now
+          </div>
+        </CardFooter>
+      </Card>
+      <Card className="card-stats">
+        <CardBody>
+          <Row>
+            <Col md="4" xs="5">
+              <div className="icon-big text-center icon-warning">
+                <i className="nc-icon nc-globe text-warning" />
               </div>
-            </CardFooter>
-          </Card>
-        </Col>
-        <Col md="9">
-          {" "}
-          <Card>
-            <CardHeader>
-              <CardTitle tag="h5">Users Behavior</CardTitle>
-              <p className="card-category">24 Hours performance</p>
-            </CardHeader>
-            <CardBody>
-              <Line
-                data={dashboard24HoursPerformanceChart.data}
-                options={dashboard24HoursPerformanceChart.options}
-                width={400}
-                height={100}
-              />
-            </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fa fa-history" /> Updated 3 minutes ago
+            </Col>
+            <Col md="8" xs="7">
+              <div className="numbers">
+                <p className="card-category">Capacity</p>
+                <CardTitle tag="p">150GB</CardTitle>
+                <p />
               </div>
-            </CardFooter>
-          </Card>
-        </Col>
-      </Row>
+            </Col>
+          </Row>
+        </CardBody>
+        <CardFooter>
+          <hr />
+          <div className="stats">
+            <i className="fas fa-sync-alt" /> Update Now
+          </div>
+        </CardFooter>
+      </Card>
       <Row>
         <Col lg="3" md="6" sm="6">
           <Card className="card-stats">

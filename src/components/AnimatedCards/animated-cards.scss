@@ -25,66 +25,99 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     img {
       margin-right: 5px;
       height: 24px;
       width: auto;
     }
+    margin: unset;
   }
 
   .card-stats .card-footer {
-    padding: 0px 8px 12px;
+    padding: 10px 0px;
+    border-top: 1px solid #cacaca;
+    width: 100%;
+    text-align: center;
+    .stats {
+      color: #4a4a4a;
+    }
   }
 
   .card-header {
     padding: 12px 8px 8px;
     text-align: center;
-    color: #333;
-    border-bottom: 1px solid #e5e5e5;
-    p {
-      margin: unset !important;
-      color: #333;
-    }
+    color: #4a4a4a;
   }
 
   .card-stats {
     display: flex;
     align-items: center;
-    position: absolute;
-    width: 95%;
+    margin-bottom: unset;
+    // position: absolute;
+    width: 99%;
     height: 160px;
     padding: 0 12px;
-    opacity: 0;
-    filter: drop-shadow(0 2px 2px #555);
+    // opacity: 100;
+    // filter: drop-shadow(0 2px 2px #555);
     will-change: transform, opacity;
     //   -webkit-animation: carousel-animate-vertical 27s linear infinite;
     //   animation: carousel-animate-vertical 27s linear infinite;
 
-    &:nth-child(1) {
-      transform: translateY(0) scale(0.8);
-      -webkit-animation-delay: calc(3s * -1);
-      animation-delay: calc(3s * -1);
-      opacity: 50%;
-    }
+    // &:nth-child(1) {
+    //   transform: translateY(0) scale(0.8);
+    //   -webkit-animation-delay: calc(3s * -1);
+    //   animation-delay: calc(3s * -1);
+    //   opacity: 50%;
+    // }
 
-    &:nth-child(2) {
-      transform: translateY(100%) scale(1);
-      -webkit-animation-delay: calc(3s * 0);
-      animation-delay: calc(3s * 0);
-      opacity: 100%;
-    }
+    // &:nth-child(2) {
+    //   transform: translateY(100%) scale(1);
+    //   -webkit-animation-delay: calc(3s * 0);
+    //   animation-delay: calc(3s * 0);
+    //   opacity: 100%;
+    // }
 
-    // Styles for the remaining elements
-    @for $i from 3 through 9 {
+    // // Styles for the remaining elements
+    @for $i from 1 through 9 {
       // or whatever number you need for n elements
       &:nth-child(#{$i}) {
         // Apply the general styles for the remaining elements here
-        -webkit-animation-delay: calc(3s * ($i - 2));
-        animation-delay: calc(3s * ($i - 2));
-        transform: translateY(calc(1 * ($i - 1)) * 100%) scale(0.8); // example
-        opacity: 50%; // example
+        // -webkit-animation-delay: calc(3s * ($i - 2));
+        // animation-delay: calc(3s * ($i - 2));
+        // transform: translateY(calc(1 * ($i - 1)) * 100%) scale(0.8); // example
+        // opacity: 50%; // example
+        transform: scale(0.9);
       }
+    }
+    &:nth-child(1) {
+      background-color: floralwhite;
+    }
+  }
+
+  .custom-header {
+    padding: 5px 0px;
+    border-bottom: 1px solid;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #cacaca;
+    h6 {
+      margin: unset !important;
+      color: #333;
+    }
+
+    p {
+      color: #4a4a4a;
+      margin: 0px;
+    }
+  }
+
+  .card-body {
+    padding: unset;
+    display: flex;
+    align-items: center;
+
+    h5 {
+      margin-bottom: 0px;
     }
   }
 }

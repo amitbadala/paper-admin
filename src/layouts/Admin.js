@@ -1,4 +1,3 @@
-
 import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -7,8 +6,9 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-import About from "views/About.js"
+import About from "views/About.js";
 import User from "views/User";
+import "./_admin.scss";
 // import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
@@ -46,17 +46,18 @@ function Dashboard(props) {
   return (
     <div className="wrapper">
       <Sidebar
+        style={{ background: "#f4f3ef" }}
         {...props}
         routes={routes}
         bgColor={backgroundColor}
         activeColor={activeColor}
       />
       <div className="main-panel" ref={mainPanel}>
-        <DemoNavbar {...props} /> 
-        <About id="about"/>
-        <WorkExperience id="user"/>
+        <DemoNavbar {...props} />
+        <About id="about" />
+        <WorkExperience id="user" />
         {/* <div className="section"><h2 class="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
-          {/* {routes.map((prop, key) => {
+        {/* {routes.map((prop, key) => {
             return (
               <li
                 path={prop.path}

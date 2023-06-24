@@ -1,0 +1,40 @@
+.sidebar {
+  .nav {
+    li {
+      padding-left: 20px;
+      border-bottom: 1px solid #dddddd;
+    }
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .medium-heading {
+      letter-spacing: -19px;
+      font-weight: lighter;
+      /* line-height: 44px; */
+      text-align: center;
+      font-size: 60px;
+      margin-bottom: 0px;
+      margin-left: -20px;
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .red-dot {
+    height: 15px !important;
+    width: 15px;
+    background-color: springgreen;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 31px;
+    border: 1px solid #333;
+    right: 9px;
+  }
+
+  .big-heading {
+    font-size: 80px;
+  }
+}

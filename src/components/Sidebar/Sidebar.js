@@ -4,12 +4,14 @@ import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import ScrollLink from "components/ScrollLink/ScrollLink";
-
+import Logo from "components/Logo/Logo";
 import logo from "logo.svg";
+import "./sidebar.scss";
 
 var ps;
 
 function Sidebar(props) {
+  console.log(props);
   const location = useLocation();
   const sidebar = React.useRef();
   // verifies if routeName is the one active (in browser input)
@@ -35,22 +37,7 @@ function Sidebar(props) {
       data-color={props.bgColor}
       data-active-color={props.activeColor}
     >
-      <div className="logo">
-        <a
-          href="https://www.creative-tim.com"
-          className="simple-text logo-mini"
-        >
-          <div className="logo-img">
-            <img src={logo} alt="react-logo" />
-          </div>
-        </a>
-        <a
-          href="https://www.creative-tim.com"
-          className="simple-text logo-normal"
-        >
-          Creative Tim
-        </a>
-      </div>
+      <Logo />
       <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>
           {props.routes.map((prop, key) => {
@@ -61,9 +48,9 @@ function Sidebar(props) {
                 }
                 key={key}
               >
-                <ScrollLink  href={prop.path} className="nav-NavLink">
-                  <i className={prop.icon} />
-                  <p>{prop.name}</p>
+                <ScrollLink href={prop.path} className="nav-NavLink">
+                  <span className="emoji-icon">{prop.emoji}</span>
+                  {prop.name}
                 </ScrollLink>
               </li>
             );

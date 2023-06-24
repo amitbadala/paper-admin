@@ -60,7 +60,7 @@ const skillsSet = [
 
 const SkillsMarquee = () => {
   return (
-    <div>
+    <div className="marquee-content">
       {skillsSet.map(({ type, technologies }, index) => (
         <>
           <Icon
@@ -77,7 +77,7 @@ const SkillsMarquee = () => {
                 icon={icon}
                 style={{ marginRight: "5px", marginLeft: "25px" }}
               />
-              {showName ? <span class="iconify">{name}</span> : null}
+              {showName ? <span className="iconify">{name}</span> : null}
             </>
           ))}
         </>
@@ -96,7 +96,7 @@ const SkillsMarquee = () => {
   //     currentType.technologies.forEach((tech) => {
   //       // Create an element for each technology
   //       const techElement = document.createElement("p");
-  //       techElement.innerHTML = `<span class="iconify" data-icon="${tech.icon}"></span> ${tech.name}`;
+  //       techElement.innerHTML = `<span className="iconify" data-icon="${tech.icon}"></span> ${tech.name}`;
   //       accumulator.appendChild(techElement);
   //     });
 

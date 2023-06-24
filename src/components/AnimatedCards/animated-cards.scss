@@ -225,74 +225,126 @@
   margin-top: 10px;
 }
 
-@-webkit-keyframes carousel-animate-vertical {
+.marquee {
+  width: 100%; /* Set the width of the marquee container */
+  overflow: hidden; /* Hide the content that moves outside of the container */
+  white-space: nowrap; /* Keep content in a single line */
+  border-top: 1px solid #595858;
+}
+
+.marquee-content {
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
   0% {
-    transform: translateY(100%) scale(0.5);
-    opacity: 0;
-    visibility: hidden;
-  }
-  3%,
-  11.1111111111% {
-    transform: translateY(100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
-  }
-  14.1111111111%,
-  22.2222222222% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    visibility: visible;
-  }
-  25.2222222222%,
-  33.3333333333% {
-    transform: translateY(-100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
-  }
-  36.3333333333% {
-    transform: translateY(-100%) scale(0.5);
-    opacity: 0;
-    visibility: visible;
+    transform: translateX(0%);
   }
   100% {
-    transform: translateY(-100%) scale(0.5);
-    opacity: 0;
-    visibility: hidden;
+    transform: translateX(-300%);
   }
 }
 
-@keyframes carousel-animate-vertical {
-  0% {
-    transform: translateY(100%) scale(0.5);
-    opacity: 0;
-    visibility: hidden;
-  }
-  3%,
-  11.1111111111% {
-    transform: translateY(100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
-  }
-  14.1111111111%,
-  22.2222222222% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    visibility: visible;
-  }
-  25.2222222222%,
-  33.3333333333% {
-    transform: translateY(-100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
-  }
-  36.3333333333% {
-    transform: translateY(-100%) scale(0.5);
-    opacity: 0;
-    visibility: visible;
-  }
-  100% {
-    transform: translateY(-100%) scale(0.5);
-    opacity: 0;
-    visibility: hidden;
+// @keyframes marquee-reverse {
+//   0% {
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     transform: translateX(100%);
+//   }
+// }
+
+.we-more-info {
+  .card-footer {
+    padding: unset;
+    box-shadow: 0px -15px 15px -15px #8f8f8f;
+    .marquee:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+    .marquee:nth-child(2) {
+      .marquee-content {
+        animation: marquee 60s linear reverse infinite;
+        // width: 100%; /* Set the width of the marquee container */
+        // overflow: hidden; /* Hide the content that moves outside of the container */
+        // white-space: nowrap;
+        // animation: marquee 50s reverse infinite;
+        //   width: 100%; /* Set the width of the marquee container */
+        //   overflow: hidden; /* Hide the content that moves outside of the container */
+        //   white-space: nowrap; /* Keep content in a single line */
+        //   border-top: 1px solid #595858;
+      }
+    }
   }
 }
+// @-webkit-keyframes carousel-animate-vertical {
+//   0% {
+//     transform: translateY(100%) scale(0.5);
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+//   3%,
+//   11.1111111111% {
+//     transform: translateY(100%) scale(0.7);
+//     opacity: 0.4;
+//     visibility: visible;
+//   }
+//   14.1111111111%,
+//   22.2222222222% {
+//     transform: translateY(0) scale(1);
+//     opacity: 1;
+//     visibility: visible;
+//   }
+//   25.2222222222%,
+//   33.3333333333% {
+//     transform: translateY(-100%) scale(0.7);
+//     opacity: 0.4;
+//     visibility: visible;
+//   }
+//   36.3333333333% {
+//     transform: translateY(-100%) scale(0.5);
+//     opacity: 0;
+//     visibility: visible;
+//   }
+//   100% {
+//     transform: translateY(-100%) scale(0.5);
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+// }
+
+// @keyframes carousel-animate-vertical {
+//   0% {
+//     transform: translateY(100%) scale(0.5);
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+//   3%,
+//   11.1111111111% {
+//     transform: translateY(100%) scale(0.7);
+//     opacity: 0.4;
+//     visibility: visible;
+//   }
+//   14.1111111111%,
+//   22.2222222222% {
+//     transform: translateY(0) scale(1);
+//     opacity: 1;
+//     visibility: visible;
+//   }
+//   25.2222222222%,
+//   33.3333333333% {
+//     transform: translateY(-100%) scale(0.7);
+//     opacity: 0.4;
+//     visibility: visible;
+//   }
+//   36.3333333333% {
+//     transform: translateY(-100%) scale(0.5);
+//     opacity: 0;
+//     visibility: visible;
+//   }
+//   100% {
+//     transform: translateY(-100%) scale(0.5);
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+// }

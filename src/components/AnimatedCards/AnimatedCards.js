@@ -112,8 +112,8 @@ const AnimatedCards = () => {
   return (
     <Row>
       <Col md="3" style={{ paddingRight: 0 }}>
-        <div class="carousel-wrapper" id="carousel">
-          <div class="carousel">
+        <div className="carousel-wrapper" id="carousel">
+          <div className="carousel">
             {we.map((exp, index) => (
               <Card
                 className={`card-stats ${
@@ -149,7 +149,7 @@ const AnimatedCards = () => {
           </div>
         </div>
       </Col>
-      <Col md="9">
+      <Col md="9" className="we-more-info">
         <Card>
           <CardHeader>
             <CardTitle tag="h5">{we[currentCompany]?.company}</CardTitle>
@@ -164,12 +164,24 @@ const AnimatedCards = () => {
             /> */}
           </CardBody>
           <CardFooter>
-            <marquee
-              className="tech-skills"
+            <div
+              className="marquee tech-skills"
               //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
             >
               <SkillsMarquee />
-            </marquee>
+            </div>
+            <div
+              className="marquee tech-skills"
+              //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+            >
+              <SkillsMarquee />
+            </div>
+            <div
+              className="marquee tech-skills"
+              //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+            >
+              <SkillsMarquee />
+            </div>
           </CardFooter>
         </Card>
       </Col>

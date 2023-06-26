@@ -56,7 +56,7 @@ function Dashboard(props) {
         <DemoNavbar {...props} />
         <About id="about" />
         <WorkExperience id="user" />
-        {/* <div className="section"><h2 class="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
+        {/* <div className="section"><h2 className="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
         {/* {routes.map((prop, key) => {
             return (
               <li

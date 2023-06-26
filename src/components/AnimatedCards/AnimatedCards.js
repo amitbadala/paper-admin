@@ -17,6 +17,13 @@ import {
 } from "variables/charts.js";
 import { Icon } from "@iconify/react";
 import SkillsMarquee from "./SkillsMarquee";
+import {
+  Webesky,
+  Oneinsure,
+  Bristlecone,
+  HumanCapital,
+  Khonvo,
+} from "components/CompanyData";
 
 const we = [
   {
@@ -24,36 +31,42 @@ const we = [
     duration: "TODAY - ♾️",
     position: "Hire Me",
     logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    component: <button>Let's chat</button>,
   },
   {
     company: "Human Capital",
     duration: "APR 2020 - APR 2023  (3.1 yrs)",
     position: "Remote Software Engineer",
     logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    component: <HumanCapital />,
   },
   {
     company: "Khonvo",
     duration: "AUG 2019 - APR 2020  (9 mos)",
     position: "Remote Software Engineer",
     logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    component: <Khonvo />,
   },
   {
     company: "OneInsure",
     duration: "DEC 2017 - APR 2019  (1.5 yrs)",
     position: "Remote Software Engineer",
     logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    component: <Oneinsure />,
   },
   {
     company: "Webesky",
     duration: "FEB 2016 - NOV 2017 (1.9 yrs)",
     position: "Co-Founder",
     logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    component: <Webesky />,
   },
   {
     company: "Bristlecone",
     duration: "APR 2015 - JAN 2016 (10 mos)",
     position: "Remote Software Engineer",
     logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    component: <Bristlecone />,
   },
 ];
 
@@ -151,38 +164,25 @@ const AnimatedCards = () => {
       </Col>
       <Col md="9" className="we-more-info">
         <Card>
-          <CardHeader>
-            <CardTitle tag="h5">{we[currentCompany]?.company}</CardTitle>
-            <p className="card-category">{we[currentCompany]?.position}</p>
-          </CardHeader>
-          <CardBody>
-            {/* <Line
-              data={dashboard24HoursPerformanceChart.data}
-              options={dashboard24HoursPerformanceChart.options}
-              width={400}
-              height={100}
-            /> */}
-          </CardBody>
-          <CardFooter>
-            <div
-              className="marquee tech-skills"
-              //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
-            >
-              <SkillsMarquee />
-            </div>
-            <div
-              className="marquee tech-skills"
-              //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
-            >
-              <SkillsMarquee />
-            </div>
-            <div
-              className="marquee tech-skills"
-              //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
-            >
-              <SkillsMarquee />
-            </div>
-          </CardFooter>
+          {we[currentCompany].component}
+          <div
+            className="marquee tech-skills"
+            //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+          >
+            <SkillsMarquee />
+          </div>
+          <div
+            className="marquee tech-skills"
+            //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+          >
+            <SkillsMarquee />
+          </div>
+          <div
+            className="marquee tech-skills"
+            //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+          >
+            <SkillsMarquee />
+          </div>
         </Card>
       </Col>
     </Row>

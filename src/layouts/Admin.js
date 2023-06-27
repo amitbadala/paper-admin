@@ -13,6 +13,7 @@ import "./_admin.scss";
 
 import routes from "routes.js";
 import WorkExperience from "views/WorkExperience";
+import Blog from "views/Blog";
 
 var ps;
 
@@ -56,6 +57,7 @@ function Dashboard(props) {
         <DemoNavbar {...props} />
         <About id="about" />
         <WorkExperience id="user" />
+        <Blog />
         {/* <div className="section"><h2 className="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
         {/* {routes.map((prop, key) => {
             return (

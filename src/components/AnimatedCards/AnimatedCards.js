@@ -125,7 +125,11 @@ const AnimatedCards = () => {
   return (
     <Row>
       <Col md="3" style={{ paddingRight: 0 }}>
-        <div className="carousel-wrapper" id="carousel">
+        <div
+          className="carousel-wrapper"
+          id="carousel"
+          style={{ maxHeight: "calc(100vh - 200px)" }}
+        >
           <div className="carousel">
             {we.map((exp, index) => (
               <Card
@@ -163,27 +167,33 @@ const AnimatedCards = () => {
         </div>
       </Col>
       <Col md="9" className="we-more-info">
-        <Card>
+        <Card
+          style={{
+            position: "relative",
+            maxHeight: "calc(100vh - 200px)",
+            overflowY: "scroll",
+          }}
+        >
           {we[currentCompany].component}
-          <div
-            className="marquee tech-skills"
-            //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
-          >
-            <SkillsMarquee />
-          </div>
-          <div
-            className="marquee tech-skills"
-            //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
-          >
-            <SkillsMarquee />
-          </div>
-          <div
-            className="marquee tech-skills"
-            //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
-          >
-            <SkillsMarquee />
-          </div>
         </Card>
+        {/* <div
+          className="marquee tech-skills"
+          //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+        >
+          <SkillsMarquee />
+        </div>
+        <div
+          className="marquee tech-skills"
+          //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+        >
+          <SkillsMarquee />
+        </div>
+        <div
+          className="marquee tech-skills"
+          //   dangerouslySetInnerHTML={{ __html: generateSkills() }}
+        >
+          <SkillsMarquee />
+        </div> */}
       </Col>
     </Row>
   );

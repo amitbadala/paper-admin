@@ -1,3 +1,5 @@
+import "./company-data.scss";
+
 export { default as Bristlecone } from "./Bristlecone";
 export { default as Webesky } from "./Webesky";
 export { default as HumanCapital } from "./HumanCapital";

@@ -1,0 +1,17 @@
+.company-header {
+  margin-bottom: 0;
+  background: "#ffffff9c";
+  border-bottom: 1px solid GAINSBORO;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    margin: unset;
+    font-size: 14px;
+    a {
+      font-size: 20px;
+      vertical-align: unset;
+    }
+  }
+}

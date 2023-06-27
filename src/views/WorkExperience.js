@@ -23,7 +23,7 @@ function WorkExperience() {
   return (
     <div className="content" id="work-experience">
       <AnimatedCards />
-      <Card className="card-stats">
+      {/* <Card className="card-stats">
         <CardBody>
           <Row>
             <Col md="4" xs="5">
@@ -254,7 +254,7 @@ function WorkExperience() {
             </CardFooter>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 }

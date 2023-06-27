@@ -3,7 +3,7 @@
   //   width: 100%;
   //   display: flex;
   //   justify-content: center;
-  height: 420px;
+  // height: 420px;
   overflow: hidden;
   margin-bottom: 50px;
   overflow-y: scroll;
@@ -256,6 +256,7 @@
 // }
 
 .we-more-info {
+  max-height: calc(100vh - 100px);
   .card-footer {
     padding: unset;
     box-shadow: 0px -15px 15px -15px #8f8f8f;

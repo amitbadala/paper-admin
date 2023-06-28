@@ -12,8 +12,9 @@ import "./_admin.scss";
 // import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
-import WorkExperience from "views/WorkExperience";
+import WorkExperience from "views/WorkExperience/WorkExperience";
 import Blog from "views/Blog/Blog";
+import Highlights from "views/Highlights/Highlights";
 
 var ps;
 
@@ -58,6 +59,7 @@ function Dashboard(props) {
         <About id="about" />
         <WorkExperience id="user" />
         <Blog />
+        <Highlights id="highlights" />
         {/* <div className="section"><h2 className="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
         {/* {routes.map((prop, key) => {
             return (

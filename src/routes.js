@@ -4,7 +4,6 @@ import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserPage from "views/User.js";
-import WorkExperience from "views/WorkExperience";
 // import UpgradeToPro from "views/Upgrade.js";
 
 var routes = [
@@ -61,35 +60,30 @@ var routes = [
     path: "#about",
     name: "About",
     emoji: <span>👨‍🎨</span>,
-    component: <Typography />,
     layout: "/admin",
   },
   {
     path: "#work-experience",
     name: "Work Experience",
     emoji: "💼",
-    component: <WorkExperience />,
     layout: "/admin",
   },
   {
     path: "#blogs",
     name: "Blog",
     emoji: "✍️",
-    component: <WorkExperience />,
     layout: "/admin",
   },
   {
-    path: "#Highlight",
-    name: "Highlight",
+    path: "#highlights",
+    name: "Highlights",
     emoji: "📌",
-    component: <WorkExperience />,
     layout: "/admin",
   },
   {
     path: "#contact",
     name: "Contact",
     emoji: "☎️",
-    component: <WorkExperience />,
     layout: "/admin",
   },
 ];

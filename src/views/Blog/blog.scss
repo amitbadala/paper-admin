@@ -10,6 +10,11 @@
 //   position: relative;
 //   bottom: 0px;
 // }
+#blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 .glass-card {
   position: absolute;

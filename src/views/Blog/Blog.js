@@ -46,7 +46,7 @@ const Blog = () => {
     {
       blogUrl:
         "https://www.linkedin.com/posts/amitbadala_javascript-closure-through-comic-strip-activity-7069701056749780993-PzUk?utm_source=share&utm_medium=member_desktop",
-      title: "Understanding Javascript Closure through Comic Strips",
+      title: "Understanding Javascript Closure through Comics",
       bgImage:
         "https://cdn.midjourney.com/5c86108c-a8fc-4769-a80d-d2b83cf448f2/0_1.webp",
       tags: ["#javascript", "#midjourney"],
@@ -57,17 +57,25 @@ const Blog = () => {
       title: "Fusing Jack & Jill with Marketing",
       bgImage:
         "https://cdn.midjourney.com/02875ebc-c5f6-4749-b47d-e7c3c7f790a0/0_1.webp",
-      tags: ["#chatgpt", "#midjourney"],
+      tags: ["#ai", "#chatgpt", "#midjourney"],
+    },
+    {
+      blogUrl:
+        "https://medium.com/@amitbadala/how-to-convey-your-message-effectively-with-images-a-k-a-kungfu-content-94c0965ed3c",
+      title: "Convey your message effectively with Kung fu Panda",
+      bgImage:
+        "https://cdn.midjourney.com/867c7f3b-1231-4f00-b166-3c2e69057441/0_0.webp",
+      tags: ["#effective", "#writing"],
     },
   ];
 
   const settings = {
     className: "center",
-    centerMode: true,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
+    centerPadding: "0px",
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
   };
   return (
     <section id="blog" className="section content">
@@ -80,7 +88,7 @@ const Blog = () => {
                   backgroundImage: `url(${blog.bgImage})`,
                   backgroundSize: "cover",
                   height: "350px",
-                  width: "250px",
+                  width: "230px",
                   position: "relative",
                   backgroundPosition: "center",
                 }}
@@ -114,6 +122,33 @@ const Blog = () => {
             </div>
           ))}
         </Slider>
+      </div>
+      <div>
+        <h4>You can find more of my blogs and post on these sites</h4>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <a href="https://medium.com/me/stories/public" target="_blank">
+            <Icon fontSize={24} icon={"logos:medium"}></Icon>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/amitbadala/recent-activity/all/"
+            target="_blank"
+          >
+            <Icon fontSize={28} icon={"logos:linkedin"} />
+          </a>
+          <a href="https://goofyai.com/" target="_blank">
+            <img
+              height={45}
+              alt="..."
+              src={require("assets/img/goofyai.png")}
+            />
+          </a>
+        </div>
       </div>
     </section>
   );

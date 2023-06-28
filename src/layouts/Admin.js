@@ -13,7 +13,7 @@ import "./_admin.scss";
 
 import routes from "routes.js";
 import WorkExperience from "views/WorkExperience";
-import Blog from "views/Blog";
+import Blog from "views/Blog/Blog";
 
 var ps;
 

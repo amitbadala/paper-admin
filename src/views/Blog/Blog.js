@@ -82,7 +82,7 @@ const Blog = () => {
       <div style={{ width: "95%" }}>
         <Slider {...settings}>
           {blogs.map((blog, i) => (
-            <div>
+            <div key={i}>
               <Card
                 style={{
                   backgroundImage: `url(${blog.bgImage})`,
@@ -94,13 +94,14 @@ const Blog = () => {
                 }}
               >
                 <div className="glass-card">
-                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                     <path />
                   </svg>
                   <h5
                     style={{
                       cursor: "pointer",
                     }}
+                    className="text-shadow"
                   >
                     <a target="_blank" href={blog.blogUrl}>
                       {blog.title}
@@ -111,7 +112,10 @@ const Blog = () => {
                     style={{ display: "flex", justifyContent: "space-evenly" }}
                   >
                     {blog.tags.map((tag) => (
-                      <span style={{ margin: "0px 5px", fontWeight: "bold" }}>
+                      <span
+                        key={tag}
+                        style={{ margin: "0px 5px", fontWeight: "bold" }}
+                      >
                         {tag}
                       </span>
                       // <Icon icon={tag} textAnchor="Python"></Icon>

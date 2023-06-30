@@ -21,22 +21,6 @@
     color: #ffcc00;
   }
 
-  h1,
-  h2,
-  h4,
-  h5,
-  h6 {
-    text-align: center;
-    color: #ccc;
-    text-shadow: #000 1px 1px 2px;
-    margin-bottom: 5px;
-  }
-  h1 {
-    font-size: 18px;
-  }
-  h2 {
-    font-size: 14px;
-  }
   .sociales {
     text-align: center;
     margin-bottom: 20px;
@@ -57,7 +41,7 @@
     background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png")
       left center no-repeat;
   }
-  #dates a {
+  #dates span {
     line-height: 38px;
     padding-bottom: 10px;
   }
@@ -123,13 +107,29 @@
   }
   #grad_top {
     top: 0;
-    // background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png")
-    //   repeat-x;
+    background: linear-gradient(
+      to bottom,
+      rgb(244 243 239),
+      rgb(244 243 239 / 70%),
+      rgb(244 243 239 / 40%),
+      rgba(111, 0, 255, 0)
+    );
   }
   #grad_bottom {
     bottom: 0;
-    // background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png")
-    //   repeat-x;
+    background: linear-gradient(
+      to top,
+      rgb(244 243 239),
+      rgb(244 243 239 / 70%),
+      rgb(244 243 239 / 40%),
+      rgba(111, 0, 255, 0)
+    );
+  }
+  #grad_top,
+  #grad_bottom {
+    width: 500px;
+    height: 80px;
+    position: absolute;
   }
 
   #next,
@@ -184,4 +184,27 @@
   position: relative;
   background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/dot.gif")
     3px top repeat-y;
+}
+
+// ANIMATIONS ONLY
+
+#dates {
+  transition-property: margin-top;
+  transition-timing-function: ease;
+}
+
+#dates li {
+  transition-property: margin-top;
+  transition-timing-function: ease;
+  cursor: pointer;
+}
+
+#issues {
+  transition-property: margin-top;
+  transition-timing-function: ease;
+}
+
+#issues li {
+  transition-property: opacity;
+  transition-timing-function: ease;
 }

@@ -265,13 +265,15 @@ const Timeline = (props) => {
 
   return (
     <div className="timeline" id="timeline" style={{ position: "relative" }}>
-      <ul id="dates">
-        {dates.map((date, index) => (
-          <li key={index}>
-            <span onClick={() => setCurrentIndex(index)}>{date}</span>
-          </li>
-        ))}
-      </ul>
+      <div id="dates-div">
+        <ul id="dates">
+          {dates.map((date, index) => (
+            <li key={index}>
+              <span onClick={() => setCurrentIndex(index)}>{date}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <ul id="issues">
         {issues.map((issue) => (
           <li id={issue?.year}>
@@ -283,7 +285,7 @@ const Timeline = (props) => {
       </ul>
       <div id="grad_top"></div>
       <div id="grad_bottom"></div>
-      <div
+      {/* <div
         onClick={() => setCurrentIndex((currIndex) => currIndex + 1)}
         id="next"
       >
@@ -295,7 +297,17 @@ const Timeline = (props) => {
         id="prev"
       >
         -
-      </div>
+      </div> */}
+      <div
+        id="circle_div"
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "50%",
+          backgroundColor: "red",
+          display: "none",
+        }}
+      ></div>
     </div>
   );
 };

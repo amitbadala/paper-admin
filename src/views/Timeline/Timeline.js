@@ -5,7 +5,55 @@ import React, {
   useRef,
   useState,
 } from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  Row,
+  Col,
+} from "reactstrap";
 import "./timeline.scss";
+
+const we = [
+  {
+    company: "Could be You",
+    duration: "TODAY - ♾️",
+    position: "Hire Me",
+    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+  },
+  {
+    company: "Human Capital",
+    duration: "APR 2020 - APR 2023  (3.1 yrs)",
+    position: "Remote Software Engineer",
+    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+  },
+  {
+    company: "Khonvo",
+    duration: "AUG 2019 - APR 2020  (9 mos)",
+    position: "Remote Software Engineer",
+    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+  },
+  {
+    company: "OneInsure",
+    duration: "DEC 2017 - APR 2019  (1.5 yrs)",
+    position: "Remote Software Engineer",
+    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+  },
+  {
+    company: "Webesky",
+    duration: "FEB 2016 - NOV 2017 (1.9 yrs)",
+    position: "Co-Founder",
+    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+  },
+  {
+    company: "Bristlecone",
+    duration: "APR 2015 - JAN 2016 (10 mos)",
+    position: "Remote Software Engineer",
+    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+  },
+];
 
 const Timeline = (props) => {
   const {
@@ -267,9 +315,40 @@ const Timeline = (props) => {
     <div className="timeline" id="timeline" style={{ position: "relative" }}>
       <div id="dates-div">
         <ul id="dates">
-          {dates.map((date, index) => (
+          {we.map(({ company, duration, position }, index) => (
             <li key={index}>
-              <span onClick={() => setCurrentIndex(index)}>{date}</span>
+              <div className="red-dot"></div>
+              <div
+                onClick={() => setCurrentIndex(index)}
+                // className={`card-stats ${
+                //   index === currentIndex ? "active" : ""
+                // }`}
+                className="we-skeleton"
+              >
+                <div className="custom-header">
+                  <p className="">{position}</p>
+                </div>
+                <div>
+                  <Row>
+                    {/* <Col md="4" xs="5"> 
+                </Col> */}
+                    <Col md="12" xs="12">
+                      <div className="flex align-items">
+                        {/* <img alt="company-logo" src={exp.logo} /> */}
+                        <h5>{company}</h5>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+                <div>
+                  <div className="footer">
+                    <p>
+                      📅 {`  `}
+                      {duration}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </li>
           ))}
         </ul>

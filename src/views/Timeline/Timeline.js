@@ -33,33 +33,39 @@ const we = [
     duration: "APR 2020 - APR 2023  (3.1 yrs)",
     position: "Remote Software Engineer",
     logo: HC,
+    description: `A venture firm with over $1.6B in capital commitment. 
+    Its portfolio includes > 130 companies, including around 15 that became unicorns, such as Brex, Commure, and Snowflake`,
   },
   {
     company: "Khonvo",
     duration: "AUG 2019 - APR 2020  (9 mos)",
     position: "Remote Software Engineer",
     logo: Khonvo,
-    logoHeight: 70,
+    logoHeight: 40,
+    description: `A startup, co-founded by alumni from (Harvard & MIT) and a former Googler, aimed to simplify email campaigns by building a chrome-extension. The company joined forces with Human Capital in 2020`,
   },
   {
     company: "OneInsure",
     duration: "DEC 2017 - APR 2019  (1.5 yrs)",
-    position: "Remote Software Engineer",
+    position: "Software Development Manager",
     logo: Oneinsure,
     logoHeight: 45,
+    description: `India’s 3rd largest Insurance-commerce `,
   },
   {
     company: "Webesky",
     duration: "FEB 2016 - NOV 2017 (1.9 yrs)",
     position: "Co-Founder",
     logoHeight: 80,
+    description: `A digital agency that helps businesses establish their online presence`,
   },
   {
     company: "Bristlecone",
     duration: "APR 2015 - JAN 2016 (10 mos)",
-    position: "Remote Software Engineer",
+    position: "Associate Consultant",
     logo: Bristlecone,
     hideName: true,
+    description: `It is the leading provider of connected logistics solutions, including AI applications, SAP integration, and more.`,
   },
 ];
 
@@ -429,6 +435,7 @@ const Timeline = (props) => {
               duration,
               position,
               hideName = false,
+              description,
             },
             index
           ) => (
@@ -440,6 +447,9 @@ const Timeline = (props) => {
                 </div>
                 <h6>{duration}</h6>
                 <h5>{position}</h5>
+              </div>
+              <div className="description">
+                <p>{description}</p>
               </div>
             </div>
           )

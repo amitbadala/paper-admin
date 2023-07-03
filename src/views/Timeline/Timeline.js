@@ -15,6 +15,10 @@ import {
   Col,
 } from "reactstrap";
 import "./timeline.scss";
+import Bristlecone from "assets/img/logos/bristlecone_logo.png";
+import Khonvo from "assets/img/logos/khonvo_logo.png";
+import Oneinsure from "assets/img/logos/oneinsure_logo.png";
+import HC from "assets/img/logos/hc_logo.svg";
 
 const we = [
   // {
@@ -28,31 +32,34 @@ const we = [
     company: "Human Capital",
     duration: "APR 2020 - APR 2023  (3.1 yrs)",
     position: "Remote Software Engineer",
-    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    logo: HC,
   },
   {
     company: "Khonvo",
     duration: "AUG 2019 - APR 2020  (9 mos)",
     position: "Remote Software Engineer",
-    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    logo: Khonvo,
+    logoHeight: 70,
   },
   {
     company: "OneInsure",
     duration: "DEC 2017 - APR 2019  (1.5 yrs)",
     position: "Remote Software Engineer",
-    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    logo: Oneinsure,
+    logoHeight: 45,
   },
   {
     company: "Webesky",
     duration: "FEB 2016 - NOV 2017 (1.9 yrs)",
     position: "Co-Founder",
-    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    logoHeight: 80,
   },
   {
     company: "Bristlecone",
     duration: "APR 2015 - JAN 2016 (10 mos)",
     position: "Remote Software Engineer",
-    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+    logo: Bristlecone,
+    hideName: true,
   },
 ];
 
@@ -189,7 +196,6 @@ const Timeline = (props) => {
   };
 
   const animateMarginTop = (element, targetMargin, duration) => {
-    debugger;
     const startTime = performance.now();
     const startMargin = parseInt(getComputedStyle(element).marginTop, 10);
 
@@ -223,7 +229,7 @@ const Timeline = (props) => {
     companyInfoRef.current.style.transitionDuration = animationDuration + "ms";
     companyInfoRef.current.style.marginTop =
       -companyInfoChildHeight * currentIndex + "px";
-    debugger;
+
     // issuesDiv.style.transitionDuration = animationDuration + "ms";
     // issuesDiv.style.marginTop = -heightIssue * currentIndex + "px";
     const companiesList = companyInfoRef.current.children;
@@ -252,7 +258,6 @@ const Timeline = (props) => {
   };
 
   const moveDates = () => {
-    debugger;
     var datesList = document.querySelectorAll(settings.datesDiv + " li");
     var heightDate = datesList[0].offsetHeight;
     var datesLinks = document.querySelectorAll(
@@ -303,7 +308,6 @@ const Timeline = (props) => {
   };
 
   const handleDateClick = () => {
-    debugger;
     // moveCompanyInfo();
     // let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
     // let heightIssue = issuesContainer[0].clientHeight;
@@ -345,7 +349,7 @@ const Timeline = (props) => {
   function handleNext(event) {}
 
   //   const handleNext = () => {
-  //     // debugger;
+  //     //
   //     // var issuesEle = document.querySelector(issuesDiv);
   //     // var issueHeight = issuesEle.offsetHeight;
   //     // const targetMargin = -issueHeight * currentIndex; // the target margin-left in pixels
@@ -416,16 +420,30 @@ const Timeline = (props) => {
         ))}
       </ul> */}
       <div ref={companyInfoRef} id="company-details">
-        {we.map(({ company, logo, duration, position }, index) => (
-          <div className="info-box" key={index}>
-            <img src={logo} alt="" />
-            <div className="company-highlights">
-              <p>{position}</p>
-              <h1>{company}</h1>
-              <p>{duration}</p>
+        {we.map(
+          (
+            {
+              company,
+              logo,
+              logoHeight = 35,
+              duration,
+              position,
+              hideName = false,
+            },
+            index
+          ) => (
+            <div className="info-box" key={index}>
+              <div className="company-highlights">
+                <div className="logo">
+                  {logo ? <img src={logo} alt="" height={logoHeight} /> : null}
+                  {!hideName ? <h2>{company}</h2> : null}
+                </div>
+                <h6>{duration}</h6>
+                <h5>{position}</h5>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
       <div id="grad_top"></div>
       <div id="grad_bottom"></div>

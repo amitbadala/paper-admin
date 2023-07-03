@@ -102,37 +102,29 @@ const Timeline = (props) => {
   }, []);
 
   const [currentIndex, setCurrentIndex] = useState(settings.startAt - 1);
-  const [currentIssue, setCurrentIssue] = useState(
-    issues[settings.startAt - 1]
-  );
   const defaultDateDivHeightRef = useRef(null);
-
-  const [variables, setVariables] = useState({
-    heightContainer: 0,
-    heightIssue: 0,
-    heightDate: 0,
-  });
+  const companyInfoRef = useRef(null);
 
   useEffect(() => {
     // SET POSITIONS
-    let howManyIssues = issues.length;
+    // let howManyIssues = issues.length;
     var containerElement = document.querySelector(settings.containerDiv);
     var heightContainer = containerElement.clientHeight;
 
-    // get the height of the content selected
-    let tempIssue = document.querySelector(settings.issuesDiv);
-    var issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
-    var heightIssue = issuesContainer[0].clientHeight;
-    // Set the height of the issues container
-    // var issuesContainer = document.querySelector(issuesDiv);
-    if (tempIssue.style) {
-      tempIssue.style.height = heightIssue * howManyIssues + "px";
-    } else {
-      tempIssue.setAttribute(
-        "style",
-        "height:" + heightIssue * howManyIssues + "px;"
-      );
-    }
+    // // get the height of the content selected
+    // let tempIssue = document.querySelector(settings.issuesDiv);
+    // var issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
+    // var heightIssue = issuesContainer[0].clientHeight;
+    // // Set the height of the issues container
+    // // var issuesContainer = document.querySelector(issuesDiv);
+    // if (tempIssue.style) {
+    //   tempIssue.style.height = heightIssue * howManyIssues + "px";
+    // } else {
+    //   tempIssue.setAttribute(
+    //     "style",
+    //     "height:" + heightIssue * howManyIssues + "px;"
+    //   );
+    // }
     // issuesContainer.style.height = heightIssue * issues.length + "px";
     let tempDatesDiv = document.querySelector(settings.datesDiv);
     var datesContainer = document.querySelectorAll(settings.datesDiv + " li");
@@ -151,9 +143,10 @@ const Timeline = (props) => {
       tempDatesDiv.style.marginTop =
         heightContainer / 2 - heightDate / 2 + "px";
     }
-    setVariables((prev) => {
-      return { ...prev, heightDate: heightDate, heightIssue: heightIssue };
-    });
+    setInitialPositions();
+    // setVariables((prev) => {
+    //   return { ...prev, heightDate: heightDate, heightIssue: heightIssue };
+    // });
   }, []);
 
   useEffect(() => {
@@ -186,6 +179,15 @@ const Timeline = (props) => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [settings]);
 
+  const setInitialPositions = () => {
+    // debugger
+    let howManyIssues = we.length;
+    let companyInfoChildHeight =
+      companyInfoRef.current.firstElementChild.clientHeight;
+    companyInfoRef.current.style.height =
+      companyInfoChildHeight * howManyIssues + "px";
+  };
+
   const animateMarginTop = (element, targetMargin, duration) => {
     debugger;
     const startTime = performance.now();
@@ -203,6 +205,50 @@ const Timeline = (props) => {
     }
 
     requestAnimationFrame(animate);
+  };
+
+  const moveCompanyInfo = () => {
+    // let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
+    // let heightIssue = issuesContainer[0].clientHeight;
+
+    // var issuesDiv = document.querySelector(settings.issuesDiv);
+    var animationDuration = parseInt(settings.issuesSpeed);
+
+    let howManyIssues = we.length;
+    let companyInfoChildHeight =
+      companyInfoRef.current.firstElementChild.clientHeight;
+    companyInfoRef.current.style.height =
+      companyInfoChildHeight * howManyIssues + "px";
+
+    companyInfoRef.current.style.transitionDuration = animationDuration + "ms";
+    companyInfoRef.current.style.marginTop =
+      -companyInfoChildHeight * currentIndex + "px";
+    debugger;
+    // issuesDiv.style.transitionDuration = animationDuration + "ms";
+    // issuesDiv.style.marginTop = -heightIssue * currentIndex + "px";
+    const companiesList = companyInfoRef.current.children;
+
+    // let issuesList = document.querySelectorAll(settings.issuesDiv + " li");
+    // var animationDuration = parseInt(settings.issuesSpeed);
+    var transparencyDuration = parseInt(settings.issuesTransparencySpeed);
+    var transparencyValue = parseFloat(settings.issuesTransparency);
+
+    [...companyInfoRef.current.children].forEach(function (item, index) {
+      item.style.transitionDuration = animationDuration + "ms";
+      if (index === currentIndex) {
+        item.style.opacity = 1;
+        item.classList.add(settings.issuesSelectedClass);
+      } else {
+        item.style.opacity = transparencyValue;
+        item.classList.remove(settings.issuesSelectedClass);
+      }
+    });
+
+    setTimeout(function () {
+      companiesList[currentIndex].style.transitionDuration =
+        transparencyDuration + "ms";
+      companiesList[currentIndex].style.opacity = "1";
+    }, 0);
   };
 
   const moveDates = () => {
@@ -258,40 +304,41 @@ const Timeline = (props) => {
 
   const handleDateClick = () => {
     debugger;
+    // moveCompanyInfo();
+    // let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
+    // let heightIssue = issuesContainer[0].clientHeight;
 
-    let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
-    let heightIssue = issuesContainer[0].clientHeight;
-
-    var issuesDiv = document.querySelector(settings.issuesDiv);
-    var animationDuration = parseInt(settings.issuesSpeed);
-
-    issuesDiv.style.transitionDuration = animationDuration + "ms";
-    issuesDiv.style.marginTop = -heightIssue * currentIndex + "px";
-
-    let issuesList = document.querySelectorAll(settings.issuesDiv + " li");
+    // var issuesDiv = document.querySelector(settings.issuesDiv);
     // var animationDuration = parseInt(settings.issuesSpeed);
-    var transparencyDuration = parseInt(settings.issuesTransparencySpeed);
-    var transparencyValue = parseFloat(settings.issuesTransparency);
 
-    issuesList.forEach(function (item, index) {
-      item.style.transitionDuration = animationDuration + "ms";
-      if (index === currentIndex) {
-        item.style.opacity = 1;
-        item.classList.add(settings.issuesSelectedClass);
-      } else {
-        item.style.opacity = transparencyValue;
-        item.classList.remove(settings.issuesSelectedClass);
-      }
-    });
+    // issuesDiv.style.transitionDuration = animationDuration + "ms";
+    // issuesDiv.style.marginTop = -heightIssue * currentIndex + "px";
 
-    // issuesList[currentIndex].classList.add(settings.issuesSelectedClass);
-    setTimeout(function () {
-      issuesList[currentIndex].style.transitionDuration =
-        transparencyDuration + "ms";
-      issuesList[currentIndex].style.opacity = "1";
-    }, 0);
+    // let issuesList = document.querySelectorAll(settings.issuesDiv + " li");
+    // // var animationDuration = parseInt(settings.issuesSpeed);
+    // var transparencyDuration = parseInt(settings.issuesTransparencySpeed);
+    // var transparencyValue = parseFloat(settings.issuesTransparency);
 
-    // setCurrentIndex(index);
+    // issuesList.forEach(function (item, index) {
+    //   item.style.transitionDuration = animationDuration + "ms";
+    //   if (index === currentIndex) {
+    //     item.style.opacity = 1;
+    //     item.classList.add(settings.issuesSelectedClass);
+    //   } else {
+    //     item.style.opacity = transparencyValue;
+    //     item.classList.remove(settings.issuesSelectedClass);
+    //   }
+    // });
+
+    // // issuesList[currentIndex].classList.add(settings.issuesSelectedClass);
+    // setTimeout(function () {
+    //   issuesList[currentIndex].style.transitionDuration =
+    //     transparencyDuration + "ms";
+    //   issuesList[currentIndex].style.opacity = "1";
+    // }, 0);
+
+    // // setCurrentIndex(index);
+    moveCompanyInfo();
     moveDates();
   };
 
@@ -359,7 +406,7 @@ const Timeline = (props) => {
           ))}
         </ul>
       </div>
-      <ul id="issues">
+      {/* <ul id="issues">
         {issues.map((issue) => (
           <li id={issue?.year}>
             <img src={issue?.imgUrl} alt="" />
@@ -367,7 +414,19 @@ const Timeline = (props) => {
             <p>{issue?.paragraph}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <div ref={companyInfoRef} id="company-details">
+        {we.map(({ company, logo, duration, position }, index) => (
+          <div className="info-box" key={index}>
+            <img src={logo} alt="" />
+            <div className="company-highlights">
+              <p>{position}</p>
+              <h1>{company}</h1>
+              <p>{duration}</p>
+            </div>
+          </div>
+        ))}
+      </div>
       <div id="grad_top"></div>
       <div id="grad_bottom"></div>
       {/* <div

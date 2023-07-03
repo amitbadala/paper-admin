@@ -17,12 +17,13 @@ import {
 import "./timeline.scss";
 
 const we = [
-  {
-    company: "Could be You",
-    duration: "TODAY - ♾️",
-    position: "Hire Me",
-    logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
-  },
+  // {
+  //   company: "Could be You",
+  //   duration: "TODAY - ♾️",
+  //   position: "Hire Me",
+  //   logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
+
+  // },
   {
     company: "Human Capital",
     duration: "APR 2020 - APR 2023  (3.1 yrs)",
@@ -209,10 +210,10 @@ const Timeline = (props) => {
     var datesList = document.querySelectorAll(settings.datesDiv + " li");
     var heightDate = datesList[0].offsetHeight;
     var datesLinks = document.querySelectorAll(
-      `${settings.datesDiv} > li > span`
+      `${settings.datesDiv} > li > .we-skeleton`
     );
     // var currentIndex = Array.from(datesLinks).indexOf(this.parentElement);
-    console.log(defaultDateDivHeightRef);
+    // console.log(defaultDateDivHeightRef);
     if (!defaultDateDivHeightRef.current) {
       let defaultPositionDates = parseInt(
         getComputedStyle(document.querySelector(settings.datesDiv)).marginTop
@@ -223,8 +224,10 @@ const Timeline = (props) => {
     datesLinks.forEach(function (link, index) {
       if (index === currentIndex) {
         link.classList.add(settings.datesSelectedClass);
+        link.parentElement.classList.add("active");
       } else {
         link.classList.remove(settings.datesSelectedClass);
+        link.parentElement.classList.remove("active");
       }
     });
 
@@ -317,7 +320,10 @@ const Timeline = (props) => {
         <ul id="dates">
           {we.map(({ company, duration, position }, index) => (
             <li key={index}>
-              <div className="red-dot"></div>
+              <div
+                className="red-dot"
+                onClick={() => setCurrentIndex(index)}
+              ></div>
               <div
                 onClick={() => setCurrentIndex(index)}
                 // className={`card-stats ${

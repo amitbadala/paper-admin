@@ -269,4 +269,16 @@
   position: absolute;
   right: -32px;
   border: 3px solid black;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.red-dot:hover {
+  background-color: lawngreen;
+}
+
+.active {
+  .red-dot {
+    background-color: lawngreen;
+  }
 }

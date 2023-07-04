@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import "./animated-cards.scss";
 
 const skillsSet = [
   {

@@ -41,8 +41,8 @@
       align-items: center;
       font-size: 24px;
       padding-left: 10px;
-      background: url(http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png)
-        right center no-repeat;
+      // background: url(http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png)
+      //   right center no-repeat;
       position: relative;
     }
   }
@@ -233,8 +233,12 @@
   border: 1px solid #a7a7a7;
   border-radius: 12px;
   box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
-  background-color: white;
+  // background-color: white;
   text-align: center;
+
+  &.selected {
+    background-color: white;
+  }
 
   .custom-header {
     padding: 5px;
@@ -362,4 +366,40 @@
       line-height: 22px;
     }
   }
+}
+
+// SKILLS
+
+.skills-container {
+  position: relative;
+  height: 300px; /* adjust according to your needs */
+  // border: 1px solid #000; /* border styling */
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+  text-align: center;
+  // overflow: hidden;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .box {
+    margin: 5px;
+    // padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.centered-title {
+  background-color: #fff; /* adjust according to your needs, should match your page's background */
+  padding: 0 10px;
+  right: 0px;
+  top: 0px;
+  position: absolute;
 }

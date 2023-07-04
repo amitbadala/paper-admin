@@ -1,24 +1,70 @@
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Row,
-  Col,
-} from "reactstrap";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { Row, Col, Table } from "reactstrap";
 import "./timeline.scss";
 import Bristlecone from "assets/img/logos/bristlecone_logo.png";
 import Khonvo from "assets/img/logos/khonvo_logo.png";
 import Oneinsure from "assets/img/logos/oneinsure_logo.png";
 import HC from "assets/img/logos/hc_logo.svg";
+import SkillsMarquee from "components/AnimatedCards/SkillsMarquee";
+import { Icon } from "@iconify/react";
+
+const skillsSet = [
+  {
+    type: "Frontend",
+    technologies: [
+      { name: "React", icon: "logos:react", showName: true },
+      { name: "Javascript", icon: "logos-javascript", showName: true },
+      { name: "Html", icon: "logos-html-5", showName: true },
+      { name: "Css", icon: "logos-css-3", showName: true },
+      { name: "Less", icon: "logos-less", showName: false },
+      { name: "Scss", icon: "vscode-icons:file-type-scss2", showName: true },
+      { name: "Web pack", icon: "logos:webpack", showName: true },
+      { name: "Jest", icon: "logos-jest", showName: true },
+      { name: "Babel", icon: "logos-babel", showName: false },
+      { name: "Ant", icon: "logos:ant-design", showName: true },
+    ],
+  },
+  {
+    type: "Backend",
+    technologies: [
+      { name: "Python", icon: "logos-python", showName: true },
+      { name: "FastAPI", icon: "devicon:fastapi", showName: true },
+      { name: "Redis", icon: "logos-redis", showName: true },
+      { name: "Postgres", icon: "logos-postgresql", showName: true },
+      { name: "SQLAlchemy", icon: "logos-alembic", showName: true },
+      { name: "NodeJS", icon: "logos-nodejs-icon", showName: true },
+    ],
+  },
+  {
+    type: "Devops",
+    technologies: [
+      {
+        name: "Github",
+        icon: "bi:github",
+        showName: true,
+        iconColor: "white",
+      },
+      { name: "Docker", icon: "logos-docker-icon", showName: true },
+      { name: "Netlify", icon: "skill-icons:netlify-light", showName: true },
+      { name: "Heroku", icon: "logos-heroku-icon", showName: true },
+      { name: "AWS", icon: "logos-amazon-aws", showName: true },
+    ],
+  },
+  {
+    type: "Others",
+    technologies: [
+      {
+        name: "Zapier",
+        icon: "simple-icons:zapier",
+        showName: true,
+        iconColor: "white",
+      },
+      { name: "Webflow", icon: "logos-webflow", showName: false },
+      { name: "Sanity CMS", icon: "logos-sanity", showName: false },
+      { name: "Sigma", icon: "logos-figma-icon", showName: false },
+    ],
+  },
+];
 
 const we = [
   // {
@@ -372,51 +418,52 @@ const Timeline = (props) => {
   };
 
   return (
-    <div className="timeline" id="timeline" style={{ position: "relative" }}>
-      <div id="dates-div">
-        <ul id="dates">
-          {we.map(({ company, duration, position }, index) => (
-            <li key={index}>
-              <div
-                className="red-dot"
-                onClick={() => setCurrentIndex(index)}
-              ></div>
-              <div
-                onClick={() => setCurrentIndex(index)}
-                // className={`card-stats ${
-                //   index === currentIndex ? "active" : ""
-                // }`}
-                className="we-skeleton"
-              >
-                <div className="custom-header">
-                  <p className="">{position}</p>
-                </div>
-                <div>
-                  <Row>
-                    {/* <Col md="4" xs="5"> 
+    <>
+      <div className="timeline" id="timeline" style={{ position: "relative" }}>
+        <div id="dates-div">
+          <ul id="dates">
+            {we.map(({ company, duration, position }, index) => (
+              <li key={index}>
+                <div
+                  className="red-dot"
+                  onClick={() => setCurrentIndex(index)}
+                ></div>
+                <div
+                  onClick={() => setCurrentIndex(index)}
+                  // className={`card-stats ${
+                  //   index === currentIndex ? "active" : ""
+                  // }`}
+                  className="we-skeleton"
+                >
+                  <div className="custom-header">
+                    <p className="">{position}</p>
+                  </div>
+                  <div>
+                    <Row>
+                      {/* <Col md="4" xs="5"> 
                 </Col> */}
-                    <Col md="12" xs="12">
-                      <div className="flex align-items">
-                        {/* <img alt="company-logo" src={exp.logo} /> */}
-                        <h5>{company}</h5>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-                <div>
-                  <div className="footer">
-                    <p>
-                      📅 {`  `}
-                      {duration}
-                    </p>
+                      <Col md="12" xs="12">
+                        <div className="flex align-items">
+                          {/* <img alt="company-logo" src={exp.logo} /> */}
+                          <h5>{company}</h5>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <div>
+                    <div className="footer">
+                      <p>
+                        📅 {`  `}
+                        {duration}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* <ul id="issues">
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* <ul id="issues">
         {issues.map((issue) => (
           <li id={issue?.year}>
             <img src={issue?.imgUrl} alt="" />
@@ -425,39 +472,82 @@ const Timeline = (props) => {
           </li>
         ))}
       </ul> */}
-      <div ref={companyInfoRef} id="company-details">
-        {we.map(
-          (
-            {
-              company,
-              logo,
-              logoHeight = 35,
-              duration,
-              position,
-              hideName = false,
-              description,
-            },
-            index
-          ) => (
-            <div className="info-box" key={index}>
-              <div className="company-highlights">
-                <div className="logo">
-                  {logo ? <img src={logo} alt="" height={logoHeight} /> : null}
-                  {!hideName ? <h2>{company}</h2> : null}
+        <div ref={companyInfoRef} id="company-details">
+          {we.map(
+            (
+              {
+                company,
+                logo,
+                logoHeight = 35,
+                duration,
+                position,
+                hideName = false,
+                description,
+              },
+              index
+            ) => (
+              <div className="info-box" key={index}>
+                <div className="company-highlights">
+                  <div className="logo">
+                    {logo ? (
+                      <img src={logo} alt="" height={logoHeight} />
+                    ) : null}
+                    {!hideName ? <h2>{company}</h2> : null}
+                  </div>
+                  <h6>{duration}</h6>
+                  <h5>{position}</h5>
                 </div>
-                <h6>{duration}</h6>
-                <h5>{position}</h5>
+                <div className="description">
+                  <p>{description}</p>
+                </div>
+                {/* <SkillsMarquee /> */}
+                <div class="skills-container">
+                  {skillsSet.map(({ type, technologies }, index) => (
+                    <>
+                      <div class="column">
+                        {technologies.map(
+                          ({ name, icon, showName, iconColor }) => (
+                            <div class="box">
+                              <Icon
+                                color={iconColor}
+                                icon={icon}
+                                style={{
+                                  marginRight: "5px",
+                                  marginLeft: "25px",
+                                }}
+                              />
+                              {showName ? (
+                                <span className="iconify">{name}</span>
+                              ) : null}
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </>
+                  ))}
+                  {/* <div class="column">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                  </div>
+                  <div class="column">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                  </div>
+                  <div class="column">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                    <div class="box">4</div>
+                  </div> */}
+                </div>
               </div>
-              <div className="description">
-                <p>{description}</p>
-              </div>
-            </div>
-          )
-        )}
-      </div>
-      <div id="grad_top"></div>
-      <div id="grad_bottom"></div>
-      {/* <div
+            )
+          )}
+        </div>
+        <div id="grad_top"></div>
+        <div id="grad_bottom"></div>
+        {/* <div
         onClick={() => setCurrentIndex((currIndex) => currIndex + 1)}
         id="next"
       >
@@ -470,17 +560,18 @@ const Timeline = (props) => {
       >
         -
       </div> */}
-      <div
-        id="circle_div"
-        style={{
-          width: "100px",
-          height: "100px",
-          borderRadius: "50%",
-          backgroundColor: "red",
-          display: "none",
-        }}
-      ></div>
-    </div>
+        <div
+          id="circle_div"
+          style={{
+            width: "100px",
+            height: "100px",
+            borderRadius: "50%",
+            backgroundColor: "red",
+            display: "none",
+          }}
+        ></div>
+      </div>
+    </>
   );
 };
 

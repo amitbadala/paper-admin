@@ -501,13 +501,13 @@ const Timeline = (props) => {
                   <p>{description}</p>
                 </div>
                 {/* <SkillsMarquee /> */}
-                <div class="skills-container">
+                <div className="skills-container">
                   {skillsSet.map(({ type, technologies }, index) => (
                     <>
-                      <div class="column">
+                      <div className="column">
                         {technologies.map(
                           ({ name, icon, showName, iconColor }) => (
-                            <div class="box">
+                            <div className="box">
                               <Icon
                                 color={iconColor}
                                 icon={icon}
@@ -525,20 +525,20 @@ const Timeline = (props) => {
                       </div>
                     </>
                   ))}
-                  {/* <div class="column">
-                    <div class="box">1</div>
-                    <div class="box">2</div>
+                  {/* <div className="column">
+                    <div className="box">1</div>
+                    <div className="box">2</div>
                   </div>
-                  <div class="column">
-                    <div class="box">1</div>
-                    <div class="box">2</div>
-                    <div class="box">3</div>
+                  <div className="column">
+                    <div className="box">1</div>
+                    <div className="box">2</div>
+                    <div className="box">3</div>
                   </div>
-                  <div class="column">
-                    <div class="box">1</div>
-                    <div class="box">2</div>
-                    <div class="box">3</div>
-                    <div class="box">4</div>
+                  <div className="column">
+                    <div className="box">1</div>
+                    <div className="box">2</div>
+                    <div className="box">3</div>
+                    <div className="box">4</div>
                   </div> */}
                 </div>
               </div>

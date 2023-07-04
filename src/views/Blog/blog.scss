@@ -19,7 +19,7 @@
 .glass-card {
   position: absolute;
   padding-top: 20px;
-  background: ivory;
+  background: white;
   color: #000;
   bottom: 0;
   border-radius: 12px;
@@ -58,7 +58,7 @@
 }
 
 .card__arc path {
-  fill: ivory;
+  fill: white;
   d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
 }
 

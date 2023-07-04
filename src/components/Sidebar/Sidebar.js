@@ -11,7 +11,6 @@ import "./sidebar.scss";
 var ps;
 
 function Sidebar(props) {
-  console.log(props);
   const location = useLocation();
   const sidebar = React.useRef();
   // verifies if routeName is the one active (in browser input)
@@ -31,6 +30,22 @@ function Sidebar(props) {
       }
     };
   });
+
+  const handleScroll = (e) => {
+    e.preventDefault();
+    //remove everything before the hash
+    const targetId = e.currentTarget.href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    let scrollTo = 0;
+    if (elem) {
+      scrollTo = elem?.offsetTop - 80;
+      window.scrollTo({
+        top: scrollTo,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div
       className="sidebar"

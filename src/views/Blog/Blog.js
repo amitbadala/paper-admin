@@ -79,79 +79,87 @@ const Blog = () => {
   };
   return (
     <section id="blog" className="section content">
-      <div style={{ width: "95%" }}>
-        <Slider {...settings}>
-          {blogs.map((blog, i) => (
-            <div key={i}>
-              <Card
-                style={{
-                  backgroundImage: `url(${blog.bgImage})`,
-                  backgroundSize: "cover",
-                  height: "350px",
-                  width: "230px",
-                  position: "relative",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="glass-card">
-                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                  </svg>
-                  <h5
-                    style={{
-                      cursor: "pointer",
-                    }}
-                    className="text-shadow"
-                  >
-                    <a target="_blank" href={blog.blogUrl}>
-                      {blog.title}
-                    </a>
-                  </h5>
-                  <div
-                    className="hash-tag"
-                    style={{ display: "flex", justifyContent: "space-evenly" }}
-                  >
-                    {blog.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        style={{ margin: "0px 5px", fontWeight: "bold" }}
-                      >
-                        {tag}
-                      </span>
-                      // <Icon icon={tag} textAnchor="Python"></Icon>
-                    ))}
+      <div className="container">
+        <div style={{ width: "95%" }}>
+          <Slider {...settings}>
+            {blogs.map((blog, i) => (
+              <div key={i}>
+                <Card
+                  style={{
+                    backgroundImage: `url(${blog.bgImage})`,
+                    backgroundSize: "cover",
+                    height: "350px",
+                    width: "230px",
+                    position: "relative",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div className="glass-card">
+                    <svg
+                      className="card__arc"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path />
+                    </svg>
+                    <h5
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      className="text-shadow"
+                    >
+                      <a target="_blank" href={blog.blogUrl}>
+                        {blog.title}
+                      </a>
+                    </h5>
+                    <div
+                      className="hash-tag"
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      {blog.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          style={{ margin: "0px 5px", fontWeight: "bold" }}
+                        >
+                          {tag}
+                        </span>
+                        // <Icon icon={tag} textAnchor="Python"></Icon>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div>
-        <h4>You can find more of my blogs and post on these sites</h4>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
-          <a href="https://medium.com/me/stories/public" target="_blank">
-            <Icon fontSize={24} icon={"logos:medium"}></Icon>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/amitbadala/recent-activity/all/"
-            target="_blank"
+                </Card>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <div>
+          <h4>You can find more of my blogs and post on these sites</h4>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
           >
-            <Icon fontSize={28} icon={"logos:linkedin"} />
-          </a>
-          <a href="https://goofyai.com/" target="_blank">
-            <img
-              height={45}
-              alt="..."
-              src={require("assets/img/goofyai.png")}
-            />
-          </a>
+            <a href="https://medium.com/me/stories/public" target="_blank">
+              <Icon fontSize={24} icon={"logos:medium"}></Icon>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amitbadala/recent-activity/all/"
+              target="_blank"
+            >
+              <Icon fontSize={28} icon={"logos:linkedin"} />
+            </a>
+            <a href="https://goofyai.com/" target="_blank">
+              <img
+                height={45}
+                alt="..."
+                src={require("assets/img/goofyai.png")}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </section>

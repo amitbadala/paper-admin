@@ -38,14 +38,14 @@ function Header(props) {
     setDropdownOpen(!dropdownOpen);
   };
   const getBrand = () => {
-    let brandName = "Default Brand";
+    let brandName = props.activeSection || "ab";
     routes.map((prop, key) => {
       if (window.location.href.indexOf(prop.layout + prop.path) !== -1) {
         brandName = prop.name;
       }
       return null;
     });
-    return brandName;
+    return brandName.toLowerCase();
   };
   const openSidebar = () => {
     document.documentElement.classList.toggle("nav-open");
@@ -73,10 +73,7 @@ function Header(props) {
   }, [location]);
   return (
     // add or remove classes depending if we are on full-screen-maps page or not
-    <Navbar 
-      expand="lg"
-      className="navbar-sticky bg-glass-effect-light"
-    >
+    <Navbar expand="lg" className="navbar-sticky bg-glass-effect-light">
       <Container fluid>
         <div className="navbar-wrapper">
           <div className="navbar-toggle">
@@ -91,7 +88,10 @@ function Header(props) {
               <span className="navbar-toggler-bar bar3" />
             </button>
           </div>
-          <NavbarBrand href="/">{getBrand()}</NavbarBrand>
+          <div className="nav-header">
+            {getBrand()}
+            <span className="period"></span>
+          </div>
         </div>
         <NavbarToggler onClick={toggle}>
           <span className="navbar-toggler-bar navbar-kebab" />

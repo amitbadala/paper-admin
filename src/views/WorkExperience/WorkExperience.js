@@ -97,10 +97,11 @@ function WorkExperience() {
     },
   ];
   return (
-    <section className="content" id="work-experience">
-      {/* <AnimatedCards /> */}
-      <Timeline dates={dates} issues={issues} orientation="vertical" />
-      {/* <div class="container">
+    <section className="section" id="experience">
+      <div className="container">
+        {/* <AnimatedCards /> */}
+        <Timeline dates={dates} issues={issues} orientation="vertical" />
+        {/* <div class="container">
         <div class="row">
           <div class="col">
             <div class="main-timeline">
@@ -220,6 +221,7 @@ function WorkExperience() {
           </div>
         </div>
       </div> */}
+      </div>
     </section>
   );
 }

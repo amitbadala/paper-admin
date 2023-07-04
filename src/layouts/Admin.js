@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -21,11 +21,67 @@ var ps;
 function Dashboard(props) {
   const [backgroundColor, setBackgroundColor] = React.useState("black");
   const [activeColor, setActiveColor] = React.useState("info");
-  const mainPanel = React.useRef();
+  const mainPanelRef = React.useRef();
   const location = useLocation();
-  React.useEffect(() => {
+  const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // console.log(mainPanelRef.current.scrollTop);
+      const scrollPosition =
+        mainPanelRef.current.scrollTop + mainPanelRef.current.clientHeight / 2; // Midpoint of viewport
+      console.log("scrollPosition-", scrollPosition);
+      // Loop through each section and check if it's in the viewport
+      document.querySelectorAll(".section").forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPosition > sectionTop && scrollPosition < sectionBottom) {
+          // Section is in viewport
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    const mainPanel = mainPanelRef.current;
+
+    if (mainPanel) {
+      mainPanel.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      // Cleanup: remove the event listener when the component unmounts
+      if (mainPanel) {
+        mainPanel.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY + window.innerHeight / 2; // Midpoint of viewport
+  //     debugger;
+  //     // Loop through each section and check if it's in the viewport
+  //     document.querySelectorAll(".section").forEach((section) => {
+  //       const sectionTop = section.offsetTop;
+  //       const sectionBottom = sectionTop + section.offsetHeight;
+
+  //       if (scrollPosition > sectionTop && scrollPosition < sectionBottom) {
+  //         // Section is in viewport
+  //         setActiveSection(section.id);
+  //       }
+  //     });
+  //   };
+
+  //   // Attach the event listener
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   // Cleanup the event listener on unmount
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
+  useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
-      ps = new PerfectScrollbar(mainPanel.current);
+      ps = new PerfectScrollbar(mainPanelRef.current);
       document.body.classList.toggle("perfect-scrollbar-on");
     }
     return function cleanup() {
@@ -36,7 +92,7 @@ function Dashboard(props) {
     };
   });
   React.useEffect(() => {
-    mainPanel.current.scrollTop = 0;
+    mainPanelRef.current.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
   }, [location]);
   const handleActiveClick = (color) => {
@@ -54,8 +110,8 @@ function Dashboard(props) {
         bgColor={backgroundColor}
         activeColor={activeColor}
       />
-      <div className="main-panel" id="main-panel" ref={mainPanel}>
-        <DemoNavbar {...props} />
+      <div className="main-panel" id="main-panel" ref={mainPanelRef}>
+        <DemoNavbar {...props} activeSection={activeSection} />
         <About id="about" />
         <div className="nav-header">
           experience<span className="period"></span>

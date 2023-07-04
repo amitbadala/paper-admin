@@ -97,7 +97,7 @@ function WorkExperience() {
     },
   ];
   return (
-    <div className="content" id="work-experience">
+    <section className="content" id="work-experience">
       {/* <AnimatedCards /> */}
       <Timeline dates={dates} issues={issues} orientation="vertical" />
       {/* <div class="container">
@@ -220,7 +220,7 @@ function WorkExperience() {
           </div>
         </div>
       </div> */}
-    </div>
+    </section>
   );
 }
 

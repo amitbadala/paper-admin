@@ -54,11 +54,20 @@ function Dashboard(props) {
         bgColor={backgroundColor}
         activeColor={activeColor}
       />
-      <div className="main-panel" ref={mainPanel}>
+      <div className="main-panel" id="main-panel" ref={mainPanel}>
         <DemoNavbar {...props} />
         <About id="about" />
+        <div className="nav-header">
+          experience<span className="period"></span>
+        </div>
         <WorkExperience id="user" />
+        <div className="nav-header">
+          blog<span className="period"></span>
+        </div>
         <Blog />
+        <div className="nav-header">
+          contact<span className="period"></span>
+        </div>
         <Highlights id="highlights" />
         {/* <div className="section"><h2 className="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
         {/* {routes.map((prop, key) => {

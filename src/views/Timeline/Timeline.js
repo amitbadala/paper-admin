@@ -1,11 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Row, Col, Table } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import "./timeline.scss";
 import Bristlecone from "assets/img/logos/bristlecone_logo.png";
 import Khonvo from "assets/img/logos/khonvo_logo.png";
 import Oneinsure from "assets/img/logos/oneinsure_logo.png";
 import HC from "assets/img/logos/hc_logo.svg";
-import SkillsMarquee from "components/AnimatedCards/SkillsMarquee";
 import { Icon } from "@iconify/react";
 
 const skillsSet = [
@@ -135,7 +134,6 @@ const Timeline = (props) => {
     // autoPlayDirection = "forward",
     // autoPlayPause = 2000,
     dates = [],
-    issues = [],
   } = props;
 
   let settings = useMemo(() => {
@@ -247,23 +245,23 @@ const Timeline = (props) => {
       companyInfoChildHeight * howManyIssues + "px";
   };
 
-  const animateMarginTop = (element, targetMargin, duration) => {
-    const startTime = performance.now();
-    const startMargin = parseInt(getComputedStyle(element).marginTop, 10);
+  // const animateMarginTop = (element, targetMargin, duration) => {
+  //   const startTime = performance.now();
+  //   const startMargin = parseInt(getComputedStyle(element).marginTop, 10);
 
-    function animate(time) {
-      const progress = (time - startTime) / duration;
-      if (progress < 1) {
-        element.style.marginTop =
-          startMargin + progress * (targetMargin - startMargin) + "px";
-        requestAnimationFrame(animate);
-      } else {
-        element.style.marginTop = targetMargin + "px";
-      }
-    }
+  //   function animate(time) {
+  //     const progress = (time - startTime) / duration;
+  //     if (progress < 1) {
+  //       element.style.marginTop =
+  //         startMargin + progress * (targetMargin - startMargin) + "px";
+  //       requestAnimationFrame(animate);
+  //     } else {
+  //       element.style.marginTop = targetMargin + "px";
+  //     }
+  //   }
 
-    requestAnimationFrame(animate);
-  };
+  //   requestAnimationFrame(animate);
+  // };
 
   const moveCompanyInfo = () => {
     // let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");

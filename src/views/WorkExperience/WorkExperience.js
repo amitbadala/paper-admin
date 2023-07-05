@@ -1,23 +1,7 @@
 import React from "react";
 // react plugin used to create charts
-import { Line, Pie } from "react-chartjs-2";
 // reactstrap components
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Row,
-  Col,
-} from "reactstrap";
 // core components
-import {
-  dashboard24HoursPerformanceChart,
-  dashboardEmailStatisticsChart,
-  dashboardNASDAQChart,
-} from "variables/charts.js";
-import AnimatedCards from "components/AnimatedCards/AnimatedCards";
 import Timeline from "views/Timeline/Timeline";
 import "./work-experience.scss";
 

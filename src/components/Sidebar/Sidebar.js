@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import ScrollLink from "components/ScrollLink/ScrollLink";
 import Logo from "components/Logo/Logo";
-import logo from "logo.svg";
 import "./sidebar.scss";
 
 var ps;
@@ -30,21 +29,6 @@ function Sidebar(props) {
       }
     };
   });
-
-  const handleScroll = (e) => {
-    e.preventDefault();
-    //remove everything before the hash
-    const targetId = e.currentTarget.href.replace(/.*\#/, "");
-    const elem = document.getElementById(targetId);
-    let scrollTo = 0;
-    if (elem) {
-      scrollTo = elem?.offsetTop - 80;
-      window.scrollTo({
-        top: scrollTo,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div

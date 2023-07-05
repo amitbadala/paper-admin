@@ -107,7 +107,7 @@ const Blog = () => {
                       }}
                       className="text-shadow"
                     >
-                      <a target="_blank" href={blog.blogUrl}>
+                      <a target="_blank" rel="noreferrer" href={blog.blogUrl}>
                         {blog.title}
                       </a>
                     </h5>
@@ -143,16 +143,21 @@ const Blog = () => {
               alignItems: "center",
             }}
           >
-            <a href="https://medium.com/me/stories/public" target="_blank">
+            <a
+              href="https://medium.com/me/stories/public"
+              rel="noreferrer"
+              target="_blank"
+            >
               <Icon fontSize={24} icon={"logos:medium"}></Icon>
             </a>
             <a
               href="https://www.linkedin.com/in/amitbadala/recent-activity/all/"
               target="_blank"
+              rel="noreferrer"
             >
               <Icon fontSize={28} icon={"logos:linkedin"} />
             </a>
-            <a href="https://goofyai.com/" target="_blank">
+            <a rel="noreferrer" href="https://goofyai.com/" target="_blank">
               <img
                 height={45}
                 alt="..."

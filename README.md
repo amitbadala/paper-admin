@@ -52,7 +52,7 @@ Quick start options:
 - `npm i paper-dashboard-react`
 - Clone the repo: `git clone https://github.com/creativetimofficial/paper-dashboard-react.git`.
 - [Download from Github](https://github.com/creativetimofficial/paper-dashboard-react/archive/main.zip).
-- [Download from Creative Tim](https://www.creative-tim.com/product/paper-dashboard-react).
+- [Download from Amit Badala](https://www.creative-tim.com/product/paper-dashboard-react).
 
 ## Documentation
 
@@ -154,12 +154,12 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Licensing
 
-- Copyright 2023 Creative Tim (https://www.creative-tim.com)
+- Copyright 2023 Amit Badala (https://www.creative-tim.com)
 - Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
 
 ## Useful Links
 
-More products from Creative Tim: <https://www.creative-tim.com/products>
+More products from Amit Badala: <https://www.creative-tim.com/products>
 
 Tutorials: <https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w>
 

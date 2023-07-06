@@ -115,7 +115,7 @@ function User() {
                         </div>
                       </Col>
                       <Col md="7" xs="7">
-                        Creative Tim <br />
+                        Amit Badala <br />
                         <span className="text-success">
                           <small>Available</small>
                         </span>

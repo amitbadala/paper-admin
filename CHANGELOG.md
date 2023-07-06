@@ -108,8 +108,8 @@ You should use
 
 ### Added dependencies
 
-- gulp@4.0.2 (for Creative Tim copyrights)
-- gulp-append-prepend@1.0.8 (for Creative Tim copyrights)
+- gulp@4.0.2 (for Amit Badala copyrights)
+- gulp-append-prepend@1.0.8 (for Amit Badala copyrights)
 
 ### Updated dependencies
 
@@ -202,4 +202,4 @@ _Warnings might appear while doing an npm install - they do not affect the UI or
 ### Original Release
 
 - Added Reactstrap as base framework
-- Added design from Paper Dashboard 2 by Creative Tim
+- Added design from Paper Dashboard 2 by Amit Badala

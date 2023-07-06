@@ -20,10 +20,10 @@ function Upgrade() {
           <Col className="ml-auto mr-auto" md="8">
             <Card className="card-upgrade">
               <CardHeader className="text-center">
-                <CardTitle tag="h4">Paper Dashboard PRO</CardTitle>
+                <CardTitle tag="h4">Dashboard PRO</CardTitle>
                 <p className="card-category">
                   Are you looking for more components? Please check our Premium
-                  Version of Paper Dashboard PRO.
+                  Version of Dashboard PRO.
                 </p>
               </CardHeader>
               <CardBody>

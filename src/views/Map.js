@@ -154,11 +154,11 @@ const MapWrapper = () => {
       position: myLatlng,
       map: map,
       animation: google.maps.Animation.DROP,
-      title: "Paper Dashboard React!",
+      title: "Dashboard React!",
     });
 
     const contentString =
-      '<div className="info-window-content"><h2>Paper Dashboard React</h2>' +
+      '<div className="info-window-content"><h2>Dashboard React</h2>' +
       "<p>A free Admin for React, Reactstrap, and React Hooks.</p></div>";
 
     const infowindow = new google.maps.InfoWindow({

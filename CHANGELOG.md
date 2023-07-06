@@ -15,7 +15,7 @@
 
 ### Bug fixing
 
-- We've change all class components to function ones, so now, Paper Dashboard React accepts hooks
+- We've change all class components to function ones, so now, Dashboard React accepts hooks
 
 ### Major style changes
 
@@ -63,16 +63,16 @@ _You will also have the following message: found 80 vulnerabilities (1 low, 79 m
 
 ### Bug fixing
 
-- https://github.com/creativetimofficial/paper-dashboard-react/issues/15
-- https://github.com/creativetimofficial/paper-dashboard-react/issues/13
-- https://github.com/creativetimofficial/paper-dashboard-react/issues/12
-- https://github.com/creativetimofficial/paper-dashboard-react/issues/9 (could not reproduce the issue, so we've left the perfect-scrollbar initialization as is, if there are layout problems, please delete the bits of code specified here: https://github.com/creativetimofficial/paper-dashboard-react/issues/9#issuecomment-593385860)
-- https://github.com/creativetimofficial/paper-dashboard-react/issues/8
+- https://github.com/amitbadala/paper-dashboard-react/issues/15
+- https://github.com/amitbadala/paper-dashboard-react/issues/13
+- https://github.com/amitbadala/paper-dashboard-react/issues/12
+- https://github.com/amitbadala/paper-dashboard-react/issues/9 (could not reproduce the issue, so we've left the perfect-scrollbar initialization as is, if there are layout problems, please delete the bits of code specified here: https://github.com/amitbadala/paper-dashboard-react/issues/9#issuecomment-593385860)
+- https://github.com/amitbadala/paper-dashboard-react/issues/8
 - Other Paper React products issues solved here as well
-  - https://github.com/creativetimofficial/ct-paper-kit-pro-react/issues/2
-  - https://github.com/creativetimofficial/paper-kit-react/issues/2
-  - https://github.com/creativetimofficial/ct-paper-dashboard-pro-react/issues/8
-  - https://github.com/creativetimofficial/ct-paper-dashboard-pro-react/issues/6 - solution to this is to change the usage of the ModalHeader from Reactstrap to simple Bootstrap ones:
+  - https://github.com/amitbadala/ct-paper-kit-pro-react/issues/2
+  - https://github.com/amitbadala/paper-kit-react/issues/2
+  - https://github.com/amitbadala/ct-paper-dashboard-pro-react/issues/8
+  - https://github.com/amitbadala/ct-paper-dashboard-pro-react/issues/6 - solution to this is to change the usage of the ModalHeader from Reactstrap to simple Bootstrap ones:
     So, instead of:
 
 ```
@@ -135,7 +135,7 @@ typescript            3.4.5   →     3.9.5
 
 ### Warning
 
-_All the following products: Paper Kit React, Paper Dashboard React, Paper Kit PRO React and Paper Dashboard PRO React have been updated together, and thus, we've added to all of them the same version of 1.2.0 - we may have skipped some versions for some of the above products, we've done so, since we want all Paper & React products to share the same versions._
+_All the following products: Paper Kit React, Dashboard React, Paper Kit PRO React and Dashboard PRO React have been updated together, and thus, we've added to all of them the same version of 1.2.0 - we may have skipped some versions for some of the above products, we've done so, since we want all Paper & React products to share the same versions._
 _While in development some of the plugins that were used for this product will throw some warnings - note, this only happens in development, the UI or the functionality of the product is not affected, also, if the issues will persist in React 17, we'll drop usage of those plugins, and replace them with other ones._
 _Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the product, and they appear because of NodeJS and not from the product itself._
 
@@ -202,4 +202,4 @@ _Warnings might appear while doing an npm install - they do not affect the UI or
 ### Original Release
 
 - Added Reactstrap as base framework
-- Added design from Paper Dashboard 2 by Amit Badala
+- Added design from Dashboard 2 by Amit Badala

@@ -45,8 +45,8 @@ function Notifications() {
       message: (
         <div>
           <div>
-            Welcome to <b>Paper Dashboard React</b> - a beautiful freebie for
-            every web developer.
+            Welcome to <b>Dashboard React</b> - a beautiful freebie for every
+            web developer.
           </div>
         </div>
       ),
@@ -75,7 +75,7 @@ function Notifications() {
                   </a>
                   . Please checkout the{" "}
                   <a
-                    href="https://github.com/creativetimofficial/react-notification-alert"
+                    href="https://github.com/amitbadala/react-notification-alert"
                     target="_blank"
                   >
                     full documentation.

@@ -420,3 +420,78 @@
   top: 0px;
   position: absolute;
 }
+
+// nav tabs
+
+.nav-tabs {
+  border-bottom: 1px solid;
+  .nav-link.active {
+    border: 1px solid;
+    background-color: unset;
+    border-radius: 0px;
+  }
+  .nav-item {
+    .nav-link {
+      padding: 5px;
+      &:hover {
+        color: black;
+        border: 1px solid black;
+        border-radius: 0px;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+        -ms-transition: 0.5s;
+        transition: 0.5s;
+      }
+    }
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    border-bottom: unset;
+    .active {
+      border: 1px solid;
+    }
+  }
+}
+
+// nav content
+
+.tab-container {
+  table {
+    width: 100%;
+    text-align: left; /* Center text horizontally */
+    margin: 10px;
+  }
+  .tech-logo {
+    display: flex;
+    align-items: center;
+    filter: grayscale(1);
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+
+  td {
+    border: unset;
+    vertical-align: middle; /* Center content vertically in each cell */
+    padding: 10px;
+    // border: 1px solid #ccc;
+    span {
+      font-size: medium;
+      letter-spacing: 0.4px;
+    }
+  }
+}
+
+// .flex-container {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .flex-item {
+//   flex: 1 0 20%; /* 4 columns layout */
+//   box-sizing: border-box;
+//   padding: 10px;
+//   text-align: center; /* center the content */
+//   border: 1px solid #ccc; /* add border to create a table cell like look */
+//   margin: 2px; /* little space between cells */
+// }

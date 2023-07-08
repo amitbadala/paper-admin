@@ -6,6 +6,7 @@ import Khonvo from "assets/img/logos/khonvo_logo.png";
 import Oneinsure from "assets/img/logos/oneinsure_logo.png";
 import HC from "assets/img/logos/hc_logo.svg";
 import { Icon } from "@iconify/react";
+import NavTabs from "./components/NavTabs";
 
 const skillsSet = [
   {
@@ -372,51 +373,7 @@ const Timeline = (props) => {
                 </div>
                 {/* <SkillsMarquee /> */}
                 <div>
-                  <Nav tabs fill>
-                    <NavItem>
-                      <NavLink
-                        className="active"
-                        onClick={function noRefCheck() {}}
-                      >
-                        FrontEnd
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink className="" onClick={function noRefCheck() {}}>
-                        BackeEnd & Devops
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink className="" onClick={function noRefCheck() {}}>
-                        Others
-                      </NavLink>
-                    </NavItem>
-                  </Nav>
-                  <TabContent activeTab="1">
-                    {skillsSet.map(({ type, technologies }, index) => (
-                      <>
-                        <div className="column">
-                          {technologies.map(
-                            ({ name, icon, showName, iconColor }) => (
-                              <div className="box">
-                                <Icon
-                                  color={iconColor}
-                                  icon={icon}
-                                  style={{
-                                    marginRight: "5px",
-                                    marginLeft: "25px",
-                                  }}
-                                />
-                                {showName ? (
-                                  <span className="iconify">{name}</span>
-                                ) : null}
-                              </div>
-                            )
-                          )}
-                        </div>
-                      </>
-                    ))}
-                  </TabContent>
+                  <NavTabs company={company} />
                 </div>
               </div>
             )

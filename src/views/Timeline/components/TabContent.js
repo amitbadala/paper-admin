@@ -1,26 +1,37 @@
-import { Row, Col, Nav, NavItem, NavLink } from "reactstrap";
+import {
+  Row,
+  Col,
+  Nav,
+  NavItem,
+  Table,
+  TabContent as ReactTab,
+} from "reactstrap";
 import { Icon } from "@iconify/react";
-import TabContent from "./TabContent";
-import React, { useState } from "react";
 
 const skillsSet = [
   {
     type: "Frontend",
+    tabName: "fe",
     technologies: [
       { name: "React", icon: "logos:react", showName: true },
       { name: "Javascript", icon: "logos-javascript", showName: true },
+      { name: "Angular", icon: "logos:angular-icon", showName: true },
+      { name: "jQuery", icon: "devicon:jquery", showName: true },
+      { name: "webpack", icon: "logos:webpack", showName: true },
+      { name: "Babel", icon: "logos-babel", showName: false },
+      { name: "Jest", icon: "logos-jest", showName: true },
+      { name: "Ant", icon: "logos:ant-design", showName: true },
+      { name: "Ionic", icon: "logos:ionic-icon", showName: true },
+      { name: "Material UI", icon: "devicon:materialui", showName: true },
       { name: "Html", icon: "logos-html-5", showName: true },
       { name: "Css", icon: "logos-css-3", showName: true },
       { name: "Less", icon: "logos-less", showName: false },
       { name: "Scss", icon: "vscode-icons:file-type-scss2", showName: true },
-      { name: "Web pack", icon: "logos:webpack", showName: true },
-      { name: "Jest", icon: "logos-jest", showName: true },
-      { name: "Babel", icon: "logos-babel", showName: false },
-      { name: "Ant", icon: "logos:ant-design", showName: true },
     ],
   },
   {
     type: "Backend",
+    tabName: "be",
     technologies: [
       { name: "Python", icon: "logos-python", showName: true },
       { name: "FastAPI", icon: "devicon:fastapi", showName: true },
@@ -32,6 +43,7 @@ const skillsSet = [
   },
   {
     type: "Devops",
+    tabName: "be",
     technologies: [
       {
         name: "Github",
@@ -47,6 +59,7 @@ const skillsSet = [
   },
   {
     type: "Others",
+    tabName: "oth",
     technologies: [
       {
         name: "Zapier",
@@ -61,40 +74,42 @@ const skillsSet = [
   },
 ];
 
-const NavTabs = React.memo(({ company }) => {
-  const [activeTab, setActiveTab] = useState("fe");
+const TabContent = ({ company, activeTab }) => {
+  const rows = [];
+  for (let i = 0; i < skillsSet[0].technologies.length; i += 4) {
+    rows.push(skillsSet[0].technologies.slice(i, i + 4));
+  }
+  console.log(rows);
 
   return (
-    <>
-      <Nav tabs fill>
-        <NavItem>
-          <NavLink
-            className={`${activeTab === "fe" ? "active" : ""}`}
-            onClick={() => setActiveTab("fe")}
-          >
-            FrontEnd
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            className={`${activeTab === "be" ? "active" : ""}`}
-            onClick={() => setActiveTab("be")}
-          >
-            BackEnd & DevOps
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            className={`${activeTab === "oth" ? "active" : ""}`}
-            onClick={() => setActiveTab("oth")}
-          >
-            Others
-          </NavLink>
-        </NavItem>
-      </Nav>
-      <TabContent activeTab={activeTab} company={company} />
-    </>
+    <ReactTab activeTab={activeTab} className="tab-container">
+      {/* {company}
+      {activeTab} */}
+      <Table>
+        <tbody>
+          {rows.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map(({ name, icon, showName, iconColor }) => (
+                <td key={name}>
+                  <div className="tech-logo">
+                    <Icon
+                      color={iconColor}
+                      icon={icon}
+                      style={{
+                        marginRight: "6px",
+                        fontSize: "x-large",
+                      }}
+                    />
+                    {showName ? <span className="iconify">{name}</span> : null}
+                  </div>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </ReactTab>
   );
-});
+};
 
-export default NavTabs;
+export default TabContent;

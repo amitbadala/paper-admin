@@ -116,26 +116,7 @@ const we = [
 ];
 
 const Timeline = (props) => {
-  const {
-    // orientation = "horizontal",
-    // containerDiv = "#timeline",
-    // datesDiv = "#dates",
-    // datesSelectedClass = "selected",
-    // datesSpeed = "normal",
-    // issuesDiv = "#issues",
-    // issuesSelectedClass = "selected",
-    // issuesSpeed = "fast",
-    // issuesTransparency = 0.2,
-    // issuesTransparencySpeed = 500,
-    // prevButton = "#prev",
-    // nextButton = "#next",
-    // arrowKeys = false,
-    // startAt = 1,
-    // autoPlay = false,
-    // autoPlayDirection = "forward",
-    // autoPlayPause = 2000,
-    dates = [],
-  } = props;
+  const { dates = [] } = props;
 
   let settings = useMemo(() => {
     return {
@@ -168,22 +149,6 @@ const Timeline = (props) => {
     // let howManyIssues = issues.length;
     var containerElement = document.querySelector(settings.containerDiv);
     var heightContainer = containerElement.clientHeight;
-
-    // // get the height of the content selected
-    // let tempIssue = document.querySelector(settings.issuesDiv);
-    // var issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
-    // var heightIssue = issuesContainer[0].clientHeight;
-    // // Set the height of the issues container
-    // // var issuesContainer = document.querySelector(issuesDiv);
-    // if (tempIssue.style) {
-    //   tempIssue.style.height = heightIssue * howManyIssues + "px";
-    // } else {
-    //   tempIssue.setAttribute(
-    //     "style",
-    //     "height:" + heightIssue * howManyIssues + "px;"
-    //   );
-    // }
-    // issuesContainer.style.height = heightIssue * issues.length + "px";
     let tempDatesDiv = document.querySelector(settings.datesDiv);
     var datesContainer = document.querySelectorAll(settings.datesDiv + " li");
     var heightDate = datesContainer[0].clientHeight;
@@ -202,9 +167,6 @@ const Timeline = (props) => {
         heightContainer / 2 - heightDate / 2 + "px";
     }
     setInitialPositions();
-    // setVariables((prev) => {
-    //   return { ...prev, heightDate: heightDate, heightIssue: heightIssue };
-    // });
   }, []);
 
   useEffect(() => {
@@ -245,24 +207,6 @@ const Timeline = (props) => {
     companyInfoRef.current.style.height =
       companyInfoChildHeight * howManyIssues + "px";
   };
-
-  // const animateMarginTop = (element, targetMargin, duration) => {
-  //   const startTime = performance.now();
-  //   const startMargin = parseInt(getComputedStyle(element).marginTop, 10);
-
-  //   function animate(time) {
-  //     const progress = (time - startTime) / duration;
-  //     if (progress < 1) {
-  //       element.style.marginTop =
-  //         startMargin + progress * (targetMargin - startMargin) + "px";
-  //       requestAnimationFrame(animate);
-  //     } else {
-  //       element.style.marginTop = targetMargin + "px";
-  //     }
-  //   }
-
-  //   requestAnimationFrame(animate);
-  // };
 
   const moveCompanyInfo = () => {
     // let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
@@ -337,80 +281,14 @@ const Timeline = (props) => {
       settings.datesSpeed + "ms";
     document.querySelector(settings.datesDiv).style.marginTop =
       defaultDateDivHeightRef.current - heightDate * currentIndex + "px";
-
-    //    // issuesContainer.style.height = heightIssue * issues.length + "px";
-    // let tempDatesDiv = document.querySelector(settings.datesDiv);
-    // var datesContainer = document.querySelectorAll(settings.datesDiv + " li");
-    // var heightDate = datesContainer[0].clientHeight;
-    // // Set the height and margin of the dates container
-    // // var datesContainer = document.querySelector(datesDiv);
-    // if (tempDatesDiv.style) {
-    //   tempDatesDiv.style.height = heightDate * dates.length + "px";
-    //   tempDatesDiv.style.marginTop =
-    //     heightContainer / 2 - heightDate / 2 + "px";
-    // } else {
-    //   tempDatesDiv.setAttribute(
-    //     "style",
-    //     "height:" + heightDate * dates.length + "px"
-    //   );
-    //   tempDatesDiv.style.marginTop =
-    //     heightContainer / 2 - heightDate / 2 + "px";
-    // }
   };
 
   const handleDateClick = () => {
-    // moveCompanyInfo();
-    // let issuesContainer = document.querySelectorAll(settings.issuesDiv + " li");
-    // let heightIssue = issuesContainer[0].clientHeight;
-
-    // var issuesDiv = document.querySelector(settings.issuesDiv);
-    // var animationDuration = parseInt(settings.issuesSpeed);
-
-    // issuesDiv.style.transitionDuration = animationDuration + "ms";
-    // issuesDiv.style.marginTop = -heightIssue * currentIndex + "px";
-
-    // let issuesList = document.querySelectorAll(settings.issuesDiv + " li");
-    // // var animationDuration = parseInt(settings.issuesSpeed);
-    // var transparencyDuration = parseInt(settings.issuesTransparencySpeed);
-    // var transparencyValue = parseFloat(settings.issuesTransparency);
-
-    // issuesList.forEach(function (item, index) {
-    //   item.style.transitionDuration = animationDuration + "ms";
-    //   if (index === currentIndex) {
-    //     item.style.opacity = 1;
-    //     item.classList.add(settings.issuesSelectedClass);
-    //   } else {
-    //     item.style.opacity = transparencyValue;
-    //     item.classList.remove(settings.issuesSelectedClass);
-    //   }
-    // });
-
-    // // issuesList[currentIndex].classList.add(settings.issuesSelectedClass);
-    // setTimeout(function () {
-    //   issuesList[currentIndex].style.transitionDuration =
-    //     transparencyDuration + "ms";
-    //   issuesList[currentIndex].style.opacity = "1";
-    // }, 0);
-
-    // // setCurrentIndex(index);
     moveCompanyInfo();
     moveDates();
   };
 
   function handleNext(event) {}
-
-  //   const handleNext = () => {
-  //     //
-  //     // var issuesEle = document.querySelector(issuesDiv);
-  //     // var issueHeight = issuesEle.offsetHeight;
-  //     // const targetMargin = -issueHeight * currentIndex; // the target margin-left in pixels
-  //     // const duration = issuesSpeed; // duration of the animation in milliseconds
-  //     // animateMarginTop(issuesEle, targetMargin, duration);
-
-  //     setCurrentIndex((prevIndex) =>
-  //       prevIndex < issues.length - 1 ? prevIndex + 1 : prevIndex
-  //     );
-  //   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
@@ -462,15 +340,6 @@ const Timeline = (props) => {
             ))}
           </ul>
         </div>
-        {/* <ul id="issues">
-        {issues.map((issue) => (
-          <li id={issue?.year}>
-            <img src={issue?.imgUrl} alt="" />
-            <h1>{issue?.year}</h1>
-            <p>{issue?.paragraph}</p>
-          </li>
-        ))}
-      </ul> */}
         <div ref={companyInfoRef} id="company-details">
           {we.map(
             (
@@ -548,42 +417,12 @@ const Timeline = (props) => {
                       </>
                     ))}
                   </TabContent>
-
-                  {/* <div className="column">
-                    <div className="box">1</div>
-                    <div className="box">2</div>
-                  </div>
-                  <div className="column">
-                    <div className="box">1</div>
-                    <div className="box">2</div>
-                    <div className="box">3</div>
-                  </div>
-                  <div className="column">
-                    <div className="box">1</div>
-                    <div className="box">2</div>
-                    <div className="box">3</div>
-                    <div className="box">4</div>
-                  </div> */}
                 </div>
               </div>
             )
           )}
         </div>
-        {/* <div id="grad_top"></div>
-        <div id="grad_bottom"></div> */}
-        {/* <div
-        onClick={() => setCurrentIndex((currIndex) => currIndex + 1)}
-        id="next"
-      >
-        +
-      </div>
 
-      <div
-        onClick={() => setCurrentIndex((currIndex) => currIndex - 1)}
-        id="prev"
-      >
-        -
-      </div> */}
         <div
           id="circle_div"
           style={{

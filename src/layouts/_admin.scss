@@ -30,7 +30,7 @@
 .main-panel {
   height: 100vh;
   overflow: auto;
-  // scroll-snap-type: y proximity;
+  scroll-snap-type: y proximity;
 
   .navbar-sticky {
     border-bottom: 1px solid #ddd;
@@ -43,7 +43,7 @@
 
   section {
     display: flex;
-    // scroll-snap-align: start;
+    scroll-snap-align: start;
     height: calc(100vh - 60px);
 
     .container {

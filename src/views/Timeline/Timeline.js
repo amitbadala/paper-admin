@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Nav, NavItem, NavLink, TabContent } from "reactstrap";
 import "./timeline.scss";
 import Bristlecone from "assets/img/logos/bristlecone_logo.png";
 import Khonvo from "assets/img/logos/khonvo_logo.png";
@@ -80,6 +80,7 @@ const we = [
     logo: HC,
     description: `A venture firm with over $1.6B in capital commitment. 
     Its portfolio includes > 130 companies, including around 15 that became unicorns, such as Brex, Commure, and Snowflake`,
+    logoHeight: 20,
   },
   {
     company: "Khonvo",
@@ -476,7 +477,7 @@ const Timeline = (props) => {
               {
                 company,
                 logo,
-                logoHeight = 35,
+                logoHeight = 28,
                 duration,
                 position,
                 hideName = false,
@@ -490,39 +491,64 @@ const Timeline = (props) => {
                     {logo ? (
                       <img src={logo} alt="" height={logoHeight} />
                     ) : null}
-                    {!hideName ? <h2>{company}</h2> : null}
+                    {!hideName ? (
+                      <h2 className="logo-text">{company}</h2>
+                    ) : null}
                   </div>
-                  <h6>{duration}</h6>
-                  <h5>{position}</h5>
+                  <h6 className="duration">{duration}</h6>
+                  <h5 className="position">{position}</h5>
                 </div>
                 <div className="description">
                   <p>{description}</p>
                 </div>
                 {/* <SkillsMarquee /> */}
-                <div className="skills-container">
-                  {skillsSet.map(({ type, technologies }, index) => (
-                    <>
-                      <div className="column">
-                        {technologies.map(
-                          ({ name, icon, showName, iconColor }) => (
-                            <div className="box">
-                              <Icon
-                                color={iconColor}
-                                icon={icon}
-                                style={{
-                                  marginRight: "5px",
-                                  marginLeft: "25px",
-                                }}
-                              />
-                              {showName ? (
-                                <span className="iconify">{name}</span>
-                              ) : null}
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </>
-                  ))}
+                <div>
+                  <Nav tabs fill>
+                    <NavItem>
+                      <NavLink
+                        className="active"
+                        onClick={function noRefCheck() {}}
+                      >
+                        FrontEnd
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink className="" onClick={function noRefCheck() {}}>
+                        BackeEnd & Devops
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink className="" onClick={function noRefCheck() {}}>
+                        Others
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
+                  <TabContent activeTab="1">
+                    {skillsSet.map(({ type, technologies }, index) => (
+                      <>
+                        <div className="column">
+                          {technologies.map(
+                            ({ name, icon, showName, iconColor }) => (
+                              <div className="box">
+                                <Icon
+                                  color={iconColor}
+                                  icon={icon}
+                                  style={{
+                                    marginRight: "5px",
+                                    marginLeft: "25px",
+                                  }}
+                                />
+                                {showName ? (
+                                  <span className="iconify">{name}</span>
+                                ) : null}
+                              </div>
+                            )
+                          )}
+                        </div>
+                      </>
+                    ))}
+                  </TabContent>
+
                   {/* <div className="column">
                     <div className="box">1</div>
                     <div className="box">2</div>
@@ -543,8 +569,8 @@ const Timeline = (props) => {
             )
           )}
         </div>
-        <div id="grad_top"></div>
-        <div id="grad_bottom"></div>
+        {/* <div id="grad_top"></div>
+        <div id="grad_bottom"></div> */}
         {/* <div
         onClick={() => setCurrentIndex((currIndex) => currIndex + 1)}
         id="next"

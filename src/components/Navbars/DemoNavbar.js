@@ -4,7 +4,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  Button,
   Nav,
   NavItem,
   Dropdown,
@@ -17,6 +17,7 @@ import {
   InputGroupAddon,
   Input,
 } from "reactstrap";
+import { Icon } from "@iconify/react";
 
 import routes from "routes.js";
 
@@ -99,17 +100,11 @@ function Header(props) {
           <span className="navbar-toggler-bar navbar-kebab" />
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar className="justify-content-end">
-          <form>
-            <InputGroup className="no-border">
-              <Input placeholder="Search..." />
-              <InputGroupAddon addonType="append">
-                <InputGroupText>
-                  <i className="nc-icon nc-zoom-split" />
-                </InputGroupText>
-              </InputGroupAddon>
-            </InputGroup>
-          </form>
-          <Nav navbar>
+          <Button outline>Hire Me</Button>
+          <Icon icon="bi:linkedin" color="#333" fontSize={32} />
+          <Icon icon="ic:baseline-email" color="#333" fontSize={32} />
+          <Icon icon="jam:github" color="#333" fontSize={32} />
+          {/* <Nav navbar>
             <NavItem>
               <Link to="#pablo" className="nav-link btn-magnify">
                 <i className="nc-icon nc-layout-11" />
@@ -143,7 +138,7 @@ function Header(props) {
                 </p>
               </Link>
             </NavItem>
-          </Nav>
+          </Nav> */}
         </Collapse>
       </Container>
     </Navbar>

@@ -192,7 +192,7 @@
 }
 
 #timeline {
-  width: 75%;
+  width: 90%;
   height: 600px;
   overflow: hidden;
   margin: 40px auto;
@@ -306,7 +306,7 @@
     .company-highlights {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
       width: 100%;
 
       .logo {
@@ -314,10 +314,23 @@
         flex-direction: row;
         align-items: center;
 
+        h2 {
+          font-size: 26px;
+        }
+
+        .text {
+          font-size: 28px;
+        }
+
         img {
           margin-right: 10px;
           filter: grayscale(1);
         }
+      }
+
+      .duration {
+        letter-spacing: 1px;
+        font-size: 14px;
       }
 
       h6 {
@@ -325,19 +338,22 @@
         font-weight: 400;
         font-size: 16px;
       }
-      h5 {
-        font-size: 20px;
-        background-image: linear-gradient(120deg, #03ff7f 0%, #03ff7f26 100%);
-        background-repeat: no-repeat;
-        background-size: 100% 88%;
-        background-position: 0 88%;
-        transition: background-size 0.25s ease-in;
-      }
     }
 
     .description {
       margin: 20px 0px;
       color: #333;
+    }
+
+    .position {
+      letter-spacing: 1px;
+      font-size: 15px;
+      color: black;
+      background-image: linear-gradient(120deg, #03ff7f 0%, #03ff7f26 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 88%;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
     }
 
     // &.selected {

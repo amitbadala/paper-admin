@@ -8,7 +8,7 @@ const About = () => {
             Amit Badala <span className="waving-hand">👋</span>
           </h1>
           <h1 className="sub-big-header">
-            I am <span className="underline-magical">Full Stack Engineer</span>{" "}
+            I am <span className="underline-magical">Software Engineer</span>{" "}
             <br /> with 7+ yrs of exp.
           </h1>
           <p>

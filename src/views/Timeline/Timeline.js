@@ -94,7 +94,7 @@ const we = [
   {
     company: "OneInsure",
     duration: "DEC 2017 - APR 2019  (1.5 yrs)",
-    position: "Software Development Manager",
+    position: "Software Manager",
     logo: Oneinsure,
     logoHeight: 45,
     description: `India’s 3rd largest Insurance-commerce `,

@@ -29,7 +29,6 @@ function Dashboard(props) {
       // console.log(mainPanelRef.current.scrollTop);
       const scrollPosition =
         mainPanelRef.current.scrollTop + mainPanelRef.current.clientHeight / 2; // Midpoint of viewport
-      console.log("scrollPosition-", scrollPosition);
       // Loop through each section and check if it's in the viewport
       document.querySelectorAll(".section").forEach((section) => {
         const sectionTop = section.offsetTop;

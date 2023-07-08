@@ -92,7 +92,7 @@ const NavTabs = React.memo(({ company }) => {
           </NavLink>
         </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab} company={company} />
+      <TabContent company={company} activeTab={activeTab} />
     </>
   );
 });

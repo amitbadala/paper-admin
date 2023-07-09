@@ -61,7 +61,7 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "#blogs",
+    path: "#blog",
     name: "blog",
     emoji: "✍️",
     layout: "/admin",

@@ -18,8 +18,8 @@ import "./highlights.scss";
 
 const Highlights = () => {
   return (
-    <div className="section content" id="highlights">
-      <div className="content" id="user">
+    <section className="section" id="highlights">
+      <div className="container" id="user">
         <Row>
           <Col md="4">
             <Card className="card-user">
@@ -69,7 +69,7 @@ const Highlights = () => {
                 </div>
               </CardFooter>
             </Card>
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle tag="h4">Team Members</CardTitle>
               </CardHeader>
@@ -164,7 +164,7 @@ const Highlights = () => {
                   </li>
                 </ul>
               </CardBody>
-            </Card>
+            </Card> */}
           </Col>
           <Col md="8">
             <Card className="card-user">
@@ -294,7 +294,7 @@ const Highlights = () => {
           </Col>
         </Row>
       </div>
-    </div>
+    </section>
   );
 };
 

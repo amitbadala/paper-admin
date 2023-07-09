@@ -120,7 +120,7 @@ function Dashboard(props) {
         </div>
         <Blog />
         <div className="nav-header">
-          contact<span className="period"></span>
+          highlights<span className="period"></span>
         </div>
         <Highlights id="highlights" />
         {/* <div className="section"><h2 className="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}

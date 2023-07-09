@@ -63,6 +63,7 @@ const companyWiseSkill = {
     "Javascript",
     ".NET",
     "Ms SQL",
+    "Bootstrap",
   ],
   webesky: [
     "jQuery",
@@ -73,8 +74,17 @@ const companyWiseSkill = {
     "Ms SQL",
     "WordPress",
     "Photoshop",
+    "Bootstrap",
   ],
-  bristlecone: ["jQuery", "Html", "Css", "Javascript", ".NET", "Ms SQL"],
+  bristlecone: [
+    "jQuery",
+    "Html",
+    "Css",
+    "Javascript",
+    ".NET",
+    "Ms SQL",
+    "Bootstrap",
+  ],
 };
 
 const skillsSet = [
@@ -91,6 +101,7 @@ const skillsSet = [
       { name: "Jest", icon: "logos-jest", showName: true },
       { name: "Ant", icon: "logos:ant-design", showName: true },
       { name: "Ionic", icon: "logos:ionic-icon", showName: true },
+      { name: "Bootstrap", icon: "logos:bootstrap", showName: true },
       { name: "Material UI", icon: "devicon:materialui", showName: true },
       { name: "Less", icon: "logos-less", showName: false },
       { name: "Scss", icon: "vscode-icons:file-type-scss2", showName: true },
@@ -198,7 +209,7 @@ const TabContent = ({ activeTab, company }) => {
                         company.toLowerCase()
                       ]?.includes(name)
                         ? 1
-                        : 0.5,
+                        : 0.7,
                     }}
                   >
                     {icon ? (

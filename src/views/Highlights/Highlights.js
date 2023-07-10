@@ -18,11 +18,73 @@ import "./highlights.scss";
 
 const Highlights = () => {
   return (
-    <section className="section" id="highlights">
-      <div className="container" id="user">
-        <Row>
-          <Col md="4">
-            <Card className="card-user">
+    <section
+      className="section"
+      id="highlights"
+      style={{ height: "calc(100vh - 57px)" }}
+    >
+      <div className="parent" id="user">
+        <div className="block frame-1x1 white-bg">
+          <div className="stats-num">4+</div>
+          <div className="stats-desc">
+            years of working remotely, self engineer
+          </div>
+        </div>
+        <div className="block frame-2x1 dark-bg">
+          <div className="stats-num">2x</div>
+          <div className="stats-desc">
+            speedup in test suite refactored closed to 2000 lines, earlier used
+            to take 45 mins to complete one round of testing now it takes only 7
+            mins. Saved a lot of dev time
+          </div>
+        </div>
+        <div class="block frame-1x2 green-bg">
+          <div className="stats-num">~130%</div>
+          <div className="stats-desc">
+            increased form submission by carefully monitoring the UX and
+            updating the UI which led to increased rate of submissions
+          </div>
+        </div>
+        <div class="block frame-1x1 white-bg">
+          {" "}
+          <div className="stats-num">1st</div>
+          <div className="stats-desc">
+            place in web design contest by TechNEXT India
+          </div>
+        </div>
+        <div class="block frame-2x1 green-bg">
+          <div className="stats-num">{`<15%`}</div>
+          <div className="stats-desc">
+            revenue increased by independently building a mobile application to
+            identify and track ecommerce packages that
+          </div>
+        </div>
+        <div class="block frame-2x1 dark-bg">
+          <div className="stats-num">600%</div>
+          <div className="stats-desc">
+            speedup in test suite refactored closed to 2000 lines, earlier used
+            to take 45 mins to complete one round of testing now it takes only 7
+            mins. Saved a lot of dev time
+          </div>
+        </div>
+        <div class="block frame-3x1 white-bg">
+          {" "}
+          <div className="stats-num">25+</div>
+          <div className="stats-desc">
+            blogs published across programming, AI
+          </div>
+        </div>
+        {/* <div class="block frame-1x1 gray">8</div>
+        <div class="block frame-1x1 tomato">1</div> */}
+        {/* <div class="block frame-2x2 slateBlue">9</div>
+        <div class="block frame-1x1 gray">10</div> */}
+        {/* <div class="block frame-1x1 violet">11</div>
+        <div class="block frame-1x1 gray">12</div>
+        <div class="block frame-2x1 tomato">13</div>
+        <div class="block frame-1x1 gray">14</div> */}
+        {/* <Row>
+          <Col md="4"> */}
+        {/* <Card className="card-user">
               <div className="image">
                 <img alt="..." src={require("assets/img/damir-bosnjak.jpg")} />
               </div>
@@ -68,8 +130,8 @@ const Highlights = () => {
                   </Row>
                 </div>
               </CardFooter>
-            </Card>
-            {/* <Card>
+            </Card> */}
+        {/* <Card>
               <CardHeader>
                 <CardTitle tag="h4">Team Members</CardTitle>
               </CardHeader>
@@ -165,8 +227,8 @@ const Highlights = () => {
                 </ul>
               </CardBody>
             </Card> */}
-          </Col>
-          <Col md="8">
+        {/* </Col> */}
+        {/* <Col md="8">
             <Card className="card-user">
               <CardHeader>
                 <CardTitle tag="h5">Edit Profile</CardTitle>
@@ -291,8 +353,8 @@ const Highlights = () => {
                 </Form>
               </CardBody>
             </Card>
-          </Col>
-        </Row>
+          </Col> */}
+        {/* </Row> */}
       </div>
     </section>
   );

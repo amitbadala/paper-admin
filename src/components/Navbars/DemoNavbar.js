@@ -100,10 +100,28 @@ function Header(props) {
           <span className="navbar-toggler-bar navbar-kebab" />
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar className="justify-content-end">
-          <Button outline>Hire Me</Button>
-          <Icon icon="bi:linkedin" color="#333" fontSize={32} />
-          <Icon icon="ic:baseline-email" color="#333" fontSize={32} />
-          <Icon icon="jam:github" color="#333" fontSize={32} />
+          {/* <Button outline>Hire Me</Button> */}
+          <p style={{ marginRight: 10 }}> hello@amitbadala.com</p>
+          <a
+            href="https://www.linkedin.com/in/amitbadala/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon
+              icon="bi:linkedin"
+              color="#333"
+              fontSize={32}
+              style={{ marginRight: 5 }}
+            />
+          </a>
+          {/* <Icon icon="mdi:resume" color="#333" fontSize={32} /> */}
+          <a
+            href="https://github.com/amitbadala"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon icon="jam:github" color="#333" fontSize={36} />
+          </a>
           {/* <Nav navbar>
             <NavItem>
               <Link to="#pablo" className="nav-link btn-magnify">

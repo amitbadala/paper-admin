@@ -1,11 +1,12 @@
 import "./logo.scss";
+import abLogo from "assets/img/ab_logo.png";
 
 const Logo = () => {
   return (
     <div className="logo">
-      <h1 className="medium-heading logo-text">
-        <span className="big-heading">a</span>B<span className="red-dot"></span>
-      </h1>
+      <div className="medium-heading logo-text">
+        <img width={60} height={42} src={abLogo} alt="amitbadala" />
+      </div>
     </div>
   );
 };

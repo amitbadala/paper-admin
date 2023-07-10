@@ -30,7 +30,7 @@
 .main-panel {
   height: 100vh;
   overflow: auto;
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   scroll-padding-top: 57px;
 
   .navbar-sticky {

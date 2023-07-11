@@ -9,12 +9,31 @@ import {
   Input,
   Label,
   FormGroup,
+  Form,
 } from "reactstrap";
 import "./contact.scss";
 import { Icon } from "@iconify/react";
 import Button from "components/Button/Button";
+import emailjs from "emailjs-com";
+import { useState } from "react";
+emailjs.init("XYCXeYWt28fkRnocH");
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleContactForm = (e) => {
+    e.preventDefault();
+    emailjs
+      .send("service_nkcfe9m", "template_xv8fvrs", { name, email, message })
+      .then((response) => {
+        console.log("Email successfully sent!", response);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
   return (
     <section id="contact" className="section">
       <div className="container">
@@ -66,7 +85,7 @@ const Contact = () => {
                     </Col>
                     <Col className="mr-auto" lg="3">
                       <a
-                        href="https://github.com/amitbadala"
+                        href="https://medium.com/@amitbadala"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -97,50 +116,56 @@ const Contact = () => {
                 Got a question or proposal, or just want to say hello? Go ahead.
               </p>
               <br />
-              <Row>
-                <Col md="5">
-                  <FormGroup>
-                    <Label for="name">Your Name</Label>
-                    <Input
-                      className="input-field"
-                      placeholder="Enter your name"
-                    />
-                  </FormGroup>
-                </Col>
-                <br />{" "}
-                <Col md="7">
-                  <FormGroup>
-                    <Label for="email">Email Address </Label>
-                    <Input
-                      className="input-field"
-                      placeholder="Enter your name"
-                    />
-                  </FormGroup>
-                </Col>
-                <Col md="12">
-                  <FormGroup>
-                    <Label for="message">Your Message</Label>
-                    <Input
-                      className="input-field"
-                      id="exampleText"
-                      name="text"
-                      type="textarea"
-                    />
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Button onClick={() => alert()}>
-                    <Icon
-                      icon="ri:send-plane-fill"
-                      color="springgreen"
-                      fontSize={20}
-                    />{" "}
-                    SEND{" "}
-                  </Button>
-                </Col>
-              </Row>
+              <Form onSubmit={handleContactForm}>
+                <Row>
+                  <Col md="5">
+                    <FormGroup>
+                      <Label for="name">Your Name</Label>
+                      <Input
+                        className="input-field"
+                        placeholder="Enter your name"
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </FormGroup>
+                  </Col>
+                  <br />{" "}
+                  <Col md="7">
+                    <FormGroup>
+                      <Label for="email">Email Address </Label>
+                      <Input
+                        className="input-field"
+                        placeholder="Enter your name"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </FormGroup>
+                    <br />
+                  </Col>
+                  <Col md="12">
+                    <FormGroup>
+                      <Label for="message">Your Message</Label>
+                      <Input
+                        className="input-field"
+                        id="exampleText"
+                        name="text"
+                        type="textarea"
+                        onChange={(e) => setMessage(e.target.value)}
+                      />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Button type="submit">
+                      <Icon
+                        icon="ri:send-plane-fill"
+                        color="springgreen"
+                        fontSize={20}
+                      />{" "}
+                      SEND
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
             </div>
           </Col>
         </Row>

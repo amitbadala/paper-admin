@@ -122,6 +122,13 @@ function Header(props) {
           >
             <Icon icon="jam:github" color="#333" fontSize={36} />
           </a>
+          <a
+            href="https://github.com/amitbadala"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon icon="ri:medium-fill" color="#333" fontSize={41} />
+          </a>
           {/* <Nav navbar>
             <NavItem>
               <Link to="#pablo" className="nav-link btn-magnify">

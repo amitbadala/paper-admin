@@ -14,6 +14,7 @@ import routes from "routes.js";
 import WorkExperience from "views/WorkExperience/WorkExperience";
 import Blog from "views/Blog/Blog";
 import Highlights from "views/Highlights/Highlights";
+import Contact from "views/Contact/Contact";
 
 var ps;
 
@@ -116,13 +117,17 @@ function Dashboard(props) {
         </div>
         <WorkExperience id="user" />
         <div className="nav-header">
+          highlights<span className="period"></span>
+        </div>
+        <Highlights id="highlights" />
+        <div className="nav-header">
           blog<span className="period"></span>
         </div>
         <Blog />
         <div className="nav-header">
-          highlights<span className="period"></span>
+          contact<span className="period"></span>
         </div>
-        <Highlights id="highlights" />
+        <Contact />
         {/* <div className="section"><h2 className="big-heading">Amit Badala <span role="img" aria-label="hi">👋</span></h2></div> */}
         {/* {routes.map((prop, key) => {
             return (
@@ -134,7 +139,7 @@ function Dashboard(props) {
               />
             );
           })} */}
-        <Footer fluid />
+        {/* <Footer fluid /> */}
       </div>
       {/* <FixedPlugin
         bgColor={backgroundColor}
@@ -142,6 +147,17 @@ function Dashboard(props) {
         handleActiveClick={handleActiveClick}
         handleBgClick={handleBgClick}
       /> */}
+      {/* <div
+        className="credits ml-auto"
+        style={{ position: "absolute", zIndex: 2000, bottom: 10, left: 20 }}
+      >
+        {" "}
+        <div className="copyright">
+          &copy; {1900 + new Date().getYear()}, made with{" "}
+          <i className="fa fa-heart heart" style={{ color: "red" }} /> by
+        </div>
+        <h1 className="signature">Amit Badala</h1>
+      </div> */}
     </div>
   );
 }

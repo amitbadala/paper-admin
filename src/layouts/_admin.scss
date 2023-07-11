@@ -15,7 +15,7 @@
   font-size: x-large;
   display: flex;
   align-items: baseline;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #a7a7a7;
 }
 .period {
   height: 10px;
@@ -29,7 +29,7 @@
 .main-panel {
   height: 100vh;
   overflow: auto;
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-padding-top: 57px;
 
   .navbar-sticky {
@@ -59,4 +59,10 @@
 
 .signature {
   font-family: "signature";
+}
+
+.alert {
+  font-weight: 500;
+  background-color: #333 !important;
+  letter-spacing: 0.5px;
 }

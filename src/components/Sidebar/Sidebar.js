@@ -6,6 +6,8 @@ import PerfectScrollbar from "perfect-scrollbar";
 import ScrollLink from "components/ScrollLink/ScrollLink";
 import Logo from "components/Logo/Logo";
 import "./sidebar.scss";
+import Button from "components/Button/Button";
+import { Icon } from "@iconify/react";
 
 var ps;
 
@@ -55,6 +57,23 @@ function Sidebar(props) {
             );
           })}
         </Nav>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            margin: "20px 0px",
+          }}
+        >
+          <Button className="small">
+            <Icon
+              icon="basil:document-solid"
+              color="springgreen"
+              fontSize={20}
+            />{" "}
+            RESUME
+          </Button>
+        </div>
       </div>
     </div>
   );

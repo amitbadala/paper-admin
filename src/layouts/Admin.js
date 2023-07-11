@@ -147,17 +147,19 @@ function Dashboard(props) {
         handleActiveClick={handleActiveClick}
         handleBgClick={handleBgClick}
       /> */}
-      {/* <div
+      <div
         className="credits ml-auto"
         style={{ position: "absolute", zIndex: 2000, bottom: 10, left: 20 }}
       >
         {" "}
         <div className="copyright">
           &copy; {1900 + new Date().getYear()}, made with{" "}
-          <i className="fa fa-heart heart" style={{ color: "red" }} /> by
+          <i className="fa fa-heart heart" style={{ color: "red" }} />
+          <h3 style={{ marginBottom: "0px" }} className="signature">
+            Amit Badala
+          </h3>
         </div>
-        <h1 className="signature">Amit Badala</h1>
-      </div> */}
+      </div>
     </div>
   );
 }

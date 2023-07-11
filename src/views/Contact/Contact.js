@@ -2,9 +2,7 @@ import {
   Row,
   Col,
   Card,
-  CardTitle,
   CardBody,
-  CardHeader,
   CardFooter,
   Input,
   Label,
@@ -15,27 +13,51 @@ import "./contact.scss";
 import { Icon } from "@iconify/react";
 import Button from "components/Button/Button";
 import emailjs from "emailjs-com";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import NotificationAlert from "react-notification-alert";
+
 emailjs.init("XYCXeYWt28fkRnocH");
 
 const Contact = () => {
+  const notificationAlert = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const notify = (message, type) => {
+    let options = {};
+    options = {
+      class: "test",
+      place: "br",
+      message: message,
+      type: type,
+      icon: "nc-icon nc-bell-55",
+      autoDismiss: 7000,
+    };
+    notificationAlert.current.notificationAlert(options);
+  };
+
+  const clearFields = () => {
+    setEmail("");
+    setName("");
+    setMessage("");
+  };
 
   const handleContactForm = (e) => {
     e.preventDefault();
     emailjs
       .send("service_nkcfe9m", "template_xv8fvrs", { name, email, message })
       .then((response) => {
-        console.log("Email successfully sent!", response);
+        notify("Email successfully sent!", "success");
+        clearFields();
       })
       .catch((error) => {
-        console.error("Error sending email:", error);
+        notify("Error sending email", "warning");
       });
   };
   return (
     <section id="contact" className="section">
+      <NotificationAlert ref={notificationAlert} />
       <div className="container">
         <Row className="gx-5" style={{ width: "90%" }} justify="center">
           <Col md="4">
@@ -122,6 +144,7 @@ const Contact = () => {
                     <FormGroup>
                       <Label for="name">Your Name</Label>
                       <Input
+                        value={name}
                         className="input-field"
                         placeholder="Enter your name"
                         onChange={(e) => setName(e.target.value)}
@@ -133,8 +156,9 @@ const Contact = () => {
                     <FormGroup>
                       <Label for="email">Email Address </Label>
                       <Input
+                        value={email}
                         className="input-field"
-                        placeholder="Enter your name"
+                        placeholder="Email Address"
                         onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormGroup>
@@ -144,6 +168,7 @@ const Contact = () => {
                     <FormGroup>
                       <Label for="message">Your Message</Label>
                       <Input
+                        value={message}
                         className="input-field"
                         id="exampleText"
                         name="text"

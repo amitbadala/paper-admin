@@ -143,20 +143,4 @@
   }
 }
 
-@keyframes waving {
-  0%,
-  100% {
-    transform: rotate(-15deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
-}
-
-.waving-hand {
-  // font-size: 5em;
-  display: inline-block;
-  animation: waving 2s ease;
-}
-
 // BLOG PAGE

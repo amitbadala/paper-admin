@@ -390,6 +390,14 @@ const Timeline = (props) => {
             display: "none",
           }}
         ></div>
+        <div id="grad_top"></div>
+        <div id="grad_bottom"></div>
+        {/* <a href="#" id="next">
+          +
+        </a>
+        <a href="#" id="prev">
+          -
+        </a> */}
       </div>
     </>
   );

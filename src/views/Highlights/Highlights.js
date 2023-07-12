@@ -18,17 +18,14 @@ import "./highlights.scss";
 
 const Highlights = () => {
   return (
-    <section
-      className="section"
-      id="highlights"
-      style={{ height: "calc(100vh - 57px)" }}
-    >
+    <section className="section" id="highlights">
       <div className="container">
         <div className="parent" id="user">
           <div className="block frame-1x1 white-bg">
             <div className="stats-num">4+</div>
-            <div className="stats-desc">
-              years of working remotely, self engineer
+            <div className="stats-desc" style={{ fontSize: 16 }}>
+              yrs of Remote work experience, exemplifying self-initiative & a
+              high sense of responsibility and ownership as an engineer
             </div>
           </div>
           <div className="block frame-2x1 dark-bg">
@@ -40,39 +37,50 @@ const Highlights = () => {
             </div>
           </div>
           <div class="block frame-1x2 green-bg">
-            <div className="stats-num">~130%</div>
+            <div className="stats-num">600%</div>
             <div className="stats-desc">
-              increased form submission by carefully monitoring the UX and
-              updating the UI which led to increased rate of submissions
+              improvement in test suite performance post-refactoring
+              {` >`} 2000 lines of code, slashing the testing cycle time from 45
+              minutes down to 7 minutes, significantly saving developer time.
             </div>
           </div>
           <div class="block frame-1x1 white-bg">
             {" "}
             <div className="stats-num">1st</div>
             <div className="stats-desc">
-              place in web design contest by TechNEXT India
+              place laureate in a web design contest hosted by TechNEXT India
             </div>
           </div>
           <div class="block frame-2x1 green-bg">
-            <div className="stats-num">{`<15%`}</div>
+            <div className="stats-num">{`>15%`}</div>
             <div className="stats-desc">
-              revenue increased by independently building a mobile application
-              to identify and track ecommerce packages that
+              revenue boost achieved by independently building a mobile
+              application for e-commerce businesses which helped in
+              identification and tracking of RTO packages
             </div>
           </div>
-          <div class="block frame-2x1 dark-bg">
+          {/* <div class="block frame-2x1 dark-bg">
             <div className="stats-num">600%</div>
             <div className="stats-desc">
-              speedup in test suite refactored closed to 2000 lines, earlier
-              used to take 45 mins to complete one round of testing now it takes
-              only 7 mins. Saved a lot of dev time
+              improvement in test suite performance post-refactoring
+              {` >`} 2000 lines of code, slashing the testing cycle time from 45
+              minutes down to 7 minutes, significantly saving developer time.
             </div>
-          </div>
+          </div> */}
           <div class="block frame-3x1 white-bg">
             {" "}
             <div className="stats-num">25+</div>
             <div className="stats-desc">
-              blogs published across programming, AI
+              informative Blogs authored covering topics ranging from
+              programming & AI to personal learning.
+            </div>
+          </div>
+          <div class="block frame-1x1 dark-bg">
+            {" "}
+            <div className="stats-num">130%</div>
+            <div className="stats-desc">
+              increased form submission by carefully monitoring the UX and
+              updating the UI which led to increased rate of submissions
             </div>
           </div>
           {/* <div class="block frame-1x1 gray">8</div>

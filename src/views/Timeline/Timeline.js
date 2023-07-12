@@ -1,5 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Row, Col, Nav, NavItem, NavLink, TabContent } from "reactstrap";
+import {
+  Row,
+  Col,
+  Nav,
+  Form,
+  NavLink,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
 import "./timeline.scss";
 import Bristlecone from "assets/img/logos/bristlecone_logo.png";
 import Khonvo from "assets/img/logos/khonvo_logo.png";
@@ -142,8 +151,46 @@ const Timeline = (props) => {
   }, []);
 
   const [currentIndex, setCurrentIndex] = useState(settings.startAt - 1);
+  const [isIncrementing, setIsIncrementing] = useState(true);
+
   const defaultDateDivHeightRef = useRef(null);
   const companyInfoRef = useRef(null);
+  const intervalRef = useRef();
+
+  const startInterval = () => {
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        if (isIncrementing) {
+          if (prevIndex < we.length - 1) {
+            return prevIndex + 1;
+          } else {
+            setIsIncrementing(false);
+            return prevIndex - 1;
+          }
+        } else {
+          if (prevIndex > 0) {
+            return prevIndex - 1;
+          } else {
+            setIsIncrementing(true);
+            return prevIndex + 1;
+          }
+        }
+      });
+    }, 3000);
+  };
+
+  useEffect(() => {
+    startInterval();
+    return () => clearInterval(intervalRef.current);
+  }, [isIncrementing]);
+
+  const handleMouseEnter = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  const handleMouseLeave = () => {
+    startInterval();
+  };
 
   useEffect(() => {
     // SET POSITIONS
@@ -171,6 +218,9 @@ const Timeline = (props) => {
   }, []);
 
   useEffect(() => {
+    console.log(currentIndex, "currentIndex");
+    console.log("isIncrementing", isIncrementing);
+
     handleDateClick();
     // setCurrentIssue(issues[currentIndex]);
   }, [currentIndex]);
@@ -341,7 +391,12 @@ const Timeline = (props) => {
             ))}
           </ul>
         </div>
-        <div ref={companyInfoRef} id="company-details">
+        <div
+          ref={companyInfoRef}
+          id="company-details"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {we.map(
             (
               {
@@ -392,6 +447,7 @@ const Timeline = (props) => {
         ></div>
         <div id="grad_top"></div>
         <div id="grad_bottom"></div>
+
         {/* <a href="#" id="next">
           +
         </a>

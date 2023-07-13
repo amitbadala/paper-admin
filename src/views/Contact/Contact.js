@@ -73,9 +73,6 @@ const Contact = () => {
                   <h1 className="signature">Amit Badala</h1>
                   <p className="">hello@amitbadala.com</p>
                 </div>
-                <p className="text-center">
-                  "I take high pride in my work, deliever high quality output"
-                </p>
               </CardBody>
               <CardFooter>
                 <hr />

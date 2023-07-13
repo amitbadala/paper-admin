@@ -29,12 +29,12 @@ const Highlights = () => {
             </div>
           </div>
           <div className="block frame-2x1 dark-bg">
-            <div className="stats-num">130%</div>
+            <div className="stats-num">2x</div>
             <div className="stats-desc" style={{ fontSize: 16 }}>
-              increased submission rates through careful UX monitoring and
-              analysis of the dropoff funnel during form completion, combined
-              with strategic UI updates that led to higher engagement and
-              submission rates
+              faster frontend page load speed through advanced techniques such
+              as lazy loading, code splitting, image optimization, and SQL query
+              optimization, which minimized database trips and enhanced API
+              response time. ⚡
             </div>
           </div>
           <div class="block frame-1x2 green-bg">
@@ -46,7 +46,7 @@ const Highlights = () => {
               time.
             </div>
           </div>
-          <div class="block frame-1x1 white-bg">
+          <div class="block frame-1x1 dark-bg">
             {" "}
             <div className="stats-num">1st</div>
             <div className="stats-desc">
@@ -62,12 +62,12 @@ const Highlights = () => {
             </div>
           </div>
           <div class="block frame-2x1 dark-bg">
-            <div className="stats-num">2x</div>
+            <div className="stats-num">130%</div>
             <div className="stats-desc" style={{ fontSize: 16 }}>
-              faster frontend page load speed through advanced techniques such
-              as lazy loading, code splitting, image optimization, and SQL query
-              optimization, which minimized database trips and enhanced API
-              response time. ⚡
+              increased submission rates through careful UX monitoring and
+              analysis of the dropoff funnel during form completion, combined
+              with strategic UI updates that led to higher engagement and
+              submission rates
             </div>
           </div>
 
@@ -79,7 +79,7 @@ const Highlights = () => {
               programming & AI to personal learning
             </div>
           </div>
-          <div class="block frame-1x2 dark-bg">
+          <div class="block frame-1x2 white-bg">
             {" "}
             <div className="stats-num">23+</div>
             <div className="stats-desc">

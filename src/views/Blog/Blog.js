@@ -82,8 +82,9 @@ const Blog = () => {
       <div className="container">
         <div style={{ width: "95%" }}>
           <h3 style={{ textAlign: "center", fontSize: 22, marginBottom: 40 }}>
-            My recent favourite thing to do is explore AI tools like ChatGPT &
-            Midjourney and writing about them. <br />
+            My recent favourite thing to do is explore AI tools like{" "}
+            <span className="underline-magical">ChatGPT & Midjourney</span> &
+            writing about them. <br />
             On usual days you'll find me writing about my learnings in
             programming & other fields
           </h3>

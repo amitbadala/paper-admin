@@ -14,7 +14,8 @@ const About = () => {
           <p>
             I love javascript and everything on web, when my dev-senses kick in
             I build presumably awesome stuff. I've always been drawn to the
-            overlap between design and development.
+            overlap between{" "}
+            <span className="underline-magical">design and development</span>.
           </p>
           <p>
             I have built a diverse range of applications across different

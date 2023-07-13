@@ -2,7 +2,7 @@
   display: grid;
   min-height: calc(100vh - 120px);
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px));
   grid-auto-rows: 200px;
   grid-auto-flow: row dense;
   grid-gap: 10px;
@@ -10,6 +10,10 @@
   //   background-color: #ddd;
   box-sizing: border-box;
   width: 100%;
+
+  .green-bg-only {
+    background-color: springgreen;
+  }
 
   .green-bg {
     // background-color: springgreen;
@@ -61,10 +65,18 @@
   font-size: 28px;
   font-weight: 600;
   border: 1px solid #a7a7a7;
+  cursor: pointer;
+
+  &:hover {
+    .stats-num {
+      text-shadow: unset;
+    }
+  }
 
   //   color: white;
 
   .stats-num {
+    transition: 0.5s;
     font-size: 70px;
     position: absolute;
     top: -15px;

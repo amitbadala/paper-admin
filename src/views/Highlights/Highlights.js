@@ -23,32 +23,34 @@ const Highlights = () => {
         <div className="parent" id="user">
           <div className="block frame-1x1 white-bg">
             <div className="stats-num">4+</div>
-            <div className="stats-desc" style={{ fontSize: 16 }}>
+            <div className="stats-desc" style={{ fontSize: 15 }}>
               yrs of Remote work experience, exemplifying self-initiative & a
               high sense of responsibility and ownership as an engineer
             </div>
           </div>
           <div className="block frame-2x1 dark-bg">
-            <div className="stats-num">2x</div>
-            <div className="stats-desc">
-              speedup in test suite refactored closed to 2000 lines, earlier
-              used to take 45 mins to complete one round of testing now it takes
-              only 7 mins. Saved a lot of dev time
+            <div className="stats-num">130%</div>
+            <div className="stats-desc" style={{ fontSize: 16 }}>
+              increased submission rates through careful UX monitoring and
+              analysis of the dropoff funnel during form completion, combined
+              with strategic UI updates that led to higher engagement and
+              submission rates
             </div>
           </div>
           <div class="block frame-1x2 green-bg">
             <div className="stats-num">600%</div>
-            <div className="stats-desc">
+            <div className="stats-desc" style={{ fontSize: 19 }}>
               improvement in test suite performance post-refactoring
-              {` >`} 2000 lines of code, slashing the testing cycle time from 45
-              minutes down to 7 minutes, significantly saving developer time.
+              {` >`} 2000 lines of python code, slashing the testing cycle time
+              from 45 minutes down to 7 minutes, significantly saving developer
+              time.
             </div>
           </div>
           <div class="block frame-1x1 white-bg">
             {" "}
             <div className="stats-num">1st</div>
             <div className="stats-desc">
-              place laureate in a web design contest hosted by TechNEXT India
+              place laureate in a web design contest hosted by TechNEXT India 🇮🇳
             </div>
           </div>
           <div class="block frame-2x1 green-bg">
@@ -56,35 +58,45 @@ const Highlights = () => {
             <div className="stats-desc">
               revenue boost achieved by independently building a mobile
               application for e-commerce businesses which helped in
-              identification and tracking of RTO packages
+              identification and tracking of RTO packages 💰
             </div>
           </div>
-          {/* <div class="block frame-2x1 dark-bg">
-            <div className="stats-num">600%</div>
-            <div className="stats-desc">
-              improvement in test suite performance post-refactoring
-              {` >`} 2000 lines of code, slashing the testing cycle time from 45
-              minutes down to 7 minutes, significantly saving developer time.
+          <div class="block frame-2x1 dark-bg">
+            <div className="stats-num">2x</div>
+            <div className="stats-desc" style={{ fontSize: 16 }}>
+              faster frontend page load speed through advanced techniques such
+              as lazy loading, code splitting, image optimization, and SQL query
+              optimization, which minimized database trips and enhanced API
+              response time. ⚡
             </div>
-          </div> */}
+          </div>
+
           <div class="block frame-3x1 white-bg">
             {" "}
             <div className="stats-num">25+</div>
-            <div className="stats-desc">
+            <div className="stats-desc" style={{ fontSize: 16 }}>
               informative Blogs authored covering topics ranging from
-              programming & AI to personal learning.
+              programming & AI to personal learning
             </div>
           </div>
-          <div class="block frame-1x1 dark-bg">
+          <div class="block frame-1x2 dark-bg">
             {" "}
-            <div className="stats-num">130%</div>
+            <div className="stats-num">23+</div>
             <div className="stats-desc">
-              increased form submission by carefully monitoring the UX and
-              updating the UI which led to increased rate of submissions
+              projects completed, most of them built from the ground up. My
+              experience spans the entire software development process, from
+              initial wireframing to final deployment. Always eager to learn and
+              take on tasks outside my area of expertise.{" "}
             </div>
           </div>
-          {/* <div class="block frame-1x1 gray">8</div>
-        <div class="block frame-1x1 tomato">1</div> */}
+          <div class="block frame-1x1">
+            <div className="stats-num">8</div>
+            <div className="stats-desc">
+              engineers mentored, with a specific emphasis on Frontend
+              development
+            </div>
+          </div>
+          <div class="block frame-1x1 green-bg-only"></div>
           {/* <div class="block frame-2x2 slateBlue">9</div>
         <div class="block frame-1x1 gray">10</div> */}
           {/* <div class="block frame-1x1 violet">11</div>

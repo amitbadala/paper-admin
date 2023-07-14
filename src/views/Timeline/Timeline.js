@@ -218,9 +218,6 @@ const Timeline = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(currentIndex, "currentIndex");
-    console.log("isIncrementing", isIncrementing);
-
     handleDateClick();
     // setCurrentIssue(issues[currentIndex]);
   }, [currentIndex]);
@@ -310,7 +307,6 @@ const Timeline = (props) => {
       `${settings.datesDiv} > li > .we-skeleton`
     );
     // var currentIndex = Array.from(datesLinks).indexOf(this.parentElement);
-    // console.log(defaultDateDivHeightRef);
     if (!defaultDateDivHeightRef.current) {
       let defaultPositionDates = parseInt(
         getComputedStyle(document.querySelector(settings.datesDiv)).marginTop

@@ -65,14 +65,18 @@ function Sidebar(props) {
             margin: "20px 0px",
           }}
         >
-          <Button className="small">
+          <a
+            href="https://docs.google.com/document/d/1nQJ4FHG--I74aANytChTIg9dbpr_ftPwI0HemP-sFIM/edit?usp=sharing"
+            target="_blank"
+            className="btn small"
+          >
             <Icon
               icon="basil:document-solid"
               color="springgreen"
               fontSize={20}
             />{" "}
             RESUME
-          </Button>
+          </a>
         </div>
       </div>
     </div>

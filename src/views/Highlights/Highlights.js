@@ -91,7 +91,7 @@ const Highlights = () => {
           </div>
           <div class="block frame-1x1">
             <div className="stats-num">8</div>
-            <div className="stats-desc">
+            <div className="stats-desc" style={{ fontSize: 16 }}>
               engineers mentored, with a specific emphasis on Frontend
               development
             </div>

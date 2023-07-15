@@ -123,7 +123,7 @@ function Header(props) {
             <Icon icon="jam:github" color="#333" fontSize={36} />
           </a>
           <a
-            href="https://github.com/amitbadala"
+            href="https://medium.com/@amitbadala"
             target="_blank"
             rel="noreferrer"
           >

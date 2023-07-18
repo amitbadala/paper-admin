@@ -110,3 +110,28 @@
     transform: rotate(0deg);
   }
 }
+
+// Media query for mobile screens
+@media (max-width: 480px) {
+  .main-panel {
+    scroll-snap-type: none;
+    scroll-padding-top: unset;
+
+    section {
+      height: auto;
+      #contact {
+        .card-user {
+          margin-top: 50px;
+        }
+      }
+
+      .contact-form {
+        margin-bottom: 150px;
+        .headline {
+          font-size: smaller;
+          margin: 60px 0px 30px;
+        }
+      }
+    }
+  }
+}

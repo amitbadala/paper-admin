@@ -78,7 +78,7 @@ const Contact = () => {
                 <hr />
                 <div className="button-container">
                   <Row>
-                    <Col className="ml-auto" lg="3" md="6" xs="6">
+                    <Col className="ml-auto" lg="4" md="4" xs="4">
                       <a
                         href="https://www.linkedin.com/in/amitbadala/"
                         target="_blank"
@@ -93,7 +93,7 @@ const Contact = () => {
                       </a>
                       {/* <Icon icon="mdi:resume" color="#333" fontSize={32} /> */}
                     </Col>
-                    <Col className="ml-auto mr-auto" lg="4" md="6" xs="6">
+                    <Col className="ml-auto mr-auto" lg="4" md="4" xs="4">
                       <a
                         href="https://github.com/amitbadala"
                         target="_blank"
@@ -102,7 +102,7 @@ const Contact = () => {
                         <Icon icon="jam:github" color="#333" fontSize={36} />
                       </a>
                     </Col>
-                    <Col className="mr-auto" lg="3">
+                    <Col className="mr-auto" lg="4" md="4" xs="4">
                       <a
                         href="https://medium.com/@amitbadala"
                         target="_blank"

@@ -83,11 +83,12 @@
       display: inline-block;
       font-family: monospace;
       overflow: hidden; /* Ensures the content is not revealed until the animation */
-      border-right: 0.15em solid black; /* The typewriter cursor */
+      border-right: 2px solid #333; /* The typewriter cursor */
       white-space: nowrap; /* Keeps the content on a single line */
       margin: 0 auto; /* Gives that scrolling effect as the typing happens */
       letter-spacing: 0.15em; /* Adjust as needed */
-      animation: typewriter 5s steps(40, end), blink 0.75s step-end;
+      animation: typewriter 5s steps(40, end), blink 1s infinite;
+      line-height: initial;
     }
   }
 }
@@ -135,7 +136,7 @@
 .underline-magical {
   background-image: linear-gradient(120deg, #03ff7f 0%, #03ff7f26 100%);
   background-repeat: no-repeat;
-  background-size: 100% 0.4em;
+  background-size: 100% 1em;
   background-position: 0 88%;
   transition: background-size 0.25s ease-in;
   &:hover {

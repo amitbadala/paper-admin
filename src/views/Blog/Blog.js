@@ -71,11 +71,31 @@ const Blog = () => {
 
   const settings = {
     className: "center",
+    centerMode: true,
     infinite: true,
-    centerPadding: "0px",
+    centerPadding: "40px",
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true, // Enable center mode
+          centerPadding: "50px", // Add padding either side of the centered slide
+        },
+      },
+    ],
   };
   return (
     <section id="blog" className="section">

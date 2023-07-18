@@ -78,7 +78,7 @@ const Blog = () => {
     autoplay: true,
   };
   return (
-    <section id="blog" className="section content">
+    <section id="blog" className="section">
       <div className="container">
         <div style={{ width: "95%" }}>
           <h3 style={{ textAlign: "center", fontSize: 22, marginBottom: 40 }}>
@@ -143,13 +143,7 @@ const Blog = () => {
         </div>
         <div>
           <h4>You can find more of my blogs and post on these sites</h4>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-            }}
-          >
+          <div className="blog-sites">
             <a
               href="https://medium.com/me/stories/public"
               rel="noreferrer"

@@ -112,3 +112,19 @@
     grid-row: span 1;
   }
 }
+
+@media (max-width: 480px) {
+  .parent {
+    display: flex;
+    flex-direction: column;
+
+    .block {
+      .stats-desc {
+        margin-top: 40px;
+      }
+      .stats-num {
+        font-size: 60px;
+      }
+    }
+  }
+}

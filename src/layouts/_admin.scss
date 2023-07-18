@@ -117,12 +117,18 @@
     scroll-snap-type: none;
     scroll-padding-top: unset;
 
+    .big-header {
+      font-size: clamp(40px, 12vw, 72px);
+    }
+
+    .sub-big-header {
+      font-size: clamp(40px, 10vw, 72px);
+    }
+
     section {
       height: auto;
-      #contact {
-        .card-user {
-          margin-top: 50px;
-        }
+      .card-user {
+        margin-top: 50px;
       }
 
       .contact-form {

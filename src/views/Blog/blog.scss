@@ -69,3 +69,18 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+
+.blog-sites {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  #blog {
+    h4 {
+      text-align: center;
+    }
+  }
+}

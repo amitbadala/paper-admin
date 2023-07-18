@@ -37,7 +37,7 @@ const Highlights = () => {
               response time. ⚡
             </div>
           </div>
-          <div class="block frame-1x2 green-bg">
+          <div className="block frame-1x2 green-bg">
             <div className="stats-num">600%</div>
             <div className="stats-desc" style={{ fontSize: 19 }}>
               improvement in test suite performance post-refactoring
@@ -46,14 +46,14 @@ const Highlights = () => {
               time.
             </div>
           </div>
-          <div class="block frame-1x1 dark-bg">
+          <div className="block frame-1x1 dark-bg">
             {" "}
             <div className="stats-num">1st</div>
             <div className="stats-desc">
               place laureate in a web design contest hosted by TechNEXT India 🇮🇳
             </div>
           </div>
-          <div class="block frame-2x1 green-bg">
+          <div className="block frame-2x1 green-bg">
             <div className="stats-num">{`>15%`}</div>
             <div className="stats-desc">
               revenue boost achieved by independently building a mobile
@@ -61,7 +61,7 @@ const Highlights = () => {
               identification and tracking of RTO packages 💰
             </div>
           </div>
-          <div class="block frame-2x1 dark-bg">
+          <div className="block frame-2x1 dark-bg">
             <div className="stats-num">130%</div>
             <div className="stats-desc" style={{ fontSize: 16 }}>
               increased submission rates through careful UX monitoring and
@@ -71,7 +71,7 @@ const Highlights = () => {
             </div>
           </div>
 
-          <div class="block frame-3x1 white-bg">
+          <div className="block frame-3x1 white-bg">
             {" "}
             <div className="stats-num">25+</div>
             <div className="stats-desc" style={{ fontSize: 16 }}>
@@ -79,7 +79,7 @@ const Highlights = () => {
               programming & AI to personal learning
             </div>
           </div>
-          <div class="block frame-1x2 white-bg">
+          <div className="block frame-1x2 white-bg">
             {" "}
             <div className="stats-num">23+</div>
             <div className="stats-desc">
@@ -89,20 +89,20 @@ const Highlights = () => {
               take on tasks outside my area of expertise.{" "}
             </div>
           </div>
-          <div class="block frame-1x1">
+          <div className="block frame-1x1">
             <div className="stats-num">8</div>
             <div className="stats-desc" style={{ fontSize: 16 }}>
               engineers mentored, with a specific emphasis on Frontend
               development
             </div>
           </div>
-          <div class="block frame-1x1 green-bg-only"></div>
-          {/* <div class="block frame-2x2 slateBlue">9</div>
-        <div class="block frame-1x1 gray">10</div> */}
-          {/* <div class="block frame-1x1 violet">11</div>
-        <div class="block frame-1x1 gray">12</div>
-        <div class="block frame-2x1 tomato">13</div>
-        <div class="block frame-1x1 gray">14</div> */}
+          <div className="block frame-1x1 green-bg-only"></div>
+          {/* <div className="block frame-2x2 slateBlue">9</div>
+        <div className="block frame-1x1 gray">10</div> */}
+          {/* <div className="block frame-1x1 violet">11</div>
+        <div className="block frame-1x1 gray">12</div>
+        <div className="block frame-2x1 tomato">13</div>
+        <div className="block frame-1x1 gray">14</div> */}
           {/* <Row>
           <Col md="4"> */}
           {/* <Card className="card-user">

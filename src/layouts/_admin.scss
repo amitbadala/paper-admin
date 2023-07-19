@@ -116,6 +116,7 @@
   .main-panel {
     scroll-snap-type: none;
     scroll-padding-top: unset;
+    overflow-x: clip;
 
     .big-header {
       font-size: clamp(40px, 12vw, 72px);

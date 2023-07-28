@@ -83,26 +83,36 @@
       display: inline-block;
       font-family: monospace;
       overflow: hidden; /* Ensures the content is not revealed until the animation */
-      border-right: 2px solid #333; /* The typewriter cursor */
+      // border-right: 2px solid #333; /* The typewriter cursor */
       white-space: nowrap; /* Keeps the content on a single line */
       margin: 0 auto; /* Gives that scrolling effect as the typing happens */
       letter-spacing: 0.15em; /* Adjust as needed */
-      animation: typewriter 5s steps(40, end), blink 1s infinite;
+      animation: typewriter 5s steps(40, end);
       line-height: initial;
     }
   }
 }
 
+.about-content {
+  width: 95%;
+  margin: 0px auto;
+}
+
 .big-header {
-  font-size: clamp(40px, 8vw, 72px);
+  font-size: clamp(40px, 8vw, 64px);
   font-weight: 700;
   color: #333;
   letter-spacing: -2px;
+  margin-bottom: 15px;
 }
 
 .sub-big-header {
-  color: #565656;
-  font-weight: 700;
+  color: #333;
+  // font-weight: 700;
+  font-size: 2.1rem;
+  .underline-magical {
+    font-size: 2.8rem;
+  }
 }
 
 .dark-slate-color {
@@ -118,19 +128,18 @@
   }
 }
 
-@keyframes blink {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
-}
+// @keyframes blink {
+//   from,
+//   to {
+//     border-color: transparent;
+//   }
+//   50% {
+//     border-color: black;
+//   }
+// }
 
 .big-header {
-  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3),
-    0px -4px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.3);
 }
 
 .underline-magical {

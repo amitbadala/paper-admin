@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Chart from "daily-activity-graph";
+// import Chart from "daily-activity-graph";
 import { Col, Row } from "reactstrap";
 import { Icon } from "@iconify/react";
 

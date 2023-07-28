@@ -60,12 +60,12 @@ var routes = [
     emoji: "💼",
     layout: "/admin",
   },
-  {
-    path: "#highlights",
-    name: "highlights",
-    emoji: "📌",
-    layout: "/admin",
-  },
+  // {
+  //   path: "#highlights",
+  //   name: "highlights",
+  //   emoji: "📌",
+  //   layout: "/admin",
+  // },
   {
     path: "#blog",
     name: "blog",

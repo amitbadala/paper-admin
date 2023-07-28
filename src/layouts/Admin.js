@@ -116,10 +116,10 @@ function Dashboard(props) {
           experience<span className="period"></span>
         </div>
         <WorkExperience id="user" />
-        <div className="nav-header">
+        {/* <div className="nav-header">
           highlights<span className="period"></span>
         </div>
-        <Highlights id="highlights" />
+        <Highlights id="highlights" /> */}
         <div className="nav-header">
           blog<span className="period"></span>
         </div>

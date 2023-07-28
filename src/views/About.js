@@ -45,7 +45,7 @@ const About = () => {
             {/* <span className="underline-magical">design and development</span>. */}
           </p>
           <Row>
-            <Col md="3">
+            <Col sm="12" md="3">
               {/* <img
                 alt="..."
                 className="avatar border-gray"
@@ -69,7 +69,7 @@ const About = () => {
                 Engineering.
               </p>
             </Col>
-            <Col md={{ size: 3, offset: 1 }}>
+            <Col sm="12" md={{ size: 3, offset: 1 }}>
               <p style={{ fontSize: 16, color: "black" }}>
                 Proven experience building full-stack products across several
                 industries.

@@ -72,7 +72,7 @@
 .waving-hand {
   display: inline-block;
   animation-name: wave;
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -83,15 +83,15 @@
   }
 
   10% {
-    transform: rotate(14deg);
+    transform: rotate(14deg) scale(1.2);
   }
 
   20% {
-    transform: rotate(-8deg);
+    transform: rotate(-8deg) scale(1.1);
   }
 
   30% {
-    transform: rotate(14deg);
+    transform: rotate(14deg) scale(1.2);
   }
 
   40% {

@@ -162,3 +162,9 @@
   height: 430px;
   filter: drop-shadow(2px 2px 7px #0000006d);
 }
+
+@media screen and (max-width: 479px) {
+  .amit {
+    display: none;
+  }
+}

@@ -27,6 +27,11 @@ const About = () => {
 
   return (
     <section id="about" className="section">
+      <img
+        alt="..."
+        className="amit"
+        src={require("assets/img/amitbadala.png")}
+      />
       {/* <ActivityChart data={data} /> */}
       <div id="chart"></div>
       <div className="container">
@@ -46,11 +51,6 @@ const About = () => {
           </p>
           <Row>
             <Col sm="12" md="3">
-              {/* <img
-                alt="..."
-                className="avatar border-gray"
-                src={require("assets/img/da-vinci.gif")}
-              /> */}
               {/* <div
                 style={{
                   display: "flex",

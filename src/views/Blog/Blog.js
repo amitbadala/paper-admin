@@ -101,7 +101,14 @@ const Blog = () => {
     <section id="blog" className="section">
       <div className="container">
         <div style={{ width: "95%" }}>
-          <h3 style={{ textAlign: "center", fontSize: 22, marginBottom: 40 }}>
+          <h3
+            style={{
+              textAlign: "center",
+              fontSize: 18,
+              marginBottom: 40,
+              color: "white",
+            }}
+          >
             My recent favourite thing to do is explore AI tools like{" "}
             <span className="underline-magical">ChatGPT & Midjourney</span> &
             writing about them. <br />
@@ -162,24 +169,40 @@ const Blog = () => {
           </Slider>
         </div>
         <div>
-          <h4>You can find more of my blogs and post on these sites</h4>
+          <h4 style={{ color: "white", fontSize: 18 }}>
+            You can find more of my blogs and post on these sites
+          </h4>
           <div className="blog-sites">
             <a
               href="https://medium.com/me/stories/public"
               rel="noreferrer"
               target="_blank"
             >
-              <Icon fontSize={24} icon={"logos:medium"}></Icon>
+              <Icon
+                style={{
+                  filter: "invert(1)",
+                }}
+                fontSize={24}
+                icon={"logos:medium"}
+              ></Icon>
             </a>
             <a
               href="https://www.linkedin.com/in/amitbadala/recent-activity/all/"
               target="_blank"
               rel="noreferrer"
             >
-              <Icon fontSize={28} icon={"logos:linkedin"} />
+              <Icon
+                style={{ margin: "0px 30px" }}
+                color="white"
+                fontSize={28}
+                icon={"logos:linkedin"}
+              />
             </a>
             <a rel="noreferrer" href="https://goofyai.com/" target="_blank">
               <img
+                style={{
+                  filter: "invert(1)",
+                }}
                 height={45}
                 alt="..."
                 src={require("assets/img/goofyai.png")}

@@ -5,7 +5,15 @@ const Logo = () => {
   return (
     <div className="logo">
       <div className="medium-heading logo-text">
-        <img width={60} height={42} src={abLogo} alt="amitbadala" />
+        <img
+          style={{
+            filter: "drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4274509804))",
+          }}
+          width={80}
+          height={70}
+          src={abLogo}
+          alt="amitbadala"
+        />
       </div>
     </div>
   );

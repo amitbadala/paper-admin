@@ -214,7 +214,7 @@ const TabContent = ({ activeTab, company }) => {
                   >
                     {icon ? (
                       <Icon
-                        color={iconColor}
+                        color={iconColor || "white"}
                         icon={icon}
                         style={{
                           marginRight: "6px",

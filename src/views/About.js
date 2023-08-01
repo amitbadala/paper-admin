@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 // import Chart from "daily-activity-graph";
 import { Col, Row } from "reactstrap";
 import { Icon } from "@iconify/react";
+// import RocketAnimation from "components/RocketAnimation/RocketAnimation";
 
 function ActivityChart({ data }) {
   const chartRef = useRef();
@@ -35,6 +36,7 @@ const About = () => {
       {/* <ActivityChart data={data} /> */}
       <div id="chart"></div>
       <div className="container">
+        {/* <RocketAnimation /> */}
         <div className="about-content">
           <p className="typing-text">Hi, my name is</p>
           <h1 className="big-header dark-slate">
@@ -64,13 +66,13 @@ const About = () => {
                 fontSize={32}
                 style={{ marginRight: 5 }}
               /> */}
-              <p style={{ fontSize: 16, color: "black" }}>
+              <p style={{ fontSize: 16, color: "white" }}>
                 Highly skilled at progressive enhancement, design systems & UI
                 Engineering.
               </p>
             </Col>
             <Col sm="12" md={{ size: 3, offset: 1 }}>
-              <p style={{ fontSize: 16, color: "black" }}>
+              <p style={{ fontSize: 16, color: "white" }}>
                 Proven experience building full-stack products across several
                 industries.
               </p>

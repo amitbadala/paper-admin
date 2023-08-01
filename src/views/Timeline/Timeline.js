@@ -176,7 +176,7 @@ const Timeline = (props) => {
           }
         }
       });
-    }, 3000);
+    }, 300000);
   };
 
   useEffect(() => {
@@ -409,15 +409,16 @@ const Timeline = (props) => {
               <div className="info-box" key={index}>
                 <div className="company-highlights">
                   <div className="logo">
-                    {logo ? (
+                    {/* {logo ? (
                       <img src={logo} alt="" height={logoHeight} />
-                    ) : null}
-                    {!hideName ? (
+                    ) : null} */}
+                    {/* {!hideName ? (
                       <h2 className="logo-text">{company}</h2>
-                    ) : null}
+                    ) : null} */}
+                    <h2 className="logo-text">{company}</h2>
                   </div>
                   <h6 className="duration">{duration}</h6>
-                  <h5 className="position">{position}</h5>
+                  <h5 className="underline-magical">{position}</h5>
                 </div>
                 <div className="description">
                   <p>{description}</p>

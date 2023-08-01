@@ -9,8 +9,8 @@ const Logo = () => {
           style={{
             filter: "drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4274509804))",
           }}
-          width={80}
-          height={70}
+          width={70}
+          height={62}
           src={abLogo}
           alt="amitbadala"
         />

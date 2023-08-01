@@ -55,6 +55,9 @@
 @import "paper-dashboard/react/react-differences.scss";
 @import "paper-dashboard/sections";
 
+$transparent: rgba(255, 255, 255, 0);
+$rgb: 194, 97, 254;
+
 $light-font: rgb(180, 188, 208);
 $purple-radial: radial-gradient(
   ellipse at center,
@@ -63,6 +66,11 @@ $purple-radial: radial-gradient(
 );
 $purple-radial-corner: radial-gradient(
   ellipse at bottom right,
+  rgba(var(--rgb), 0.15),
+  var(--transparent)
+);
+$purple-radial-left-corner: radial-gradient(
+  ellipse at top left,
   rgba(var(--rgb), 0.15),
   var(--transparent)
 );
@@ -172,8 +180,8 @@ $thin-border-color: #37363f;
   position: absolute;
   right: 0;
   bottom: 0;
-  height: 400px;
-  filter: drop-shadow(2px 2px 7px #0000006d);
+  height: 350px;
+  filter: drop-shadow(2px 2px 7px #0000006d) grayscale(1);
 }
 
 @media screen and (max-width: 479px) {
@@ -202,8 +210,11 @@ $thin-border-color: #37363f;
     /* opacity: 1; */
     /* transform: none; */
     backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.01);
+    // background: rgba(255, 255, 255, 0.01);
     transition: opacity 320ms ease 0s, transform;
+    background: $purple-radial-left-corner;
+    --transparent: rgba(255, 255, 255, 0);
+    --rgb: 194, 97, 254;
   }
   .nav-header {
     color: whitesmoke;

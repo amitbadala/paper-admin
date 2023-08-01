@@ -86,7 +86,7 @@ const Contact = () => {
                       >
                         <Icon
                           icon="bi:linkedin"
-                          color="#333"
+                          color="#fff"
                           fontSize={32}
                           style={{ marginRight: 5 }}
                         />
@@ -99,7 +99,7 @@ const Contact = () => {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Icon icon="jam:github" color="#333" fontSize={36} />
+                        <Icon icon="jam:github" color="#fff" fontSize={36} />
                       </a>
                     </Col>
                     <Col className="mr-auto" lg="4" md="4" xs="4">
@@ -110,7 +110,7 @@ const Contact = () => {
                       >
                         <Icon
                           icon="ri:medium-fill"
-                          color="#333"
+                          color="#fff"
                           fontSize={41}
                         />
                       </a>
@@ -177,10 +177,14 @@ const Contact = () => {
                 </Row>
                 <Row>
                   <Col>
-                    <Button type="submit">
+                    <Button
+                      style={{ backgroundColor: "#673fd5" }}
+                      className="btn-round btn btn-secondary"
+                      type="submit"
+                    >
                       <Icon
                         icon="ri:send-plane-fill"
-                        color="springgreen"
+                        color="white"
                         fontSize={20}
                       />{" "}
                       SEND

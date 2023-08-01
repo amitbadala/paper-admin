@@ -68,13 +68,10 @@ function Sidebar(props) {
           <a
             href="https://docs.google.com/document/d/1nQJ4FHG--I74aANytChTIg9dbpr_ftPwI0HemP-sFIM/edit?usp=sharing"
             target="_blank"
-            className="btn small"
+            style={{ backgroundColor: "#673fd5" }}
+            className="btn-round btn btn-secondary"
           >
-            <Icon
-              icon="basil:document-solid"
-              color="springgreen"
-              fontSize={20}
-            />{" "}
+            <Icon icon="basil:document-solid" color="white" fontSize={20} />{" "}
             RESUME
           </a>
         </div>

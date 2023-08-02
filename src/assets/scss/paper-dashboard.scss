@@ -234,7 +234,7 @@ $thin-border-color: #37363f;
   }
   #about {
     background: radial-gradient(
-      ellipse at center,
+      ellipse at bottom right,
       rgba(var(--rgb), 0.15),
       var(--transparent)
     );

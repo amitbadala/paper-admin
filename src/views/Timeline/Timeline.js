@@ -176,7 +176,7 @@ const Timeline = (props) => {
           }
         }
       });
-    }, 300000);
+    }, 3000);
   };
 
   useEffect(() => {

@@ -81,15 +81,23 @@ const we = [
   //   duration: "TODAY - ♾️",
   //   position: "Hire Me",
   //   logo: "https://assets.website-files.com/6411e025888db9522f309cf1/64132b5769cd3d5d874ac1fd_logo-symbol.svg",
-
   // },
+  {
+    company: "Venture Labs",
+    duration: "MAY 2023 - Current",
+    position: "Freelance Developer",
+    logo: HC,
+    description: `<span class="intro">A San Francisco-based AI Startup </span><br/>
+    Solely developed a full-stack system using Python, React, and Docker, allowing for quick deployment of AI chatbots on Vercel with just one click using GitHub APIs, enabling customized chatbots to be deployed in minutes.`,
+    logoHeight: 20,
+  },
   {
     company: "Human Capital",
     duration: "APR 2020 - APR 2023  (3.1 yrs)",
     position: "Remote Software Engineer",
     logo: HC,
-    description: `A venture firm with over $1.6B in capital commitment. 
-    Its portfolio includes > 130 companies, including around 15 that became unicorns, such as Brex, Commure, and Snowflake`,
+    description: `<span class="intro"> A San Francisco-based VC firm | >$1.6B in Capital commitment | 130 Portfolio Companies | > 15 Unicorns. </span><br/>
+    Developed a Venture Intelligence Platform from the ground up that streamlined investment decisions. Additionally, I constructed a hiring portal to manage portfolio company hiring with an analytics dashboard that utilized Zoho Analytics to track team performance.`,
     logoHeight: 20,
   },
   {
@@ -98,7 +106,8 @@ const we = [
     position: "Remote Software Engineer",
     logo: Khonvo,
     logoHeight: 40,
-    description: `A startup, co-founded by alumni from (Harvard & MIT) and a former Googler, aimed to simplify email campaigns by building a chrome-extension. The company joined forces with Human Capital in 2020`,
+    description: `<span class="intro">A startup, co-founded by alumni from (Harvard & MIT) and a former Googler, aimed to simplify Email Campaigns </span> <br/>  I was part of a two-member team tasked with developing a Chrome Extension. The extension allowed users to send email campaigns directly from their Gmail accounts. 
+    <br/> Additionally, we built features such as tracking campaign replies and automating scheduled campaigns for multiple days.`,
   },
   {
     company: "OneInsure",
@@ -106,14 +115,15 @@ const we = [
     position: "Software Manager",
     logo: Oneinsure,
     logoHeight: 45,
-    description: `India’s 3rd largest Insurance-commerce `,
+    description: `<span class="intro">India’s 3rd largest Insurance-commerce </span><br/>
+    I was in charge of integrating insurance plans from various vendors into our system, my responsibility was to oversee the entire process, from presenting appropriate plans based on the inputs to facilitating the purchase of insurance through Payment Integration. <br/>`,
   },
   {
     company: "Webesky",
     duration: "FEB 2016 - NOV 2017 (1.9 yrs)",
     position: "Co-Founder",
     logoHeight: 80,
-    description: `A digital agency that helps businesses establish their online presence`,
+    description: `<span class="intro"> A digital agency that helps businesses establish their online presence </span><br/> As a Co-founder, I had an all-encompassing role across the Software Development Life Cycle (SDLC). From initial project estimation and crafting wireframes to delivering the final product, my touchpoints spanned the gamut. <br/> Our portfolio boasts standout projects such as the Rental Car Application, a SAAS Portal for Insurance Agents`,
   },
   {
     company: "Bristlecone",
@@ -121,7 +131,8 @@ const we = [
     position: "Associate Consultant",
     logo: Bristlecone,
     hideName: true,
-    description: `It is the leading provider of connected logistics solutions, including AI applications, SAP integration, and more.`,
+    description: `<span class="intro">It is the leading provider of connected logistics solutions, including AI applications, SAP integration, and more.</span>
+    We converted a 20-year-old Legacy application into a modern, responsive platform. Additionally, we created user-friendly dashboards specifically for monitoring and managing SAP applications.`,
   },
 ];
 
@@ -134,7 +145,7 @@ const Timeline = (props) => {
       containerDiv: "#timeline",
       datesDiv: "#dates",
       datesSelectedClass: "selected",
-      datesSpeed: 1500,
+      datesSpeed: 1200,
       issuesDiv: "#issues",
       issuesSelectedClass: "selected",
       issuesSpeed: 500,
@@ -150,7 +161,7 @@ const Timeline = (props) => {
     };
   }, []);
 
-  const [currentIndex, setCurrentIndex] = useState(settings.startAt - 1);
+  const [currentIndex, setCurrentIndex] = useState(1);
   const [isIncrementing, setIsIncrementing] = useState(true);
 
   const defaultDateDivHeightRef = useRef(null);
@@ -335,10 +346,12 @@ const Timeline = (props) => {
     moveDates();
   };
 
-  function handleNext(event) {}
+  function handleNext() {
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  }
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+    setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   return (
@@ -408,20 +421,39 @@ const Timeline = (props) => {
             ) => (
               <div className="info-box" key={index}>
                 <div className="company-highlights">
-                  <div className="logo">
-                    {/* {logo ? (
+                  <Row
+                    style={{
+                      width: "100%",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Col md="6" lg="6">
+                      <div className="logo">
+                        {/* {logo ? (
                       <img src={logo} alt="" height={logoHeight} />
                     ) : null} */}
-                    {/* {!hideName ? (
+                        {/* {!hideName ? (
                       <h2 className="logo-text">{company}</h2>
                     ) : null} */}
-                    <h2 className="logo-text">{company}</h2>
-                  </div>
-                  <h6 className="duration">{duration}</h6>
-                  <h5 className="underline-magical">{position}</h5>
+                        <h2 className="logo-text">{company}</h2>
+                      </div>
+                    </Col>
+                    <Col style={{ textAlign: "right" }} md="4" lg="4">
+                      <h5
+                        style={{ fontSize: 18 }}
+                        className="underline-magical"
+                      >
+                        {position}
+                      </h5>
+                      <h6 style={{ fontSize: 12 }} className="duration">
+                        {duration}
+                      </h6>
+                    </Col>
+                  </Row>
                 </div>
                 <div className="description">
-                  <p>{description}</p>
+                  <p dangerouslySetInnerHTML={{ __html: description }} />
                 </div>
                 {/* <SkillsMarquee /> */}
                 <div>
@@ -444,6 +476,40 @@ const Timeline = (props) => {
         ></div>
         <div id="grad_top"></div>
         <div id="grad_bottom"></div>
+        <div className="controls">
+          {currentIndex !== 0 ? (
+            <span onClick={handlePrev}>
+              <Icon
+                className="icons"
+                color="white"
+                icon="fluent:previous-24-regular"
+              />
+            </span>
+          ) : (
+            <Icon
+              className="icons"
+              color="gray"
+              icon="fluent:previous-24-regular"
+            />
+          )}
+          {currentIndex >= we.length - 1 ? (
+            <Icon
+              className="icons"
+              color="gray"
+              icon="fluent:next-20-regular"
+            />
+          ) : (
+            <span onClick={handleNext}>
+              {/* <Icon color="white" icon="fluent:pause-20-regular" />
+          <Icon color="white" icon="fluent:play-24-regular" /> */}
+              <Icon
+                className="icons"
+                color="white"
+                icon="fluent:next-20-regular"
+              />
+            </span>
+          )}
+        </div>
 
         {/* <a href="#" id="next">
           +

@@ -183,8 +183,8 @@ const TabContent = ({ activeTab, company }) => {
   const rows = [];
   let skillType = skillsSet.find((el) => el.tabName === activeTab);
   if (!skillType) return null;
-  for (let i = 0; i < skillType.technologies.length; i += 4) {
-    rows.push(skillType.technologies.slice(i, i + 4));
+  for (let i = 0; i < skillType.technologies.length; i += 5) {
+    rows.push(skillType.technologies.slice(i, i + 5));
   }
 
   return (

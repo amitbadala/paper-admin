@@ -346,11 +346,18 @@
         font-weight: 400;
         font-size: 16px;
       }
+      .intro {
+        color: darkgray;
+      }
     }
 
     .description {
       margin: 20px 0px;
       color: #333;
+
+      .intro {
+        color: darkgray;
+      }
     }
 
     .position {
@@ -503,3 +510,14 @@
 //   border: 1px solid #ccc; /* add border to create a table cell like look */
 //   margin: 2px; /* little space between cells */
 // }
+
+.controls {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  .icons {
+    font-size: 40px;
+    margin: 0px 10px;
+  }
+}

@@ -261,10 +261,15 @@ $thin-border-color: #37363f;
   }
 
   .we-skeleton {
-    background: $purple-radial;
+    // background: $purple-radial;
     border-color: $thin-border-color;
     h5 {
       color: white;
+    }
+    &.selected {
+      box-shadow: 0 0 #0000, 0 0 #0000,
+        0px 0px 24px 8px rgba(148, 140, 249, 0.4);
+      border-color: rgb(148 140 249);
     }
   }
   .tab-container {

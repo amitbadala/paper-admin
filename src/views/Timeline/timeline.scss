@@ -260,25 +260,39 @@
   }
 }
 
-.red-dot {
-  height: 20px;
-  width: 20px;
-  background-color: #f4f3f0;
-  border-radius: 50%;
-  position: absolute;
-  right: -32px;
-  border: 1px solid white;
-  cursor: pointer;
-  transition: background-color 0.5s ease-in-out;
-}
+// .red-dot {
+//   position: absolute;
+//   right: -40px;
+//   cursor: pointer;
+//   transition: background-color 0.5s ease-in-out;
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   border-top: 15px solid transparent;
+//   border-bottom: 15px solid transparent;
+//   border-left: 28px solid #555555;
+//   border-right: 0;
+// }
 
-.red-dot:hover {
-  background-color: #613ac9;
-}
+// .red-dot:hover {
+//   border-color: #613ac9;
+// }
 
 .active {
   .red-dot {
-    background-color: #613ac9;
+    border-left-color: white;
+    position: absolute;
+    right: -40px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid white;
+    border-right: 0;
+    transition: 1ms ease-in-out;
   }
 }
 

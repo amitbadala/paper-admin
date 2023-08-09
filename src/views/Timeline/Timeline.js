@@ -134,7 +134,7 @@ const Timeline = (props) => {
       containerDiv: "#timeline",
       datesDiv: "#dates",
       datesSelectedClass: "selected",
-      datesSpeed: 800,
+      datesSpeed: 1500,
       issuesDiv: "#issues",
       issuesSelectedClass: "selected",
       issuesSpeed: 500,
@@ -179,10 +179,10 @@ const Timeline = (props) => {
     }, 3000);
   };
 
-  useEffect(() => {
-    startInterval();
-    return () => clearInterval(intervalRef.current);
-  }, [isIncrementing]);
+  // useEffect(() => {
+  //   startInterval();
+  //   return () => clearInterval(intervalRef.current);
+  // }, [isIncrementing]);
 
   const handleMouseEnter = () => {
     clearInterval(intervalRef.current);
@@ -390,8 +390,8 @@ const Timeline = (props) => {
         <div
           ref={companyInfoRef}
           id="company-details"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseLeave={handleMouseLeave}
         >
           {we.map(
             (

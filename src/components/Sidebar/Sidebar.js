@@ -50,7 +50,7 @@ function Sidebar(props) {
                 key={key}
               >
                 <ScrollLink href={prop.path} className="nav-NavLink">
-                  <span className="emoji-icon">{prop.emoji}</span>
+                  <i className={`nc-icon ${prop.iclass}`} color="white" />
                   {prop.name}
                 </ScrollLink>
               </li>

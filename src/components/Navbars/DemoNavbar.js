@@ -110,7 +110,7 @@ function Header(props) {
             <Icon
               icon="bi:linkedin"
               color="white"
-              fontSize={32}
+              fontSize={28}
               style={{ marginRight: 5 }}
             />
           </a>
@@ -120,14 +120,14 @@ function Header(props) {
             target="_blank"
             rel="noreferrer"
           >
-            <Icon icon="jam:github" color="white" fontSize={36} />
+            <Icon icon="jam:github" color="white" fontSize={32} />
           </a>
           <a
             href="https://medium.com/@amitbadala"
             target="_blank"
             rel="noreferrer"
           >
-            <Icon icon="ri:medium-fill" color="white" fontSize={41} />
+            <Icon icon="ri:medium-fill" color="white" fontSize={36} />
           </a>
           {/* <Nav navbar>
             <NavItem>

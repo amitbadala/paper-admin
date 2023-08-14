@@ -53,12 +53,14 @@ var routes = [
     name: "about",
     emoji: <span>👨‍🎨</span>,
     layout: "/admin",
+    iclass: "nc-touch-id",
   },
   {
     path: "#experience",
     name: "experience",
     emoji: "💼",
     layout: "/admin",
+    iclass: "nc-briefcase-24",
   },
   // {
   //   path: "#highlights",
@@ -71,12 +73,14 @@ var routes = [
     name: "blog",
     emoji: "✍️",
     layout: "/admin",
+    iclass: "nc-ruler-pencil",
   },
   {
     path: "#contact",
     name: "contact",
     emoji: "☎️",
     layout: "/admin",
+    iclass: "nc-email-85",
   },
 ];
 export default routes;

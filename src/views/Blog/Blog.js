@@ -109,11 +109,11 @@ const Blog = () => {
               color: "white",
             }}
           >
-            My recent favourite thing to do is explore AI tools like{" "}
-            <span className="underline-magical">ChatGPT & Midjourney</span> &
-            writing about them. <br />
-            On usual days you'll find me writing about my learnings in
-            programming & other fields
+            Recently, I have been exploring AI tools such as{" "}
+            <span className="underline-magical">ChatGPT & Midjourney</span>
+            and documenting my experiences. <br />
+            On regular days, I write about my programming learnings and other
+            interests.
           </h3>
           <Slider {...settings}>
             {blogs.map((blog, i) => (

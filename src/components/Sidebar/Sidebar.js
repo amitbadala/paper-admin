@@ -66,7 +66,7 @@ function Sidebar(props) {
           }}
         >
           <a
-            href="https://docs.google.com/document/d/1nQJ4FHG--I74aANytChTIg9dbpr_ftPwI0HemP-sFIM/edit?usp=sharing"
+            href="https://docs.google.com/document/d/15MEutGgiAEefr44G4xC9_NzbEAQHKc_f/edit?usp=sharing&ouid=112752124426060995580&rtpof=true&sd=true"
             target="_blank"
             style={{ backgroundColor: "#673fd5" }}
             className="btn-round btn btn-secondary"

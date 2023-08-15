@@ -31,7 +31,7 @@ const About = () => {
       <img
         alt="..."
         className="amit"
-        src={require("assets/img/amitbadala.png")}
+        src={require("assets/img/amitanime.png")}
       />
       {/* <ActivityChart data={data} /> */}
       <div id="chart"></div>
